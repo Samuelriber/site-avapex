@@ -1,0 +1,52 @@
+/* =========================================
+   ARQUIVO: style.css
+   Avapex Transportes
+   ========================================= */
+
+/* --- Configurações Gerais --- */
+body { 
+    font-family: 'Inter', sans-serif; 
+    -webkit-font-smoothing: antialiased; 
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Utilitários de Cor */
+.bg-navy { 
+    background-color: #0f172a; /* Slate 900 */
+}
+
+.yellow-accent { 
+    color: #facc15; /* Yellow 400 */
+}
+
+/* --- Grid de Logos dos Clientes --- */
+.client-logo { 
+    filter: grayscale(100%); 
+    opacity: 0.6; 
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.client-logo:hover { 
+    filter: grayscale(0%); 
+    opacity: 1; 
+    transform: scale(1.15); 
+    cursor: pointer;
+}
+
+/* --- Comportamento do Header ao Rolar --- */
+header.scrolled {
+    background-color: rgba(255, 255, 255, 0.95) !important;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    padding-top: 0.5rem !important;
+    padding-bottom: 0.5rem !important;
+    border-bottom: 1px solid rgba(0,0,0,0.05) !important;
+}
+
+#desktop-menu a {
+    transition: color 0.3s ease;
+}
+
+iframe {
+    border-radius: 1rem;
+}
