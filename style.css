@@ -3,57 +3,47 @@
    Avapex Transportes
    ========================================= */
 
-/* --- Configurações Gerais --- */
-body {
+body{
   font-family: 'Inter', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Utilitários de Cor */
-.bg-navy {
-  background-color: #0f172a; /* Slate 900 */
+/* Utilitários */
+.bg-navy{ background-color:#0f172a; }
+.yellow-accent{ color:#facc15; }
+
+iframe{ border-radius:1rem; }
+
+#desktop-menu a{ transition: color .3s ease; }
+
+/* Header scroll */
+header.scrolled{
+  background-color: rgba(255,255,255,.95) !important;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 4px 6px -1px rgba(0,0,0,.10), 0 2px 4px -1px rgba(0,0,0,.06);
+  padding-top: .5rem !important;
+  padding-bottom: .5rem !important;
+  border-bottom: 1px solid rgba(0,0,0,.05) !important;
 }
 
-.yellow-accent {
-  color: #facc15; /* Yellow 400 */
-}
-
-/* --- Grid de Logos dos Clientes --- */
-.client-logo {
+/* Logos (hover) */
+.client-logo{
   filter: grayscale(100%);
-  opacity: 0.6;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: .6;
+  transition: all .35s cubic-bezier(.4,0,.2,1);
 }
-
-.client-logo:hover {
+.client-logo:hover{
   filter: grayscale(0%);
   opacity: 1;
-  transform: scale(1.15);
+  transform: scale(1.12);
   cursor: pointer;
 }
 
-/* --- Comportamento do Header ao Rolar --- */
-header.scrolled {
-  background-color: rgba(255, 255, 255, 0.95) !important;
-  backdrop-filter: blur(8px);
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
-    0 2px 4px -1px rgba(0, 0, 0, 0.06);
-  padding-top: 0.5rem !important;
-  padding-bottom: 0.5rem !important;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.05) !important;
-}
-
-#desktop-menu a {
-  transition: color 0.3s ease;
-}
-
-iframe {
-  border-radius: 1rem;
-}
-
-/* --- Logo Carousel (FUNCIONANDO) --- */
-.logo-carousel {
+/* ================================
+   LOGO CAROUSEL (FORÇADO)
+   ================================ */
+.logo-carousel{
   overflow: hidden;
   width: 100%;
   display: flex;
@@ -61,42 +51,59 @@ iframe {
   gap: 1.5rem;
 }
 
-.logo-track {
-  display: flex;
+.logo-track{
+  display: flex !important;
   align-items: center;
-  width: max-content;
+  width: max-content !important;
   will-change: transform;
 }
 
-.logo-set {
-  display: flex;
+.logo-set{
+  display: flex !important;
   align-items: center;
   gap: 2.5rem;
   padding-right: 2.5rem;
-  flex: 0 0 auto; /* evita encolher e quebrar o loop */
+  flex: 0 0 auto;
 }
 
-/* FORÇA a animação (shorthand) */
-.logo-track.row-1 {
-  animation: scroll-left 25s linear infinite;
+/* IMPORTANTE: -50% porque o HTML tem 2 logo-set iguais */
+.logo-track.row-1{
+  animation: scroll-left 26s linear infinite !important;
+}
+.logo-track.row-2{
+  animation: scroll-right 26s linear infinite !important;
 }
 
-.logo-track.row-2 {
-  animation: scroll-right 25s linear infinite;
-}
-
-/* Anda metade do track porque você duplicou o .logo-set */
-@keyframes scroll-left {
+@keyframes scroll-left{
   from { transform: translateX(0); }
   to   { transform: translateX(-50%); }
 }
 
-@keyframes scroll-right {
+@keyframes scroll-right{
   from { transform: translateX(-50%); }
   to   { transform: translateX(0); }
 }
 
-/* REMOVIDO de propósito:
-   - pausa no hover (pode travar sem querer)
-   - prefers-reduced-motion (pode desligar animação no seu Windows)
-*/
+/* Lista equipamentos */
+.equip-list{
+  margin-top: .5rem;
+  display: flex;
+  flex-direction: column;
+  gap: .75rem;
+  padding-left: 0;
+  list-style: none;
+}
+.equip-list li{
+  position: relative;
+  padding-left: 1.6rem;
+  color: #334155;
+  line-height: 1.6;
+}
+.equip-list li::before{
+  content: "➤";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #0f172a;
+  opacity: .85;
+}

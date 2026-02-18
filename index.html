@@ -47,6 +47,7 @@
         <a href="#home" class="hover:text-yellow-400 transition-colors">Início</a>
         <a href="#credibilidade" class="hover:text-yellow-400 transition-colors">Clientes</a>
         <a href="#servicos" class="hover:text-yellow-400 transition-colors">Serviços</a>
+        <a href="#equipamentos" class="hover:text-yellow-400 transition-colors">Equipamentos</a>
         <a href="#orcamento" class="hover:text-yellow-400 transition-colors">Orçamento</a>
         <a href="#sobre" class="bg-yellow-400 text-navy px-5 py-2 rounded shadow-lg hover:bg-yellow-500 transition-all">Sobre Nós</a>
       </div>
@@ -65,6 +66,7 @@
     <a href="#home" class="text-2xl font-bold">Início</a>
     <a href="#credibilidade" class="text-2xl font-bold">Clientes</a>
     <a href="#servicos" class="text-2xl font-bold">Serviços</a>
+    <a href="#equipamentos" class="text-2xl font-bold">Equipamentos</a>
     <a href="#orcamento" class="text-2xl font-bold">Orçamento</a>
     <a href="#sobre" class="bg-yellow-400 text-navy px-8 py-3 rounded-full font-bold">Sobre Nós</a>
   </div>
@@ -129,6 +131,7 @@
         <p class="text-slate-600 mt-4">Empresas que confiam na nossa robustez operacional.</p>
       </div>
 
+      <!-- CARROSSEL -->
       <div class="logo-carousel" aria-label="Principais clientes">
         <div class="logo-track row-1">
           <div class="logo-set">
@@ -222,7 +225,7 @@
 
         <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all border border-slate-200">
           <div class="bg-navy w-14 h-14 rounded-lg flex items-center justify-center mb-6 text-yellow-400">
-            <i data-lucide="container" class="w-8 h-8"></i>
+            <i data-lucide="box" class="w-8 h-8"></i>
           </div>
           <h3 class="text-xl font-bold mb-3 text-navy">Cargas Especiais</h3>
           <p class="text-sm text-slate-600">Transporte de grandes volumes e equipamentos pesados.</p>
@@ -231,7 +234,55 @@
     </div>
   </section>
 
-  <!-- MVV (logo abaixo de serviços) -->
+  <!-- Equipamentos -->
+  <section id="equipamentos" class="py-24 bg-slate-100 border-t border-slate-200">
+    <div class="container mx-auto px-6">
+      <div class="text-center mb-16">
+        <h2 class="text-navy text-4xl font-extrabold mb-4">Nossos Equipamentos</h2>
+        <p class="text-slate-600 max-w-2xl mx-auto">
+          Frota e equipamentos para operações de transporte, movimentação e locação com segurança e performance.
+        </p>
+      </div>
+
+      <div class="grid lg:grid-cols-2 gap-8">
+        <div class="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all">
+          <div class="flex items-center justify-between gap-6 mb-6">
+            <h3 class="text-2xl font-extrabold text-navy">Frota Rodoviária</h3>
+            <i data-lucide="truck" class="w-8 h-8 text-yellow-400"></i>
+          </div>
+          <ul class="equip-list">
+            <li>Prestação de Serviços e Transporte com Caminhão Basculante</li>
+            <li>Prestação de Serviços e Locação de Caminhão Munck</li>
+            <li>Prestação de Serviços e Locação de Carreta Prancha</li>
+            <li>Prestação de Serviços e Locação de Caminhão Comboio</li>
+            <li>Prestação de Serviços e Locação de Caminhão Pipa</li>
+            <li>Prestação de Serviços e Locação de Carreta Carga Seca</li>
+            <li>Prestação de Serviços e Locação de Caminhão ¾ com cabine suplementar</li>
+          </ul>
+        </div>
+
+        <div class="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all">
+          <div class="flex items-center justify-between gap-6 mb-6">
+            <h3 class="text-2xl font-extrabold text-navy">Movimentação e Locação</h3>
+            <i data-lucide="boxes" class="w-8 h-8 text-yellow-400"></i>
+          </div>
+          <ul class="equip-list">
+            <li>Prestação de Serviços e Locação de Caminhão Truck Carga Seca</li>
+            <li>Prestação de Serviços e Locação de Carregadeira</li>
+            <li>Prestação de Serviços e Locação de Escavadeira</li>
+            <li>Prestação de Serviços e Locação de Retroescavadeira</li>
+            <li>Prestação de Serviços e Locação de Empilhadeira</li>
+            <li>Prestação de Serviços e Locação de Transpaleteira</li>
+            <li>Prestação de Serviços e Locação de Trator de esteira</li>
+            <li>Prestação de Serviços e Locação de Trator de pneus</li>
+            <li>Prestação de Serviços e Locação de Manipuladores</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MVV (AGORA AQUI EMBAIXO) -->
   <section id="mvv" class="py-24 bg-white border-t border-slate-200">
     <div class="container mx-auto px-6">
       <div class="text-center mb-16">
@@ -242,7 +293,6 @@
       </div>
 
       <div class="grid md:grid-cols-3 gap-8">
-        <!-- Missão -->
         <div class="bg-slate-50 border border-slate-200 rounded-2xl p-8 hover:shadow-xl transition-all">
           <div class="flex items-center gap-3 mb-4">
             <div class="bg-yellow-400 text-navy font-extrabold w-10 h-10 rounded-lg flex items-center justify-center">
@@ -256,7 +306,6 @@
           </p>
         </div>
 
-        <!-- Visão -->
         <div class="bg-slate-50 border border-slate-200 rounded-2xl p-8 hover:shadow-xl transition-all">
           <div class="flex items-center gap-3 mb-4">
             <div class="bg-yellow-400 text-navy font-extrabold w-10 h-10 rounded-lg flex items-center justify-center">
@@ -271,7 +320,6 @@
           </p>
         </div>
 
-        <!-- Valores -->
         <div class="bg-slate-50 border border-slate-200 rounded-2xl p-8 hover:shadow-xl transition-all">
           <div class="flex items-center gap-3 mb-4">
             <div class="bg-yellow-400 text-navy font-extrabold w-10 h-10 rounded-lg flex items-center justify-center">
@@ -279,7 +327,6 @@
             </div>
             <h3 class="text-xl font-extrabold text-navy">Valores</h3>
           </div>
-
           <ul class="text-slate-600 space-y-2 leading-relaxed list-disc pl-5">
             <li>Segurança</li>
             <li>Ética</li>
@@ -298,7 +345,6 @@
   <section id="orcamento" class="py-24 bg-white">
     <div class="container mx-auto px-6">
       <div class="grid lg:grid-cols-2 gap-16">
-
         <div>
           <h2 class="text-navy text-4xl font-extrabold mb-8">Solicite seu Orçamento</h2>
           <p class="text-slate-600 mb-12 text-lg">Entre em contato hoje mesmo e solicite uma proposta personalizada.</p>
@@ -400,7 +446,6 @@
   <!-- Sobre / Grupo -->
   <section id="sobre" class="py-24 bg-navy text-white relative overflow-hidden">
     <div class="container mx-auto px-6 relative z-10">
-
       <div class="max-w-4xl mx-auto text-center mb-20">
         <span class="text-yellow-400 font-bold tracking-widest uppercase text-sm mb-4">Sobre Nós</span>
         <h2 class="text-4xl font-extrabold mb-6">18 Anos de História</h2>
@@ -424,7 +469,6 @@
 
           <div class="hidden md:block h-20 w-[1px] bg-slate-700"></div>
 
-          <!-- SEDAY MAIOR -->
           <div class="text-center group hover:scale-105 transition-transform">
             <img src="img/SEDAY.PADRÃO02transparente.png" alt="Seday Equipamentos"
                  class="h-24 md:h-28 w-auto mx-auto mb-4 object-contain">
@@ -442,7 +486,6 @@
           </div>
         </div>
       </div>
-
     </div>
   </section>
 
