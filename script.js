@@ -1,54 +1,77 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // Lucide
+  // Inicialização Segura dos Ícones
   if (window.lucide && typeof window.lucide.createIcons === "function") {
     window.lucide.createIcons();
   }
 
-  // Menu mobile
+  // Elementos do DOM (Cacheados para melhor performance)
   const menuBtn = document.getElementById("menuBtn");
   const closeBtn = document.getElementById("closeBtn");
   const mobileMenu = document.getElementById("mobileMenu");
+  const menuLinks = mobileMenu?.querySelectorAll("a");
+  
+  const header = document.getElementById("main-header");
+  const headerLogo = document.getElementById("header-logo");
+  const desktopMenu = document.getElementById("desktop-menu");
+  const menuBtnIcon = document.querySelector("#menuBtn");
 
+  // ==========================================
+  // Lógica do Menu Mobile
+  // ==========================================
   const toggleMenu = () => {
     mobileMenu?.classList.toggle("hidden");
   };
 
   menuBtn?.addEventListener("click", toggleMenu);
   closeBtn?.addEventListener("click", toggleMenu);
-  mobileMenu?.querySelectorAll("a")?.forEach((a) => a.addEventListener("click", toggleMenu));
+  menuLinks?.forEach((a) => a.addEventListener("click", toggleMenu));
 
-  // Header scroll
-  const header = document.getElementById("main-header");
-  const headerLogo = document.getElementById("header-logo");
-  const desktopMenu = document.getElementById("desktop-menu");
-  const menuBtnIcon = document.querySelector("#menuBtn");
+  // ==========================================
+  // Lógica de Scroll (Otimizada com requestAnimationFrame)
+  // Troca inteligente da Logo Original Branca para Escura
+  // ==========================================
+  let ticking = false;
 
-  const onScroll = () => {
+  const handleScroll = () => {
     if (window.scrollY > 50) {
-      header?.classList.add("scrolled");
-      header?.classList.remove("bg-navy/95", "py-4", "border-slate-700");
+      // Quando rolar a página (Fundo Branco)
+      header?.classList.add("scrolled", "bg-white");
+      header?.classList.remove("bg-[#0f172a]/95", "py-4", "border-slate-700");
 
-      headerLogo?.classList.remove("brightness-0", "invert");
+      // Troca para a logo preta e amarela (Se já não estiver)
+      if (headerLogo && headerLogo.getAttribute("src") !== "img/AVAPEX OFICIAL 01.png") {
+        headerLogo.src = "img/AVAPEX OFICIAL 01.png";
+      }
 
-      desktopMenu?.classList.remove("text-slate-300");
-      desktopMenu?.classList.add("text-navy");
+      desktopMenu?.classList.replace("text-slate-300", "text-[#0f172a]");
+      menuBtnIcon?.classList.replace("text-white", "text-[#0f172a]");
 
-      menuBtnIcon?.classList.remove("text-white");
-      menuBtnIcon?.classList.add("text-navy");
     } else {
-      header?.classList.remove("scrolled");
-      header?.classList.add("bg-navy/95", "py-4", "border-slate-700");
+      // Quando voltar para o topo (Fundo Azul Escuro)
+      header?.classList.remove("scrolled", "bg-white");
+      header?.classList.add("bg-[#0f172a]/95", "py-4", "border-slate-700");
 
-      headerLogo?.classList.add("brightness-0", "invert");
+      // Volta para a logo branca e amarela (Se já não estiver)
+      if (headerLogo && headerLogo.getAttribute("src") !== "img/AVAPEX OFICIAL 02 branca e amarela.png") {
+        headerLogo.src = "img/AVAPEX OFICIAL 02 branca e amarela.png";
+      }
 
-      desktopMenu?.classList.add("text-slate-300");
-      desktopMenu?.classList.remove("text-navy");
-
-      menuBtnIcon?.classList.add("text-white");
-      menuBtnIcon?.classList.remove("text-navy");
+      desktopMenu?.classList.replace("text-[#0f172a]", "text-slate-300");
+      menuBtnIcon?.classList.replace("text-[#0f172a]", "text-white");
     }
+    
+    // Libera a próxima atualização de frame
+    ticking = false;
   };
 
-  window.addEventListener("scroll", onScroll, { passive: true });
-  onScroll();
+  // Event Listener Otimizado
+  window.addEventListener("scroll", () => {
+    if (!ticking) {
+      window.requestAnimationFrame(handleScroll);
+      ticking = true;
+    }
+  }, { passive: true });
+
+  // Executar a verificação inicial caso a página carregue no meio
+  handleScroll();
 });

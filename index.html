@@ -1,651 +1,478 @@
 <!DOCTYPE html>
 <html lang="pt-BR" class="scroll-smooth">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- SEO -->
   <title>Avapex Transportes | Transporte Rodoviário e Locação de Máquinas</title>
-  <meta name="description"
-    content="A Avapex Transportes atua há mais de 18 anos com transporte rodoviário, movimentação de cargas, intralogística e locação de máquinas para os setores de mineração, indústria e ferroviário em todo o Brasil." />
+  <meta name="description" content="A Avapex Transportes atua há mais de 18 anos com transporte rodoviário, movimentação de cargas, intralogística e locação de máquinas para os setores de mineração, indústria e ferroviário em todo o Brasil." />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://www.avapex.com.br/" />
 
-  <!-- SEO Local -->
   <meta name="geo.region" content="BR-MG" />
   <meta name="geo.placename" content="Conselheiro Lafaiete" />
   <meta name="geo.position" content="-20.6636;-43.7845" />
   <meta name="ICBM" content="-20.6636, -43.7845" />
 
-  <!-- Open Graph -->
   <meta property="og:title" content="Avapex Transportes" />
-  <meta property="og:description"
-    content="Excelência em transporte rodoviário, locação de máquinas e movimentação de cargas para mineração e indústria." />
+  <meta property="og:description" content="Excelência em transporte rodoviário, locação de máquinas e movimentação de cargas para mineração e indústria." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://www.avapex.com.br/" />
   <meta property="og:image" content="https://www.avapex.com.br/img/og-image.jpg" />
   <meta property="og:locale" content="pt_BR" />
 
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Avapex Transportes" />
-  <meta name="twitter:description" content="Transporte rodoviário, locação de máquinas e movimentação de cargas." />
-  <meta name="twitter:image" content="https://www.avapex.com.br/img/og-image.jpg" />
-
-  <!-- Favicon -->
   <link rel="icon" type="image/png" href="img/AVAPEX icone.png" />
 
-  <!-- CSP -->
-  <meta http-equiv="Content-Security-Policy" content="
-    default-src 'self';
-    script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com https://unpkg.com;
-    style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
-    font-src 'self' https://fonts.gstatic.com;
-    img-src 'self' data: https:;
-    frame-src https://www.google.com https://maps.google.com;
-    connect-src 'self' https://unpkg.com;
-  ">
-
-  <!-- Tailwind + Lucide -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
 
-  <!-- Fonte -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet" />
 
-  <!-- CSS -->
   <link rel="stylesheet" href="style.css" />
-
-  <!-- Schema.org -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "LogisticsBusiness",
-    "name": "Avapex Transportes",
-    "url": "https://www.avapex.com.br/",
-    "image": "https://www.avapex.com.br/img/AVAPEX%20OFICIAL%2001.png",
-    "telephone": "+55 31 8465-7066",
-    "email": "comercial@avapex.com.br",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Rodovia BR040, 22750, Barreira",
-      "addressLocality": "Conselheiro Lafaiete",
-      "addressRegion": "MG",
-      "postalCode": "36400-000",
-      "addressCountry": "BR"
-    },
-    "areaServed": "BR",
-    "description": "Transporte rodoviário, movimentação de cargas, intralogística e locação de máquinas e equipamentos.",
-    "sameAs": []
-  }
-  </script>
 </head>
 
 <body class="bg-slate-50 text-slate-900 overflow-x-hidden">
 
-  <!-- WhatsApp Floating -->
   <a href="https://wa.me/553184657066" target="_blank" rel="noopener noreferrer"
-    class="fixed bottom-6 right-6 z-50 bg-green-500 p-2 md:p-3 rounded-full shadow-2xl hover:bg-green-600 transition-all flex items-center justify-center group hover:scale-110 border-2 border-white/20">
-    <span
-      class="absolute right-full mr-3 bg-slate-800 text-white text-xs px-3 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none font-bold">
+     class="fixed bottom-6 right-6 z-50 bg-green-500 p-3 rounded-full shadow-2xl hover:bg-green-600 transition-all flex items-center justify-center group hover:scale-110 border-2 border-white/20">
+    <span class="absolute right-full mr-3 bg-slate-800 text-white text-xs px-3 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none font-bold">
       Fale Conosco
     </span>
     <img src="img/whatsapp.png" alt="WhatsApp" class="w-8 h-8 md:w-10 md:h-10 object-contain" />
   </a>
 
-  <!-- Header -->
-  <header id="main-header"
-    class="fixed w-full z-40 bg-navy/95 backdrop-blur-sm border-b border-slate-700 transition-all duration-300">
-    <nav class="w-full px-6 md:px-10 py-4 flex justify-between items-center">
-      <a href="#home" class="flex items-center gap-2">
-        <img id="header-logo" src="img/AVAPEX OFICIAL 01.png" alt="Avapex Transportes Logo"
-          class="h-12 md:h-14 w-auto object-contain brightness-0 invert transition-all duration-300" />
+  <header id="main-header" class="fixed w-full z-40 bg-[#0f172a]/95 backdrop-blur-sm border-b border-slate-700 transition-all duration-300 py-4">
+    <nav class="container mx-auto px-6 md:px-10 flex justify-between items-center">
+      <a href="#home" class="flex items-center">
+        <img id="header-logo" src="img/AVAPEX OFICIAL 02 branca e amarela.png" alt="Avapex Transportes"
+             class="h-10 md:h-14 w-auto object-contain transition-all duration-300" />
       </a>
 
-      <div id="desktop-menu"
-        class="hidden md:flex items-center gap-8 text-sm font-semibold text-slate-300 transition-colors duration-300">
+      <div id="desktop-menu" class="hidden md:flex items-center gap-8 text-sm font-semibold text-slate-300 transition-colors duration-300">
         <a href="#home" class="hover:text-yellow-400 transition-colors">Início</a>
         <a href="#credibilidade" class="hover:text-yellow-400 transition-colors">Clientes</a>
         <a href="#servicos" class="hover:text-yellow-400 transition-colors">Serviços</a>
         <a href="#equipamentos" class="hover:text-yellow-400 transition-colors">Equipamentos</a>
         <a href="#mvv" class="hover:text-yellow-400 transition-colors">MVV</a>
+        <a href="https://avapextransportes.vagas.solides.com.br/" target="_blank" rel="noopener noreferrer" class="hover:text-yellow-400 transition-colors">Trabalhe Conosco</a>
         <a href="#orcamento" class="hover:text-yellow-400 transition-colors">Orçamento</a>
-        <a href="#sobre"
-          class="bg-yellow-400 text-navy px-5 py-2 rounded shadow-lg hover:bg-yellow-500 transition-all">Sobre Nós</a>
+        <a href="#sobre" class="bg-yellow-400 text-[#0f172a] px-5 py-2 rounded shadow-lg hover:bg-yellow-500 transition-all">Sobre Nós</a>
       </div>
 
-      <button class="md:hidden text-white transition-colors duration-300" id="menuBtn" aria-label="Abrir menu">
-        <i data-lucide="menu"></i>
+      <button class="md:hidden text-white transition-colors duration-300 flex items-center justify-center p-2 rounded-lg bg-slate-800/80 border border-slate-700 backdrop-blur-sm" id="menuBtn" aria-label="Abrir menu">
+        <i data-lucide="menu" class="w-6 h-6"></i>
       </button>
     </nav>
   </header>
 
-  <!-- Mobile Menu -->
-  <div id="mobileMenu"
-    class="fixed inset-0 bg-navy z-50 flex flex-col items-center justify-center gap-8 text-white hidden">
-    <button class="absolute top-6 right-6" id="closeBtn" aria-label="Fechar menu">
+  <div id="mobileMenu" class="fixed inset-0 z-50 flex flex-col items-center justify-center gap-8 text-white bg-[#0f172a] hidden">
+    <button class="absolute top-6 right-6 p-2 text-white" id="closeBtn" aria-label="Fechar menu">
       <i data-lucide="x" class="w-8 h-8"></i>
     </button>
-    <a href="#home" class="text-2xl font-bold">Início</a>
-    <a href="#credibilidade" class="text-2xl font-bold">Clientes</a>
-    <a href="#servicos" class="text-2xl font-bold">Serviços</a>
-    <a href="#equipamentos" class="text-2xl font-bold">Equipamentos</a>
-    <a href="#mvv" class="text-2xl font-bold">MVV</a>
-    <a href="#orcamento" class="text-2xl font-bold">Orçamento</a>
-    <a href="#sobre" class="bg-yellow-400 text-navy px-8 py-3 rounded-full font-bold">Sobre Nós</a>
+    <a href="#home" class="text-2xl font-bold hover:text-yellow-400">Início</a>
+    <a href="#credibilidade" class="text-2xl font-bold hover:text-yellow-400">Clientes</a>
+    <a href="#servicos" class="text-2xl font-bold hover:text-yellow-400">Serviços</a>
+    <a href="#equipamentos" class="text-2xl font-bold hover:text-yellow-400">Equipamentos</a>
+    <a href="#mvv" class="text-2xl font-bold hover:text-yellow-400">MVV</a>
+    <a href="https://avapextransportes.vagas.solides.com.br/" target="_blank" rel="noopener noreferrer" class="text-2xl font-bold text-yellow-400">Trabalhe Conosco</a>
+    <a href="#orcamento" class="text-2xl font-bold hover:text-yellow-400">Orçamento</a>
+    <a href="#sobre" class="bg-yellow-400 text-[#0f172a] px-8 py-3 rounded-full font-bold">Sobre Nós</a>
   </div>
 
-  <!-- Hero -->
-  <section id="home" class="relative h-screen w-full overflow-hidden flex items-center justify-center">
-    <video autoplay muted loop playsinline class="absolute top-0 left-0 w-full h-full object-cover z-0">
-      <source src="img/videoSITE.mp4" type="video/mp4" />
-      Seu navegador não suporta vídeos HTML5.
-    </video>
+  <main>
+    <section id="home" class="relative h-screen w-full overflow-hidden flex items-center justify-center">
+      <video autoplay muted loop playsinline class="absolute top-0 left-0 w-full h-full object-cover z-0">
+        <source src="img/videoSITE.mp4" type="video/mp4" />
+      </video>
 
-    <div class="absolute inset-0 bg-slate-900/60 z-10"></div>
+      <div class="absolute inset-0 bg-slate-900/65 z-10"></div>
 
-    <div class="container mx-auto px-6 relative z-20 text-center text-white mt-16">
-      <div
-        class="inline-flex items-center gap-2 bg-yellow-400 text-navy px-4 py-1.5 rounded text-sm font-bold uppercase mb-8 tracking-wider shadow-lg">
-        <i data-lucide="award" class="w-4 h-4"></i>
-        Certificação ISO 9001:2015
-      </div>
-
-      <h1 class="text-4xl md:text-7xl font-extrabold leading-tight mb-8 drop-shadow-lg">
-        Qualidade que Inspira <br class="hidden md:block" />
-        <span class="text-yellow-400">Confiança</span>
-      </h1>
-
-      <p class="text-lg md:text-xl text-slate-100 mb-10 max-w-3xl mx-auto leading-relaxed drop-shadow-md font-medium">
-        18 anos de excelência em transporte rodoviário, movimentação de cargas e locação de equipamentos para os setores
-        de mineração, indústria e ferroviário.
-      </p>
-
-      <div class="flex flex-col sm:flex-row gap-5 justify-center">
-        <a href="#orcamento"
-          class="bg-yellow-400 text-navy px-10 py-4 rounded font-bold text-center shadow-xl hover:scale-105 transition-transform flex items-center justify-center gap-2 text-lg">
-          Solicitar Orçamento
-          <i data-lucide="arrow-right" class="w-5 h-5"></i>
-        </a>
-        <a href="#servicos"
-          class="border-2 border-white/50 backdrop-blur-sm text-white px-10 py-4 rounded font-bold text-center hover:bg-white/10 hover:border-white transition-all text-lg">
-          Nossos Serviços
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Credibilidade / Clientes -->
-  <section id="credibilidade" class="py-24 bg-white">
-  <div class="container mx-auto px-6">
-
-    <div class="grid md:grid-cols-3 gap-8 mb-20">
-      <div class="bg-slate-50 p-8 rounded-xl border border-slate-100 text-center hover:shadow-lg transition-shadow">
-        <span class="block text-5xl font-extrabold text-navy mb-2">18+</span>
-        <span class="text-slate-600 font-medium">Anos de Mercado</span>
-      </div>
-      <div class="bg-slate-50 p-8 rounded-xl border border-slate-100 text-center hover:shadow-lg transition-shadow">
-        <span class="block text-5xl font-extrabold text-navy mb-2">ISO</span>
-        <span class="text-slate-600 font-medium">Certificação 9001:2015</span>
-      </div>
-      <div class="bg-slate-50 p-8 rounded-xl border border-slate-100 text-center hover:shadow-lg transition-shadow">
-        <span class="block text-5xl font-extrabold text-navy mb-2">4+</span>
-        <span class="text-slate-600 font-medium">Estados Atendidos</span>
-      </div>
-    </div>
-
-    <div class="text-center mb-12">
-      <h2 class="text-navy text-3xl font-extrabold mb-4">Principais Clientes</h2>
-      <div class="w-24 h-1 bg-yellow-400 mx-auto"></div>
-      <p class="text-slate-600 mt-4">Empresas que confiam na nossa robustez operacional.</p>
-    </div>
-
-    <div class="logo-carousel" aria-label="Principais clientes">
-      
-      <div class="logo-track row-1">
-        <div class="logo-set">
-          <img src="img/cliente-gps.png" alt="Grupo GPS" class="client-logo h-16 w-auto object-contain shrink-0">
-          <img src="img/cliente-usiminas.png" alt="Usiminas" class="client-logo h-16 w-auto object-contain shrink-0">
-          <img src="img/cliente-mrs.png" alt="MRS Logística" class="client-logo h-16 w-auto object-contain shrink-0">
-          <img src="img/cliente-magnesita.png" alt="RHI Magnesita" class="client-logo h-16 w-auto object-contain shrink-0">
-          <img src="img/cliente-vale.png" alt="Vale" class="client-logo h-14 w-auto object-contain shrink-0">
-          <img src="img/cliente-vli.png" alt="VLI" class="client-logo h-16 w-auto object-contain shrink-0">
-          <img src="img/cliente-gps.png" alt="Grupo GPS" class="client-logo h-16 w-auto object-contain shrink-0">
-          <img src="img/cliente-usiminas.png" alt="Usiminas" class="client-logo h-16 w-auto object-contain shrink-0">
-          <img src="img/cliente-mrs.png" alt="MRS Logística" class="client-logo h-16 w-auto object-contain shrink-0">
-          <img src="img/cliente-magnesita.png" alt="RHI Magnesita" class="client-logo h-16 w-auto object-contain shrink-0">
-          <img src="img/cliente-vale.png" alt="Vale" class="client-logo h-14 w-auto object-contain shrink-0">
-          <img src="img/cliente-vli.png" alt="VLI" class="client-logo h-16 w-auto object-contain shrink-0">
-          <img src="img/cliente-gps.png" alt="Grupo GPS" class="client-logo h-16 w-auto object-contain shrink-0">
-          <img src="img/cliente-usiminas.png" alt="Usiminas" class="client-logo h-16 w-auto object-contain shrink-0">
-          <img src="img/cliente-mrs.png" alt="MRS Logística" class="client-logo h-16 w-auto object-contain shrink-0">
-          <img src="img/cliente-magnesita.png" alt="RHI Magnesita" class="client-logo h-16 w-auto object-contain shrink-0">
-          <img src="img/cliente-vale.png" alt="Vale" class="client-logo h-14 w-auto object-contain shrink-0">
-          <img src="img/cliente-vli.png" alt="VLI" class="client-logo h-16 w-auto object-contain shrink-0">
-          <img src="img/cliente-gps.png" alt="Grupo GPS" class="client-logo h-16 w-auto object-contain shrink-0">
-          <img src="img/cliente-usiminas.png" alt="Usiminas" class="client-logo h-16 w-auto object-contain shrink-0">
-          <img src="img/cliente-mrs.png" alt="MRS Logística" class="client-logo h-16 w-auto object-contain shrink-0">
-          <img src="img/cliente-magnesita.png" alt="RHI Magnesita" class="client-logo h-16 w-auto object-contain shrink-0">
-          <img src="img/cliente-vale.png" alt="Vale" class="client-logo h-14 w-auto object-contain shrink-0">
-          <img src="img/cliente-vli.png" alt="VLI" class="client-logo h-16 w-auto object-contain shrink-0">
+      <div class="container mx-auto px-6 relative z-20 text-center text-white mt-16">
+        <div class="inline-flex items-center gap-2 bg-yellow-400 text-[#0f172a] px-4 py-1.5 rounded text-sm font-bold uppercase mb-8 tracking-wider shadow-lg">
+          <i data-lucide="award" class="w-4 h-4"></i>
+          Certificação ISO 9001:2015
         </div>
-        
-        <div class="logo-set" aria-hidden="true">
-          <img src="img/cliente-gps.png" alt="Grupo GPS" class="client-logo h-16 w-auto object-contain shrink-0">
-          <img src="img/cliente-usiminas.png" alt="Usiminas" class="client-logo h-16 w-auto object-contain shrink-0">
-          <img src="img/cliente-mrs.png" alt="MRS Logística" class="client-logo h-16 w-auto object-contain shrink-0">
-          <img src="img/cliente-magnesita.png" alt="RHI Magnesita" class="client-logo h-16 w-auto object-contain shrink-0">
-          <img src="img/cliente-vale.png" alt="Vale" class="client-logo h-14 w-auto object-contain shrink-0">
-          <img src="img/cliente-vli.png" alt="VLI" class="client-logo h-16 w-auto object-contain shrink-0">
-          <img src="img/cliente-gps.png" alt="Grupo GPS" class="client-logo h-16 w-auto object-contain shrink-0">
-          <img src="img/cliente-usiminas.png" alt="Usiminas" class="client-logo h-16 w-auto object-contain shrink-0">
-          <img src="img/cliente-mrs.png" alt="MRS Logística" class="client-logo h-16 w-auto object-contain shrink-0">
-          <img src="img/cliente-magnesita.png" alt="RHI Magnesita" class="client-logo h-16 w-auto object-contain shrink-0">
-          <img src="img/cliente-vale.png" alt="Vale" class="client-logo h-14 w-auto object-contain shrink-0">
-          <img src="img/cliente-vli.png" alt="VLI" class="client-logo h-16 w-auto object-contain shrink-0">
-          <img src="img/cliente-gps.png" alt="Grupo GPS" class="client-logo h-16 w-auto object-contain shrink-0">
-          <img src="img/cliente-usiminas.png" alt="Usiminas" class="client-logo h-16 w-auto object-contain shrink-0">
-          <img src="img/cliente-mrs.png" alt="MRS Logística" class="client-logo h-16 w-auto object-contain shrink-0">
-          <img src="img/cliente-magnesita.png" alt="RHI Magnesita" class="client-logo h-16 w-auto object-contain shrink-0">
-          <img src="img/cliente-vale.png" alt="Vale" class="client-logo h-14 w-auto object-contain shrink-0">
-          <img src="img/cliente-vli.png" alt="VLI" class="client-logo h-16 w-auto object-contain shrink-0">
-          <img src="img/cliente-gps.png" alt="Grupo GPS" class="client-logo h-16 w-auto object-contain shrink-0">
-          <img src="img/cliente-usiminas.png" alt="Usiminas" class="client-logo h-16 w-auto object-contain shrink-0">
-          <img src="img/cliente-mrs.png" alt="MRS Logística" class="client-logo h-16 w-auto object-contain shrink-0">
-          <img src="img/cliente-magnesita.png" alt="RHI Magnesita" class="client-logo h-16 w-auto object-contain shrink-0">
-          <img src="img/cliente-vale.png" alt="Vale" class="client-logo h-14 w-auto object-contain shrink-0">
-          <img src="img/cliente-vli.png" alt="VLI" class="client-logo h-16 w-auto object-contain shrink-0">
-        </div>
-      </div>
 
-      <div class="logo-track row-2">
-        <div class="logo-set">
-          <img src="img/cliente-mip.png" alt="MIP Engenharia" class="client-logo h-16 w-auto object-contain shrink-0">
-          <img src="img/cliente-milplan.png" alt="Milplan" class="client-logo h-16 w-auto object-contain shrink-0">
-          <img src="img/cliente-timken.png" alt="Timken" class="client-logo h-14 w-auto object-contain shrink-0">
-          <img src="img/cliente-aterpa.png" alt="Aterpa" class="client-logo h-16 w-auto object-contain shrink-0">
-          <img src="img/cliente-reframax.webp" alt="Reframax" class="client-logo h-14 w-auto object-contain shrink-0">
-          <img src="img/cliente-terraco.png" alt="Terraço" class="client-logo h-16 w-auto object-contain shrink-0">
-          <img src="img/cliente-mip.png" alt="MIP Engenharia" class="client-logo h-16 w-auto object-contain shrink-0">
-          <img src="img/cliente-milplan.png" alt="Milplan" class="client-logo h-16 w-auto object-contain shrink-0">
-          <img src="img/cliente-timken.png" alt="Timken" class="client-logo h-14 w-auto object-contain shrink-0">
-          <img src="img/cliente-aterpa.png" alt="Aterpa" class="client-logo h-16 w-auto object-contain shrink-0">
-          <img src="img/cliente-reframax.webp" alt="Reframax" class="client-logo h-14 w-auto object-contain shrink-0">
-          <img src="img/cliente-terraco.png" alt="Terraço" class="client-logo h-16 w-auto object-contain shrink-0">
-          <img src="img/cliente-mip.png" alt="MIP Engenharia" class="client-logo h-16 w-auto object-contain shrink-0">
-          <img src="img/cliente-milplan.png" alt="Milplan" class="client-logo h-16 w-auto object-contain shrink-0">
-          <img src="img/cliente-timken.png" alt="Timken" class="client-logo h-14 w-auto object-contain shrink-0">
-          <img src="img/cliente-aterpa.png" alt="Aterpa" class="client-logo h-16 w-auto object-contain shrink-0">
-          <img src="img/cliente-reframax.webp" alt="Reframax" class="client-logo h-14 w-auto object-contain shrink-0">
-          <img src="img/cliente-terraco.png" alt="Terraço" class="client-logo h-16 w-auto object-contain shrink-0">
-          <img src="img/cliente-mip.png" alt="MIP Engenharia" class="client-logo h-16 w-auto object-contain shrink-0">
-          <img src="img/cliente-milplan.png" alt="Milplan" class="client-logo h-16 w-auto object-contain shrink-0">
-          <img src="img/cliente-timken.png" alt="Timken" class="client-logo h-14 w-auto object-contain shrink-0">
-          <img src="img/cliente-aterpa.png" alt="Aterpa" class="client-logo h-16 w-auto object-contain shrink-0">
-          <img src="img/cliente-reframax.webp" alt="Reframax" class="client-logo h-14 w-auto object-contain shrink-0">
-          <img src="img/cliente-terraco.png" alt="Terraço" class="client-logo h-16 w-auto object-contain shrink-0">
-        </div>
-        
-        <div class="logo-set" aria-hidden="true">
-          <img src="img/cliente-mip.png" alt="MIP Engenharia" class="client-logo h-16 w-auto object-contain shrink-0">
-          <img src="img/cliente-milplan.png" alt="Milplan" class="client-logo h-16 w-auto object-contain shrink-0">
-          <img src="img/cliente-timken.png" alt="Timken" class="client-logo h-14 w-auto object-contain shrink-0">
-          <img src="img/cliente-aterpa.png" alt="Aterpa" class="client-logo h-16 w-auto object-contain shrink-0">
-          <img src="img/cliente-reframax.webp" alt="Reframax" class="client-logo h-14 w-auto object-contain shrink-0">
-          <img src="img/cliente-terraco.png" alt="Terraço" class="client-logo h-16 w-auto object-contain shrink-0">
-          <img src="img/cliente-mip.png" alt="MIP Engenharia" class="client-logo h-16 w-auto object-contain shrink-0">
-          <img src="img/cliente-milplan.png" alt="Milplan" class="client-logo h-16 w-auto object-contain shrink-0">
-          <img src="img/cliente-timken.png" alt="Timken" class="client-logo h-14 w-auto object-contain shrink-0">
-          <img src="img/cliente-aterpa.png" alt="Aterpa" class="client-logo h-16 w-auto object-contain shrink-0">
-          <img src="img/cliente-reframax.webp" alt="Reframax" class="client-logo h-14 w-auto object-contain shrink-0">
-          <img src="img/cliente-terraco.png" alt="Terraço" class="client-logo h-16 w-auto object-contain shrink-0">
-          <img src="img/cliente-mip.png" alt="MIP Engenharia" class="client-logo h-16 w-auto object-contain shrink-0">
-          <img src="img/cliente-milplan.png" alt="Milplan" class="client-logo h-16 w-auto object-contain shrink-0">
-          <img src="img/cliente-timken.png" alt="Timken" class="client-logo h-14 w-auto object-contain shrink-0">
-          <img src="img/cliente-aterpa.png" alt="Aterpa" class="client-logo h-16 w-auto object-contain shrink-0">
-          <img src="img/cliente-reframax.webp" alt="Reframax" class="client-logo h-14 w-auto object-contain shrink-0">
-          <img src="img/cliente-terraco.png" alt="Terraço" class="client-logo h-16 w-auto object-contain shrink-0">
-          <img src="img/cliente-mip.png" alt="MIP Engenharia" class="client-logo h-16 w-auto object-contain shrink-0">
-          <img src="img/cliente-milplan.png" alt="Milplan" class="client-logo h-16 w-auto object-contain shrink-0">
-          <img src="img/cliente-timken.png" alt="Timken" class="client-logo h-14 w-auto object-contain shrink-0">
-          <img src="img/cliente-aterpa.png" alt="Aterpa" class="client-logo h-16 w-auto object-contain shrink-0">
-          <img src="img/cliente-reframax.webp" alt="Reframax" class="client-logo h-14 w-auto object-contain shrink-0">
-          <img src="img/cliente-terraco.png" alt="Terraço" class="client-logo h-16 w-auto object-contain shrink-0">
-        </div>
-      </div>
-    </div>
+        <h1 class="text-4xl md:text-7xl font-extrabold leading-tight mb-8 drop-shadow-lg">
+          Qualidade que Inspira <br class="hidden md:block" />
+          <span class="text-yellow-400">Confiança</span>
+        </h1>
 
-  </div>
-</section>
-
-  <!-- Serviços -->
-  <section id="servicos" class="py-24 bg-slate-100">
-    <div class="container mx-auto px-6">
-      <div class="text-center mb-16">
-        <h2 class="text-navy text-4xl font-extrabold mb-4">Nossos Serviços</h2>
-        <p class="text-slate-600 max-w-2xl mx-auto">Soluções completas com frota moderna e mão de obra especializada.
+        <p class="text-lg md:text-xl text-slate-100 mb-10 max-w-3xl mx-auto leading-relaxed drop-shadow-md font-medium">
+          18 anos de excelência em transporte rodoviário, movimentação de cargas e locação de equipamentos para os setores de mineração, indústria e ferroviário.
         </p>
-      </div>
 
-      <div class="grid md:grid-cols-3 gap-6">
-        <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all border border-slate-200">
-          <div class="bg-navy w-14 h-14 rounded-lg flex items-center justify-center mb-6 text-yellow-400">
-            <i data-lucide="truck" class="w-8 h-8"></i>
-          </div>
-          <h3 class="text-xl font-bold mb-3 text-navy">Transporte Rodoviário</h3>
-          <p class="text-sm text-slate-600">Cargas fechadas, basculante, pipa e prancha.</p>
-        </div>
+        <div class="flex flex-col md:flex-row flex-wrap gap-4 justify-center mt-4">
+          <a href="#orcamento" class="bg-yellow-400 text-[#0f172a] px-8 py-4 rounded font-bold text-center shadow-xl hover:bg-yellow-500 hover:scale-105 transition-all flex items-center justify-center gap-2 text-lg w-full md:w-auto">
+            Solicitar Orçamento
+            <i data-lucide="arrow-right" class="w-5 h-5"></i>
+          </a>
+          
+          <a href="#servicos" class="border-2 border-white/50 backdrop-blur-sm text-white px-8 py-4 rounded font-bold text-center hover:bg-white/10 hover:border-white transition-all text-lg flex items-center justify-center w-full md:w-auto">
+            Nossos Serviços
+          </a>
 
-        <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all border border-slate-200">
-          <div class="bg-navy w-14 h-14 rounded-lg flex items-center justify-center mb-6 text-yellow-400">
-            <i data-lucide="package-search" class="w-8 h-8"></i>
-          </div>
-          <h3 class="text-xl font-bold mb-3 text-navy">Intralogística</h3>
-          <p class="text-sm text-slate-600">Movimentação interna com empilhadeiras elétricas e gestão eficiente.</p>
-        </div>
-
-        <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all border border-slate-200">
-          <div class="bg-navy w-14 h-14 rounded-lg flex items-center justify-center mb-6 text-yellow-400">
-            <i data-lucide="wrench" class="w-8 h-8"></i>
-          </div>
-          <h3 class="text-xl font-bold mb-3 text-navy">Locação de Máquinas</h3>
-          <p class="text-sm text-slate-600">Escavadeiras, Retroescavadeiras, Carregadeiras e Tratores.</p>
-        </div>
-
-        <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all border border-slate-200">
-          <div class="bg-navy w-14 h-14 rounded-lg flex items-center justify-center mb-6 text-yellow-400">
-            <i data-lucide="arrow-up-from-line" class="w-8 h-8"></i>
-          </div>
-          <h3 class="text-xl font-bold mb-3 text-navy">Içamento de Cargas</h3>
-          <p class="text-sm text-slate-600">Operações complexas com Caminhão Munck e Manipuladores.</p>
-        </div>
-
-        <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all border border-slate-200">
-          <div class="bg-navy w-14 h-14 rounded-lg flex items-center justify-center mb-6 text-yellow-400">
-            <i data-lucide="fuel" class="w-8 h-8"></i>
-          </div>
-          <h3 class="text-xl font-bold mb-3 text-navy">Apoio Logístico</h3>
-          <p class="text-sm text-slate-600">Caminhão Comboio para abastecimento e suporte em campo.</p>
-        </div>
-
-        <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all border border-slate-200">
-          <div class="bg-navy w-14 h-14 rounded-lg flex items-center justify-center mb-6 text-yellow-400">
-            <i data-lucide="box" class="w-8 h-8"></i>
-          </div>
-          <h3 class="text-xl font-bold mb-3 text-navy">Cargas Especiais</h3>
-          <p class="text-sm text-slate-600">Transporte de grandes volumes e equipamentos pesados.</p>
+          <a href="https://avapextransportes.vagas.solides.com.br/" target="_blank" rel="noopener noreferrer" class="border-2 border-white/50 backdrop-blur-sm text-white px-8 py-4 rounded font-bold text-center hover:bg-white/10 hover:border-white transition-all text-lg flex items-center justify-center gap-2 w-full md:w-auto">
+            Trabalhe Conosco
+            <i data-lucide="briefcase" class="w-5 h-5"></i>
+          </a>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Equipamentos -->
-  <section id="equipamentos" class="py-24 bg-slate-100 border-t border-slate-200">
-    <div class="container mx-auto px-6">
-      <div class="text-center mb-16">
-        <h2 class="text-navy text-4xl font-extrabold mb-4">Nossos Equipamentos</h2>
-        <p class="text-slate-600 max-w-2xl mx-auto">
-          Frota e equipamentos para operações de transporte, movimentação e locação com segurança e performance.
-        </p>
-      </div>
+    <section id="credibilidade" class="py-24 bg-white">
+      <div class="container mx-auto px-6">
 
-      <div class="grid lg:grid-cols-2 gap-8">
-        <div class="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all">
-          <div class="flex items-center justify-between gap-6 mb-6">
-            <h3 class="text-2xl font-extrabold text-navy">Frota Rodoviária</h3>
-            <i data-lucide="truck" class="w-8 h-8 text-yellow-400"></i>
+        <div class="grid md:grid-cols-3 gap-8 mb-20">
+          <div class="bg-slate-50 p-8 rounded-xl border border-slate-100 text-center hover:shadow-lg transition-shadow">
+            <span class="block text-5xl font-extrabold text-[#0f172a] mb-2">18+</span>
+            <span class="text-slate-600 font-medium">Anos de Mercado</span>
           </div>
-          <ul class="equip-list">
-            <li>Prestação de Serviços e Transporte com Caminhão Basculante</li>
-            <li>Prestação de Serviços e Locação de Caminhão Munck</li>
-            <li>Prestação de Serviços e Locação de Carreta Prancha</li>
-            <li>Prestação de Serviços e Locação de Caminhão Comboio</li>
-            <li>Prestação de Serviços e Locação de Caminhão Pipa</li>
-            <li>Prestação de Serviços e Locação de Carreta Carga Seca</li>
-            <li>Prestação de Serviços e Locação de Caminhão ¾ com cabine suplementar</li>
-          </ul>
-        </div>
-
-        <div class="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all">
-          <div class="flex items-center justify-between gap-6 mb-6">
-            <h3 class="text-2xl font-extrabold text-navy">Movimentação e Locação</h3>
-            <i data-lucide="boxes" class="w-8 h-8 text-yellow-400"></i>
+          <div class="bg-slate-50 p-8 rounded-xl border border-slate-100 text-center hover:shadow-lg transition-shadow">
+            <span class="block text-5xl font-extrabold text-[#0f172a] mb-2">ISO</span>
+            <span class="text-slate-600 font-medium">Certificação 9001:2015</span>
           </div>
-          <ul class="equip-list">
-            <li>Prestação de Serviços e Locação de Caminhão Truck Carga Seca</li>
-            <li>Prestação de Serviços e Locação de Carregadeira</li>
-            <li>Prestação de Serviços e Locação de Escavadeira</li>
-            <li>Prestação de Serviços e Locação de Retroescavadeira</li>
-            <li>Prestação de Serviços e Locação de Empilhadeira</li>
-            <li>Prestação de Serviços e Locação de Transpaleteira</li>
-            <li>Prestação de Serviços e Locação de Trator de esteira</li>
-            <li>Prestação de Serviços e Locação de Trator de pneus</li>
-            <li>Prestação de Serviços e Locação de Manipuladores</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- MVV -->
-  <section id="mvv" class="py-24 bg-white border-t border-slate-200">
-    <div class="container mx-auto px-6">
-      <div class="text-center mb-16">
-        <h2 class="text-navy text-4xl font-extrabold mb-4">Missão, Visão e Valores</h2>
-        <p class="text-slate-600 max-w-2xl mx-auto">
-          Direcionadores que sustentam nossa cultura e a forma como entregamos resultados.
-        </p>
-      </div>
-
-      <div class="grid md:grid-cols-3 gap-8">
-        <div class="bg-slate-50 border border-slate-200 rounded-2xl p-8 hover:shadow-xl transition-all">
-          <div class="flex items-center gap-3 mb-4">
-            <div class="bg-yellow-400 text-navy font-extrabold w-10 h-10 rounded-lg flex items-center justify-center">
-              <i data-lucide="target" class="w-5 h-5"></i>
-            </div>
-            <h3 class="text-xl font-extrabold text-navy">Missão</h3>
-          </div>
-          <p class="text-slate-600 leading-relaxed">
-            Dirigir meios eficazes de transportes e locação de máquinas e equipamentos de forma sustentável,
-            com segurança, rapidez, qualidade e respeito aos nossos clientes, em harmonia com o meio ambiente.
-          </p>
-        </div>
-
-        <div class="bg-slate-50 border border-slate-200 rounded-2xl p-8 hover:shadow-xl transition-all">
-          <div class="flex items-center gap-3 mb-4">
-            <div class="bg-yellow-400 text-navy font-extrabold w-10 h-10 rounded-lg flex items-center justify-center">
-              <i data-lucide="telescope" class="w-5 h-5"></i>
-            </div>
-            <h3 class="text-xl font-extrabold text-navy">Visão</h3>
-          </div>
-          <p class="text-slate-600 leading-relaxed">
-            Ser reconhecida pela excelência nos serviços prestados no segmento de transportes e locação
-            de máquinas e equipamentos, satisfazendo plenamente nossos clientes, com compromisso no resultado
-            e responsabilidade socioambiental.
-          </p>
-        </div>
-
-        <div class="bg-slate-50 border border-slate-200 rounded-2xl p-8 hover:shadow-xl transition-all">
-          <div class="flex items-center gap-3 mb-4">
-            <div class="bg-yellow-400 text-navy font-extrabold w-10 h-10 rounded-lg flex items-center justify-center">
-              <i data-lucide="badge-check" class="w-5 h-5"></i>
-            </div>
-            <h3 class="text-xl font-extrabold text-navy">Valores</h3>
-          </div>
-          <ul class="text-slate-600 space-y-2 leading-relaxed list-disc pl-5">
-            <li>Segurança</li>
-            <li>Ética</li>
-            <li>Respeito</li>
-            <li>Desenvolvimento profissional</li>
-            <li>Melhoria contínua</li>
-            <li>Credibilidade</li>
-            <li>Compromisso com o Resultado</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Orçamento -->
-  <section id="orcamento" class="py-24 bg-white">
-    <div class="container mx-auto px-6">
-      <div class="grid lg:grid-cols-2 gap-16">
-
-        <div>
-          <h2 class="text-navy text-4xl font-extrabold mb-8">Solicite seu Orçamento</h2>
-          <p class="text-slate-600 mb-12 text-lg">Entre em contato hoje mesmo e solicite uma proposta personalizada.</p>
-
-          <div class="space-y-6">
-            <div class="flex items-center gap-4">
-              <div class="bg-slate-100 p-3 rounded text-navy"><i data-lucide="phone"></i></div>
-              <div>
-                <p class="font-bold text-navy">Telefone Comercial</p>
-                <p class="text-slate-600">(31) 8465-7066</p>
-              </div>
-            </div>
-
-            <div class="flex items-center gap-4">
-              <div class="bg-slate-100 p-3 rounded text-navy"><i data-lucide="mail"></i></div>
-              <div>
-                <p class="font-bold text-navy">E-mail</p>
-                <p class="text-slate-600">comercial@avapex.com.br</p>
-              </div>
-            </div>
-
-            <div class="flex items-center gap-4">
-              <div class="bg-slate-100 p-3 rounded text-navy"><i data-lucide="map-pin"></i></div>
-              <div>
-                <p class="font-bold text-navy">Sede Administrativa</p>
-                <p class="text-slate-600">Rodovia BR040, 22750, Barreira - Conselheiro Lafaiete/MG</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="mt-12 rounded-2xl overflow-hidden h-64 md:h-80 border border-slate-300 shadow-lg relative">
-            <iframe title="Mapa Localização Avapex"
-              src="https://maps.google.com/maps?q=Avapex%20Transportes%20Conselheiro%20Lafaiete&t=&z=15&ie=UTF8&iwloc=&output=embed"
-              width="100%" height="100%" style="border:0;" loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"></iframe>
+          <div class="bg-slate-50 p-8 rounded-xl border border-slate-100 text-center hover:shadow-lg transition-shadow">
+            <span class="block text-5xl font-extrabold text-[#0f172a] mb-2">4+</span>
+            <span class="text-slate-600 font-medium">Estados Atendidos</span>
           </div>
         </div>
 
-        <div class="bg-slate-50 p-8 rounded-3xl border border-slate-200 shadow-xl">
-          <form action="mailto:comercial@avapex.com.br" method="POST" enctype="text/plain" class="space-y-6">
-            <div class="grid md:grid-cols-2 gap-6">
-              <div>
-                <label class="block text-sm font-bold text-navy mb-2">Nome</label>
-                <input type="text" name="nome" required maxlength="100"
-                  class="w-full p-3 rounded border border-slate-300 focus:border-navy outline-none">
-              </div>
-              <div>
-                <label class="block text-sm font-bold text-navy mb-2">Empresa</label>
-                <input type="text" name="empresa" maxlength="100"
-                  class="w-full p-3 rounded border border-slate-300 focus:border-navy outline-none">
-              </div>
-            </div>
-
-            <div class="grid md:grid-cols-2 gap-6">
-              <div>
-                <label class="block text-sm font-bold text-navy mb-2">E-mail</label>
-                <input type="email" name="email" required
-                  class="w-full p-3 rounded border border-slate-300 focus:border-navy outline-none">
-              </div>
-              <div>
-                <label class="block text-sm font-bold text-navy mb-2">Telefone</label>
-                <input type="tel" name="telefone" required maxlength="20"
-                  class="w-full p-3 rounded border border-slate-300 focus:border-navy outline-none">
-              </div>
-            </div>
-
-            <div>
-              <label class="block text-sm font-bold text-navy mb-2">Serviço</label>
-              <select name="servico"
-                class="w-full p-3 rounded border border-slate-300 bg-white focus:border-navy outline-none">
-                <option>Transporte Rodoviário</option>
-                <option>Locação de Máquinas</option>
-                <option>Intralogística</option>
-                <option>Movimentação de Cargas Especiais</option>
-                <option>Outros</option>
-              </select>
-            </div>
-
-            <div>
-              <label class="block text-sm font-bold text-navy mb-2">Mensagem</label>
-              <textarea name="mensagem" required maxlength="500" rows="4"
-                class="w-full p-3 rounded border border-slate-300 focus:border-navy outline-none"></textarea>
-            </div>
-
-            <button type="submit"
-              class="w-full bg-navy text-white font-bold py-4 rounded shadow-lg hover:bg-slate-800 transition-all flex items-center justify-center gap-2">
-              Enviar Solicitação <i data-lucide="send" class="w-4 h-4"></i>
-            </button>
-          </form>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- Sobre / Grupo -->
-  <section id="sobre" class="py-24 bg-navy text-white relative overflow-hidden">
-    <div class="container mx-auto px-6 relative z-10">
-      <div class="max-w-4xl mx-auto text-center mb-20">
-        <span class="text-yellow-400 font-bold tracking-widest uppercase text-sm mb-4">Sobre Nós</span>
-        <h2 class="text-4xl font-extrabold mb-6">18 Anos de História</h2>
-        <p class="text-slate-300 text-lg leading-relaxed">
-          A Avapex Transportes atua com excelência, ética e segurança, sempre buscando a melhoria contínua dos
-          processos.
-          Nossa missão é oferecer meios eficientes de transporte e locação, minimizando impactos ambientais.
-        </p>
-      </div>
-
-      <div class="border-t border-slate-700 pt-16">
         <div class="text-center mb-12">
-          <h3 class="text-2xl font-bold mb-2">Parte de um Grupo <span class="text-yellow-400">Consolidado</span></h3>
-          <p class="text-slate-400">Sinergia para garantir capacidade de atendimento completa.</p>
+          <h2 class="text-[#0f172a] text-3xl font-extrabold mb-4">Principais Clientes</h2>
+          <div class="w-24 h-1 bg-yellow-400 mx-auto rounded"></div>
+          <p class="text-slate-600 mt-4">Empresas que confiam na nossa robustez operacional.</p>
         </div>
 
-        <div class="flex flex-col md:flex-row justify-center items-center gap-12 md:gap-24">
-          <div class="text-center group hover:scale-105 transition-transform">
-            <a href="#" class="block">
-              <img src="img/AVAPEX OFICIAL 02 branca e amarela.png" alt="Avapex Transportes"
-                class="h-16 md:h-18 w-auto mx-auto mb-4 object-contain transition-all">
-            </a>
-            <p class="text-slate-400 text-sm max-w-[220px] mx-auto">
-              Transporte e Logística Industrial
+        <div class="logo-carousel" aria-label="Principais clientes">
+          <div class="logo-track row-1">
+            <div class="logo-set">
+              <img src="img/cliente-gps.png" alt="Grupo GPS" class="client-logo h-16 w-auto object-contain shrink-0"><img src="img/cliente-usiminas.png" alt="Usiminas" class="client-logo h-16 w-auto object-contain shrink-0"><img src="img/cliente-mrs.png" alt="MRS" class="client-logo h-16 w-auto object-contain shrink-0"><img src="img/cliente-magnesita.png" alt="RHI Magnesita" class="client-logo h-16 w-auto object-contain shrink-0"><img src="img/cliente-vale.png" alt="Vale" class="client-logo h-14 w-auto object-contain shrink-0"><img src="img/cliente-vli.png" alt="VLI" class="client-logo h-16 w-auto object-contain shrink-0">
+              <img src="img/cliente-gps.png" alt="Grupo GPS" class="client-logo h-16 w-auto object-contain shrink-0"><img src="img/cliente-usiminas.png" alt="Usiminas" class="client-logo h-16 w-auto object-contain shrink-0"><img src="img/cliente-mrs.png" alt="MRS" class="client-logo h-16 w-auto object-contain shrink-0"><img src="img/cliente-magnesita.png" alt="RHI Magnesita" class="client-logo h-16 w-auto object-contain shrink-0"><img src="img/cliente-vale.png" alt="Vale" class="client-logo h-14 w-auto object-contain shrink-0"><img src="img/cliente-vli.png" alt="VLI" class="client-logo h-16 w-auto object-contain shrink-0">
+              <img src="img/cliente-gps.png" alt="Grupo GPS" class="client-logo h-16 w-auto object-contain shrink-0"><img src="img/cliente-usiminas.png" alt="Usiminas" class="client-logo h-16 w-auto object-contain shrink-0"><img src="img/cliente-mrs.png" alt="MRS" class="client-logo h-16 w-auto object-contain shrink-0"><img src="img/cliente-magnesita.png" alt="RHI Magnesita" class="client-logo h-16 w-auto object-contain shrink-0"><img src="img/cliente-vale.png" alt="Vale" class="client-logo h-14 w-auto object-contain shrink-0"><img src="img/cliente-vli.png" alt="VLI" class="client-logo h-16 w-auto object-contain shrink-0">
+              <img src="img/cliente-gps.png" alt="Grupo GPS" class="client-logo h-16 w-auto object-contain shrink-0"><img src="img/cliente-usiminas.png" alt="Usiminas" class="client-logo h-16 w-auto object-contain shrink-0"><img src="img/cliente-mrs.png" alt="MRS" class="client-logo h-16 w-auto object-contain shrink-0"><img src="img/cliente-magnesita.png" alt="RHI Magnesita" class="client-logo h-16 w-auto object-contain shrink-0"><img src="img/cliente-vale.png" alt="Vale" class="client-logo h-14 w-auto object-contain shrink-0"><img src="img/cliente-vli.png" alt="VLI" class="client-logo h-16 w-auto object-contain shrink-0">
+            </div>
+            <div class="logo-set" aria-hidden="true">
+              <img src="img/cliente-gps.png" alt="" class="client-logo h-16 w-auto object-contain shrink-0"><img src="img/cliente-usiminas.png" alt="" class="client-logo h-16 w-auto object-contain shrink-0"><img src="img/cliente-mrs.png" alt="" class="client-logo h-16 w-auto object-contain shrink-0"><img src="img/cliente-magnesita.png" alt="" class="client-logo h-16 w-auto object-contain shrink-0"><img src="img/cliente-vale.png" alt="" class="client-logo h-14 w-auto object-contain shrink-0"><img src="img/cliente-vli.png" alt="" class="client-logo h-16 w-auto object-contain shrink-0">
+              <img src="img/cliente-gps.png" alt="" class="client-logo h-16 w-auto object-contain shrink-0"><img src="img/cliente-usiminas.png" alt="" class="client-logo h-16 w-auto object-contain shrink-0"><img src="img/cliente-mrs.png" alt="" class="client-logo h-16 w-auto object-contain shrink-0"><img src="img/cliente-magnesita.png" alt="" class="client-logo h-16 w-auto object-contain shrink-0"><img src="img/cliente-vale.png" alt="" class="client-logo h-14 w-auto object-contain shrink-0"><img src="img/cliente-vli.png" alt="" class="client-logo h-16 w-auto object-contain shrink-0">
+              <img src="img/cliente-gps.png" alt="" class="client-logo h-16 w-auto object-contain shrink-0"><img src="img/cliente-usiminas.png" alt="" class="client-logo h-16 w-auto object-contain shrink-0"><img src="img/cliente-mrs.png" alt="" class="client-logo h-16 w-auto object-contain shrink-0"><img src="img/cliente-magnesita.png" alt="" class="client-logo h-16 w-auto object-contain shrink-0"><img src="img/cliente-vale.png" alt="" class="client-logo h-14 w-auto object-contain shrink-0"><img src="img/cliente-vli.png" alt="" class="client-logo h-16 w-auto object-contain shrink-0">
+              <img src="img/cliente-gps.png" alt="" class="client-logo h-16 w-auto object-contain shrink-0"><img src="img/cliente-usiminas.png" alt="" class="client-logo h-16 w-auto object-contain shrink-0"><img src="img/cliente-mrs.png" alt="" class="client-logo h-16 w-auto object-contain shrink-0"><img src="img/cliente-magnesita.png" alt="" class="client-logo h-16 w-auto object-contain shrink-0"><img src="img/cliente-vale.png" alt="" class="client-logo h-14 w-auto object-contain shrink-0"><img src="img/cliente-vli.png" alt="" class="client-logo h-16 w-auto object-contain shrink-0">
+            </div>
+          </div>
+
+          <div class="logo-track row-2">
+            <div class="logo-set">
+               <img src="img/cliente-mip.png" alt="MIP" class="client-logo h-16 w-auto object-contain shrink-0"><img src="img/cliente-milplan.png" alt="Milplan" class="client-logo h-16 w-auto object-contain shrink-0"><img src="img/cliente-timken.png" alt="Timken" class="client-logo h-14 w-auto object-contain shrink-0"><img src="img/cliente-aterpa.png" alt="Aterpa" class="client-logo h-16 w-auto object-contain shrink-0"><img src="img/cliente-reframax.webp" alt="Reframax" class="client-logo h-14 w-auto object-contain shrink-0"><img src="img/cliente-terraco.png" alt="Terraço" class="client-logo h-16 w-auto object-contain shrink-0">
+              <img src="img/cliente-mip.png" alt="MIP" class="client-logo h-16 w-auto object-contain shrink-0"><img src="img/cliente-milplan.png" alt="Milplan" class="client-logo h-16 w-auto object-contain shrink-0"><img src="img/cliente-timken.png" alt="Timken" class="client-logo h-14 w-auto object-contain shrink-0"><img src="img/cliente-aterpa.png" alt="Aterpa" class="client-logo h-16 w-auto object-contain shrink-0"><img src="img/cliente-reframax.webp" alt="Reframax" class="client-logo h-14 w-auto object-contain shrink-0"><img src="img/cliente-terraco.png" alt="Terraço" class="client-logo h-16 w-auto object-contain shrink-0">
+              <img src="img/cliente-mip.png" alt="MIP" class="client-logo h-16 w-auto object-contain shrink-0"><img src="img/cliente-milplan.png" alt="Milplan" class="client-logo h-16 w-auto object-contain shrink-0"><img src="img/cliente-timken.png" alt="Timken" class="client-logo h-14 w-auto object-contain shrink-0"><img src="img/cliente-aterpa.png" alt="Aterpa" class="client-logo h-16 w-auto object-contain shrink-0"><img src="img/cliente-reframax.webp" alt="Reframax" class="client-logo h-14 w-auto object-contain shrink-0"><img src="img/cliente-terraco.png" alt="Terraço" class="client-logo h-16 w-auto object-contain shrink-0">
+              <img src="img/cliente-mip.png" alt="MIP" class="client-logo h-16 w-auto object-contain shrink-0"><img src="img/cliente-milplan.png" alt="Milplan" class="client-logo h-16 w-auto object-contain shrink-0"><img src="img/cliente-timken.png" alt="Timken" class="client-logo h-14 w-auto object-contain shrink-0"><img src="img/cliente-aterpa.png" alt="Aterpa" class="client-logo h-16 w-auto object-contain shrink-0"><img src="img/cliente-reframax.webp" alt="Reframax" class="client-logo h-14 w-auto object-contain shrink-0"><img src="img/cliente-terraco.png" alt="Terraço" class="client-logo h-16 w-auto object-contain shrink-0">
+            </div>
+            <div class="logo-set" aria-hidden="true">
+               <img src="img/cliente-mip.png" alt="" class="client-logo h-16 w-auto object-contain shrink-0"><img src="img/cliente-milplan.png" alt="" class="client-logo h-16 w-auto object-contain shrink-0"><img src="img/cliente-timken.png" alt="" class="client-logo h-14 w-auto object-contain shrink-0"><img src="img/cliente-aterpa.png" alt="" class="client-logo h-16 w-auto object-contain shrink-0"><img src="img/cliente-reframax.webp" alt="" class="client-logo h-14 w-auto object-contain shrink-0"><img src="img/cliente-terraco.png" alt="" class="client-logo h-16 w-auto object-contain shrink-0">
+              <img src="img/cliente-mip.png" alt="" class="client-logo h-16 w-auto object-contain shrink-0"><img src="img/cliente-milplan.png" alt="" class="client-logo h-16 w-auto object-contain shrink-0"><img src="img/cliente-timken.png" alt="" class="client-logo h-14 w-auto object-contain shrink-0"><img src="img/cliente-aterpa.png" alt="" class="client-logo h-16 w-auto object-contain shrink-0"><img src="img/cliente-reframax.webp" alt="" class="client-logo h-14 w-auto object-contain shrink-0"><img src="img/cliente-terraco.png" alt="" class="client-logo h-16 w-auto object-contain shrink-0">
+              <img src="img/cliente-mip.png" alt="" class="client-logo h-16 w-auto object-contain shrink-0"><img src="img/cliente-milplan.png" alt="" class="client-logo h-16 w-auto object-contain shrink-0"><img src="img/cliente-timken.png" alt="" class="client-logo h-14 w-auto object-contain shrink-0"><img src="img/cliente-aterpa.png" alt="" class="client-logo h-16 w-auto object-contain shrink-0"><img src="img/cliente-reframax.webp" alt="" class="client-logo h-14 w-auto object-contain shrink-0"><img src="img/cliente-terraco.png" alt="" class="client-logo h-16 w-auto object-contain shrink-0">
+              <img src="img/cliente-mip.png" alt="" class="client-logo h-16 w-auto object-contain shrink-0"><img src="img/cliente-milplan.png" alt="" class="client-logo h-16 w-auto object-contain shrink-0"><img src="img/cliente-timken.png" alt="" class="client-logo h-14 w-auto object-contain shrink-0"><img src="img/cliente-aterpa.png" alt="" class="client-logo h-16 w-auto object-contain shrink-0"><img src="img/cliente-reframax.webp" alt="" class="client-logo h-14 w-auto object-contain shrink-0"><img src="img/cliente-terraco.png" alt="" class="client-logo h-16 w-auto object-contain shrink-0">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="servicos" class="py-24 bg-slate-100">
+      <div class="container mx-auto px-6">
+        <div class="text-center mb-16">
+          <h2 class="text-[#0f172a] text-4xl font-extrabold mb-4">Nossos Serviços</h2>
+          <p class="text-slate-600 max-w-2xl mx-auto">Soluções completas com frota moderna e mão de obra especializada.</p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all border border-slate-200">
+            <div class="bg-[#0f172a] w-14 h-14 rounded-lg flex items-center justify-center mb-6 text-yellow-400">
+              <i data-lucide="truck" class="w-8 h-8"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-3 text-[#0f172a]">Transporte Rodoviário</h3>
+            <p class="text-sm text-slate-600">Cargas fechadas, basculante, pipa e prancha.</p>
+          </div>
+
+          <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all border border-slate-200">
+            <div class="bg-[#0f172a] w-14 h-14 rounded-lg flex items-center justify-center mb-6 text-yellow-400">
+              <i data-lucide="package-search" class="w-8 h-8"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-3 text-[#0f172a]">Intralogística</h3>
+            <p class="text-sm text-slate-600">Movimentação interna com empilhadeiras elétricas e gestão eficiente.</p>
+          </div>
+
+          <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all border border-slate-200">
+            <div class="bg-[#0f172a] w-14 h-14 rounded-lg flex items-center justify-center mb-6 text-yellow-400">
+              <i data-lucide="wrench" class="w-8 h-8"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-3 text-[#0f172a]">Locação de Máquinas</h3>
+            <p class="text-sm text-slate-600">Escavadeiras, Retroescavadeiras, Carregadeiras e Tratores.</p>
+          </div>
+
+          <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all border border-slate-200">
+            <div class="bg-[#0f172a] w-14 h-14 rounded-lg flex items-center justify-center mb-6 text-yellow-400">
+              <i data-lucide="arrow-up-from-line" class="w-8 h-8"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-3 text-[#0f172a]">Içamento de Cargas</h3>
+            <p class="text-sm text-slate-600">Operações complexas com Caminhão Munck e Manipuladores.</p>
+          </div>
+
+          <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all border border-slate-200">
+            <div class="bg-[#0f172a] w-14 h-14 rounded-lg flex items-center justify-center mb-6 text-yellow-400">
+              <i data-lucide="fuel" class="w-8 h-8"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-3 text-[#0f172a]">Apoio Logístico</h3>
+            <p class="text-sm text-slate-600">Caminhão Comboio para abastecimento e suporte em campo.</p>
+          </div>
+
+          <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all border border-slate-200">
+            <div class="bg-[#0f172a] w-14 h-14 rounded-lg flex items-center justify-center mb-6 text-yellow-400">
+              <i data-lucide="box" class="w-8 h-8"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-3 text-[#0f172a]">Cargas Especiais</h3>
+            <p class="text-sm text-slate-600">Transporte de grandes volumes e equipamentos pesados.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="equipamentos" class="py-24 bg-slate-100 border-t border-slate-200">
+      <div class="container mx-auto px-6">
+        <div class="text-center mb-16">
+          <h2 class="text-[#0f172a] text-4xl font-extrabold mb-4">Nossos Equipamentos</h2>
+          <p class="text-slate-600 max-w-2xl mx-auto">
+            Frota e equipamentos para operações de transporte, movimentação e locação com segurança e performance.
+          </p>
+        </div>
+
+        <div class="grid lg:grid-cols-2 gap-8">
+          <div class="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all">
+            <div class="flex items-center justify-between gap-6 mb-6">
+              <h3 class="text-2xl font-extrabold text-[#0f172a]">Frota Rodoviária</h3>
+              <i data-lucide="truck" class="w-8 h-8 text-yellow-400"></i>
+            </div>
+            <ul class="equip-list text-slate-600 space-y-2">
+              <li class="flex items-center gap-2"><i data-lucide="chevron-right" class="w-4 h-4 text-yellow-500"></i> Transporte com Caminhão Basculante</li>
+              <li class="flex items-center gap-2"><i data-lucide="chevron-right" class="w-4 h-4 text-yellow-500"></i> Locação de Caminhão Munck</li>
+              <li class="flex items-center gap-2"><i data-lucide="chevron-right" class="w-4 h-4 text-yellow-500"></i> Locação de Carreta Prancha</li>
+              <li class="flex items-center gap-2"><i data-lucide="chevron-right" class="w-4 h-4 text-yellow-500"></i> Locação de Caminhão Comboio</li>
+              <li class="flex items-center gap-2"><i data-lucide="chevron-right" class="w-4 h-4 text-yellow-500"></i> Locação de Caminhão Pipa</li>
+              <li class="flex items-center gap-2"><i data-lucide="chevron-right" class="w-4 h-4 text-yellow-500"></i> Locação de Carreta Carga Seca</li>
+              <li class="flex items-center gap-2"><i data-lucide="chevron-right" class="w-4 h-4 text-yellow-500"></i> Locação de Caminhão ¾ com cabine</li>
+            </ul>
+          </div>
+
+          <div class="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all">
+            <div class="flex items-center justify-between gap-6 mb-6">
+              <h3 class="text-2xl font-extrabold text-[#0f172a]">Movimentação e Locação</h3>
+              <i data-lucide="boxes" class="w-8 h-8 text-yellow-400"></i>
+            </div>
+            <ul class="equip-list text-slate-600 space-y-2">
+              <li class="flex items-center gap-2"><i data-lucide="chevron-right" class="w-4 h-4 text-yellow-500"></i> Locação de Caminhão Truck Carga Seca</li>
+              <li class="flex items-center gap-2"><i data-lucide="chevron-right" class="w-4 h-4 text-yellow-500"></i> Locação de Carregadeira</li>
+              <li class="flex items-center gap-2"><i data-lucide="chevron-right" class="w-4 h-4 text-yellow-500"></i> Locação de Escavadeira</li>
+              <li class="flex items-center gap-2"><i data-lucide="chevron-right" class="w-4 h-4 text-yellow-500"></i> Locação de Retroescavadeira</li>
+              <li class="flex items-center gap-2"><i data-lucide="chevron-right" class="w-4 h-4 text-yellow-500"></i> Locação de Empilhadeira</li>
+              <li class="flex items-center gap-2"><i data-lucide="chevron-right" class="w-4 h-4 text-yellow-500"></i> Locação de Transpaleteira</li>
+              <li class="flex items-center gap-2"><i data-lucide="chevron-right" class="w-4 h-4 text-yellow-500"></i> Locação de Trator de esteira e pneus</li>
+              <li class="flex items-center gap-2"><i data-lucide="chevron-right" class="w-4 h-4 text-yellow-500"></i> Locação de Manipuladores</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="mvv" class="py-24 bg-white border-t border-slate-200">
+      <div class="container mx-auto px-6">
+        <div class="text-center mb-16">
+          <h2 class="text-[#0f172a] text-4xl font-extrabold mb-4">Missão, Visão e Valores</h2>
+          <p class="text-slate-600 max-w-2xl mx-auto">Direcionadores que sustentam nossa cultura.</p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="bg-slate-50 border border-slate-200 rounded-2xl p-8 hover:shadow-xl transition-all">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="bg-yellow-400 text-[#0f172a] font-extrabold w-10 h-10 rounded-lg flex items-center justify-center">
+                <i data-lucide="target" class="w-5 h-5"></i>
+              </div>
+              <h3 class="text-xl font-extrabold text-[#0f172a]">Missão</h3>
+            </div>
+            <p class="text-slate-600 leading-relaxed">
+              Dirigir meios eficazes de transportes e locação de máquinas de forma sustentável,
+              com segurança, qualidade e respeito aos clientes e ao meio ambiente.
             </p>
           </div>
 
-          <div class="hidden md:block h-20 w-[1px] bg-slate-700"></div>
-
-          <div class="text-center group hover:scale-105 transition-transform">
-            <img src="img/SEDAY.PADRÃO02transparente.png" alt="Seday Equipamentos"
-              class="h-24 md:h-28 w-auto mx-auto mb-4 object-contain">
-            <p class="text-slate-400 text-sm max-w-[220px] mx-auto">Soluções em Locação de Grande Porte</p>
+          <div class="bg-slate-50 border border-slate-200 rounded-2xl p-8 hover:shadow-xl transition-all">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="bg-yellow-400 text-[#0f172a] font-extrabold w-10 h-10 rounded-lg flex items-center justify-center">
+                <i data-lucide="telescope" class="w-5 h-5"></i>
+              </div>
+              <h3 class="text-xl font-extrabold text-[#0f172a]">Visão</h3>
+            </div>
+            <p class="text-slate-600 leading-relaxed">
+              Ser reconhecida pela excelência nos serviços prestados, satisfazendo plenamente nossos clientes, com compromisso e responsabilidade socioambiental.
+            </p>
           </div>
 
-          <div class="hidden md:block h-20 w-[1px] bg-slate-700"></div>
-
-          <div class="text-center group hover:scale-105 transition-transform">
-            <a href="https://www.innomach.com.br/" target="_blank" rel="noopener noreferrer" class="block">
-              <img src="img/INNOMACH EQUIPAMENTO oficial 01.png" alt="Innomach"
-                class="h-16 w-auto mx-auto mb-4 object-contain hover:opacity-80 transition-all">
-            </a>
-            <p class="text-slate-400 text-sm max-w-[200px] mx-auto">Tecnologia e Maquinário Industrial</p>
+          <div class="bg-slate-50 border border-slate-200 rounded-2xl p-8 hover:shadow-xl transition-all">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="bg-yellow-400 text-[#0f172a] font-extrabold w-10 h-10 rounded-lg flex items-center justify-center">
+                <i data-lucide="badge-check" class="w-5 h-5"></i>
+              </div>
+              <h3 class="text-xl font-extrabold text-[#0f172a]">Valores</h3>
+            </div>
+            <ul class="text-slate-600 space-y-2 leading-relaxed">
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-yellow-500"></i> Segurança e Ética</li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-yellow-500"></i> Respeito</li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-yellow-500"></i> Desenvolvimento profissional</li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-yellow-500"></i> Melhoria contínua</li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-yellow-500"></i> Credibilidade</li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-yellow-500"></i> Compromisso com o Resultado</li>
+            </ul>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <footer class="bg-navy border-t border-slate-800 pt-10 pb-10 text-slate-500 text-center text-sm">
+    <section id="orcamento" class="py-24 bg-white">
+      <div class="container mx-auto px-6">
+        <div class="grid lg:grid-cols-2 gap-16">
+          <div>
+            <h2 class="text-[#0f172a] text-4xl font-extrabold mb-8">Solicite seu Orçamento</h2>
+            <p class="text-slate-600 mb-12 text-lg">Entre em contato hoje mesmo e solicite uma proposta personalizada.</p>
+
+            <div class="space-y-6">
+              <div class="flex items-center gap-4">
+                <div class="bg-slate-100 p-3 rounded text-[#0f172a]"><i data-lucide="phone"></i></div>
+                <div>
+                  <p class="font-bold text-[#0f172a]">Telefone Comercial</p>
+                  <p class="text-slate-600">(31) 8465-7066</p>
+                </div>
+              </div>
+
+              <div class="flex items-center gap-4">
+                <div class="bg-slate-100 p-3 rounded text-[#0f172a]"><i data-lucide="mail"></i></div>
+                <div>
+                  <p class="font-bold text-[#0f172a]">E-mail</p>
+                  <p class="text-slate-600">comercial@avapex.com.br</p>
+                </div>
+              </div>
+
+              <div class="flex items-center gap-4">
+                <div class="bg-slate-100 p-3 rounded text-[#0f172a]"><i data-lucide="map-pin"></i></div>
+                <div>
+                  <p class="font-bold text-[#0f172a]">Sede Administrativa</p>
+                  <p class="text-slate-600">Rodovia BR040, 22750, Barreira - Conselheiro Lafaiete/MG</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-12 rounded-2xl overflow-hidden h-64 md:h-80 border border-slate-300 shadow-lg relative">
+              <iframe title="Mapa Localização Avapex" src="https://maps.google.com/maps?q=Avapex%20Transportes%20Conselheiro%20Lafaiete&t=&z=15&ie=UTF8&iwloc=&output=embed" width="100%" height="100%" style="border:0;" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+          </div>
+
+          <div class="bg-slate-50 p-8 rounded-3xl border border-slate-200 shadow-xl">
+            <form action="mailto:comercial@avapex.com.br" method="POST" enctype="text/plain" class="space-y-6">
+              <div class="grid md:grid-cols-2 gap-6">
+                <div>
+                  <label class="block text-sm font-bold text-[#0f172a] mb-2">Nome</label>
+                  <input type="text" name="nome" required maxlength="100" class="w-full p-3 rounded border border-slate-300 focus:border-[#0f172a] outline-none">
+                </div>
+                <div>
+                  <label class="block text-sm font-bold text-[#0f172a] mb-2">Empresa</label>
+                  <input type="text" name="empresa" maxlength="100" class="w-full p-3 rounded border border-slate-300 focus:border-[#0f172a] outline-none">
+                </div>
+              </div>
+
+              <div class="grid md:grid-cols-2 gap-6">
+                <div>
+                  <label class="block text-sm font-bold text-[#0f172a] mb-2">E-mail</label>
+                  <input type="email" name="email" required class="w-full p-3 rounded border border-slate-300 focus:border-[#0f172a] outline-none">
+                </div>
+                <div>
+                  <label class="block text-sm font-bold text-[#0f172a] mb-2">Telefone</label>
+                  <input type="tel" name="telefone" required maxlength="20" class="w-full p-3 rounded border border-slate-300 focus:border-[#0f172a] outline-none">
+                </div>
+              </div>
+
+              <div>
+                <label class="block text-sm font-bold text-[#0f172a] mb-2">Serviço</label>
+                <select name="servico" class="w-full p-3 rounded border border-slate-300 bg-white focus:border-[#0f172a] outline-none">
+                  <option>Transporte Rodoviário</option>
+                  <option>Locação de Máquinas</option>
+                  <option>Intralogística</option>
+                  <option>Movimentação de Cargas Especiais</option>
+                  <option>Outros</option>
+                </select>
+              </div>
+
+              <div>
+                <label class="block text-sm font-bold text-[#0f172a] mb-2">Mensagem</label>
+                <textarea name="mensagem" required maxlength="500" rows="4" class="w-full p-3 rounded border border-slate-300 focus:border-[#0f172a] outline-none"></textarea>
+              </div>
+
+              <button type="submit" class="w-full bg-[#0f172a] text-white font-bold py-4 rounded shadow-lg hover:bg-slate-800 transition-all flex items-center justify-center gap-2">
+                Enviar Solicitação <i data-lucide="send" class="w-4 h-4"></i>
+              </button>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="sobre" class="py-24 bg-[#0f172a] text-white relative overflow-hidden">
+      <div class="container mx-auto px-6 relative z-10">
+        <div class="max-w-4xl mx-auto text-center mb-20">
+          <span class="text-yellow-400 font-bold tracking-widest uppercase text-sm mb-4 block">Sobre Nós</span>
+          <h2 class="text-4xl font-extrabold mb-6">18 Anos de História</h2>
+          <p class="text-slate-300 text-lg leading-relaxed">
+            A Avapex Transportes atua com excelência, ética e segurança, sempre buscando a melhoria contínua dos processos. Nossa missão é oferecer meios eficientes de transporte e locação, minimizando impactos ambientais.
+          </p>
+        </div>
+
+        <div class="border-t border-slate-700 pt-16">
+          <div class="text-center mb-12">
+            <h3 class="text-2xl font-bold mb-2">Parte de um Grupo <span class="text-yellow-400">Consolidado</span></h3>
+            <p class="text-slate-400">Sinergia para garantir capacidade de atendimento completa.</p>
+          </div>
+
+          <div class="flex flex-col md:flex-row justify-center items-center gap-12 md:gap-24">
+            <div class="text-center group hover:scale-105 transition-transform">
+              <img src="img/AVAPEX OFICIAL 02 branca e amarela.png" alt="Avapex" class="h-16 w-auto mx-auto mb-4 object-contain">
+              <p class="text-slate-400 text-sm max-w-[200px] mx-auto">Transporte e Logística Industrial</p>
+            </div>
+
+            <div class="hidden md:block h-20 w-[1px] bg-slate-700"></div>
+
+            <div class="text-center group hover:scale-105 transition-transform">
+              <img src="img/SEDAY.PADRÃO02transparente.png" alt="Seday Equipamentos" class="h-24 md:h-28 w-auto mx-auto mb-4 object-contain">
+              <p class="text-slate-400 text-sm max-w-[220px] mx-auto">Soluções em Locação de Grande Porte</p>
+            </div>
+
+            <div class="hidden md:block h-20 w-[1px] bg-slate-700"></div>
+
+            <div class="text-center group hover:scale-105 transition-transform">
+              <a href="https://www.innomach.com.br/" target="_blank" rel="noopener noreferrer" class="block">
+                <img src="img/INNOMACH EQUIPAMENTO oficial 01.png" alt="Innomach" class="h-16 w-auto mx-auto mb-4 object-contain hover:opacity-80 transition-all">
+              </a>
+              <p class="text-slate-400 text-sm max-w-[200px] mx-auto">Tecnologia e Maquinário Industrial</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-[#0f172a] border-t border-slate-800 pt-8 pb-8 text-slate-500 text-center text-sm">
     <p>© 2026 Avapex Transportes. Todos os direitos reservados.</p>
   </footer>
 
   <script src="script.js"></script>
 </body>
-
 </html>
