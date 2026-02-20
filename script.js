@@ -102,13 +102,14 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   // Escuta o scroll performático
-  window.addEventListener("scroll", () => {
-    if (!ticking) {
-      window.requestAnimationFrame(handleScroll);
-      ticking = true;
-    }
-  }, { passive: true });
-
+  window.addEventListener('scroll', function() {
+  const header = document.getElementById('main-header'); // O ID deve ser este
+  if (window.scrollY > 50) {
+    header.classList.add('scrolled');
+  } else {
+    header.classList.remove('scrolled');
+  }
+});
   handleScroll(); // Trigger inicial
 
   // ==========================================

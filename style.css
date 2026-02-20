@@ -3,131 +3,153 @@
    Avapex Transportes - Otimizado para Leads e UI
    ========================================= */
 
-body {
-  font-family: "Inter", sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* Reset fundamental para o layout "bater" */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
-/* Header scrolled com Efeito Blur (Glassmorphism) */
+body {
+    font-family: "Inter", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+}
+
+/* ================================
+   HEADER E LOGO (Lógica de Troca)
+   ================================ */
+
+/* Estado inicial (Fundo escuro/transparente) */
+header #logo-dark {
+    display: none !important;
+}
+
+header #logo-white {
+    display: block !important;
+}
+
+/* Estado Scrolled (Fundo Branco) */
 header.scrolled {
-  background-color: rgba(255, 255, 255, 0.97) !important;
-  backdrop-filter: blur(10px);
-  box-shadow: 0 4px 15px -1px rgba(0, 0, 0, 0.08),
-    0 2px 4px -1px rgba(0, 0, 0, 0.05);
-  padding-top: 0.6rem !important;
-  padding-bottom: 0.6rem !important;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.05) !important;
+    background-color: rgba(255, 255, 255, 0.97) !important;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 15px -1px rgba(0, 0, 0, 0.08);
+    padding-top: 0.6rem !important;
+    padding-bottom: 0.6rem !important;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05) !important;
+}
+
+/* Troca as logos no Scroll */
+header.scrolled #logo-white {
+    display: none !important;
+}
+
+header.scrolled #logo-dark {
+    display: block !important;
+}
+
+/* Muda a cor dos links do menu no scroll para não sumirem no branco */
+header.scrolled #desktop-menu a {
+    color: #0f172a !important; /* Cor Navy escura */
+}
+
+header.scrolled #desktop-menu a:hover {
+    color: #eab308 !important; /* Amarelo no hover */
 }
 
 #desktop-menu a {
-  transition: all 0.25s ease;
-}
-
-/* Mapas arredondados */
-iframe {
-  border-radius: 1rem;
-}
-
-/* Remove a seta feia padrão do navegador nos acordeões de FAQ */
-details > summary::-webkit-details-marker {
-  display: none;
-}
-
-/* Logos de clientes (Interatividade clean) */
-.client-logo {
-  filter: grayscale(100%);
-  opacity: 0.6;
-  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s ease, filter 0.4s ease;
-}
-
-.client-logo:hover {
-  filter: grayscale(0%);
-  opacity: 1;
-  transform: scale(1.15);
-  cursor: pointer;
+    transition: all 0.25s ease;
 }
 
 /* ================================
-   LOGO CAROUSEL (Animação Suave e Lenta)
+   COMPONENTE: LOGO CAROUSEL
    ================================ */
 .logo-carousel {
-  overflow: hidden;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
+    overflow: hidden;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
 }
 
 .logo-track {
-  display: flex !important;
-  align-items: center;
-  width: max-content !important;
-  will-change: transform;
+    display: flex !important;
+    align-items: center;
+    width: max-content !important;
+    will-change: transform;
 }
 
 .logo-set {
-  display: flex !important;
-  align-items: center;
-  gap: 3.5rem;
-  padding-right: 3.5rem;
-  flex: 0 0 auto;
+    display: flex !important;
+    align-items: center;
+    gap: 3.5rem;
+    padding-right: 3.5rem;
+    flex: 0 0 auto;
 }
 
-/* Ajuste de tempo da animação (Muito suave) */
-.logo-track.row-1 {
-  animation: scroll-left 55s linear infinite !important;
-}
-
-.logo-track.row-2 {
-  animation: scroll-right 55s linear infinite !important;
-}
+.logo-track.row-1 { animation: scroll-left 55s linear infinite !important; }
+.logo-track.row-2 { animation: scroll-right 55s linear infinite !important; }
 
 @keyframes scroll-left {
-  from { transform: translateX(0); }
-  to   { transform: translateX(-50%); }
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
 }
 
 @keyframes scroll-right {
-  from { transform: translateX(-50%); }
-  to   { transform: translateX(0); }
+    from { transform: translateX(-50%); }
+    to   { transform: translateX(0); }
+}
+
+/* Logos Interatividade */
+.client-logo {
+    filter: grayscale(100%);
+    opacity: 0.6;
+    transition: all 0.4s ease;
+}
+
+.client-logo:hover {
+    filter: grayscale(0%);
+    opacity: 1;
+    transform: scale(1.15);
+    cursor: pointer;
 }
 
 /* ================================
-   LISTA DE EQUIPAMENTOS
+   LISTA DE EQUIPAMENTOS E FAQ
    ================================ */
 .equip-list {
-  margin-top: 0.5rem;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  padding-left: 0;
-  list-style: none;
+    margin-top: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    list-style: none;
 }
 
 .equip-list li {
-  position: relative;
-  padding-left: 1.8rem;
-  color: #334155;
-  line-height: 1.6;
+    position: relative;
+    padding-left: 1.8rem;
+    color: #334155;
+    line-height: 1.6;
 }
 
 .equip-list li::before {
-  content: "➤";
-  position: absolute;
-  left: 0;
-  top: 0;
-  color: #facc15; /* Seta Amarela Avapex */
-  opacity: 1;
-  font-size: 0.9em;
+    content: "➤";
+    position: absolute;
+    left: 0;
+    color: #facc15; /* Amarelo Avapex */
+    font-size: 0.9em;
 }
 
-/* Animação suave no acordeão FAQ */
+iframe { border-radius: 1rem; }
+
+details > summary::-webkit-details-marker { display: none; }
+
 details[open] summary ~ * {
-  animation: sweep .5s ease-in-out;
+    animation: sweep .5s ease-in-out;
 }
 
 @keyframes sweep {
-  0%    {opacity: 0; transform: translateY(-10px)}
-  100%  {opacity: 1; transform: translateY(0)}
+    0%   {opacity: 0; transform: translateY(-10px)}
+    100% {opacity: 1; transform: translateY(0)}
 }
