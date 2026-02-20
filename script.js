@@ -1,19 +1,28 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // Inicialização Segura dos Ícones
+  // Inicialização dos ícones Lucide
   if (window.lucide && typeof window.lucide.createIcons === "function") {
     window.lucide.createIcons();
   }
 
-  // Elementos do DOM (Cacheados para melhor performance)
-  const menuBtn = document.getElementById("menuBtn");
-  const closeBtn = document.getElementById("closeBtn");
-  const mobileMenu = document.getElementById("mobileMenu");
-  const menuLinks = mobileMenu?.querySelectorAll("a");
-  
+  // Inicialização Animações AOS
+  if (window.AOS) {
+    AOS.init({
+      once: true,
+      duration: 800,
+      offset: 50,
+      easing: 'ease-in-out-cubic',
+    });
+  }
+
+  // Cache dos elementos do DOM
   const header = document.getElementById("main-header");
   const headerLogo = document.getElementById("header-logo");
   const desktopMenu = document.getElementById("desktop-menu");
-  const menuBtnIcon = document.querySelector("#menuBtn");
+  const menuBtn = document.getElementById("menuBtn");
+  const mobileMenu = document.getElementById("mobileMenu");
+  const closeBtn = document.getElementById("closeBtn");
+  const menuLinks = mobileMenu?.querySelectorAll("a");
+  const backToTopBtn = document.getElementById("backToTop");
 
   // ==========================================
   // Lógica do Menu Mobile
@@ -27,44 +36,72 @@ document.addEventListener("DOMContentLoaded", () => {
   menuLinks?.forEach((a) => a.addEventListener("click", toggleMenu));
 
   // ==========================================
-  // Lógica de Scroll (Otimizada com requestAnimationFrame)
-  // Troca inteligente da Logo Original Branca para Escura
+  // Lógica do Botão "Voltar ao Topo"
+  // ==========================================
+  if (backToTopBtn) {
+    backToTopBtn.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  }
+
+  // ==========================================
+  // Lógica de Scroll do Cabeçalho
+  // Muda de Escuro (Topo) para Claro (Rolagem)
   // ==========================================
   let ticking = false;
 
   const handleScroll = () => {
-    if (window.scrollY > 50) {
-      // Quando rolar a página (Fundo Branco)
-      header?.classList.add("scrolled", "bg-white");
-      header?.classList.remove("bg-[#0f172a]/95", "py-4", "border-slate-700");
+    if (window.scrollY > 60) {
+      // ESTADO: Página Rolada (Fundo Branco com Blur)
+      header?.classList.add("scrolled");
+      header?.classList.remove("bg-[#0f172a]/95");
 
-      // Troca para a logo preta e amarela (Se já não estiver)
+      // Troca para a logo escura (01)
       if (headerLogo && headerLogo.getAttribute("src") !== "img/AVAPEX OFICIAL 01.png") {
         headerLogo.src = "img/AVAPEX OFICIAL 01.png";
       }
 
-      desktopMenu?.classList.replace("text-slate-300", "text-[#0f172a]");
-      menuBtnIcon?.classList.replace("text-white", "text-[#0f172a]");
-
+      // Muda textos para escuro
+      if (desktopMenu) {
+        desktopMenu.classList.remove("text-slate-300");
+        desktopMenu.classList.add("text-[#0f172a]");
+      }
+      if (menuBtn) {
+        menuBtn.classList.remove("text-white");
+        menuBtn.classList.add("text-[#0f172a]");
+      }
     } else {
-      // Quando voltar para o topo (Fundo Azul Escuro)
-      header?.classList.remove("scrolled", "bg-white");
-      header?.classList.add("bg-[#0f172a]/95", "py-4", "border-slate-700");
+      // ESTADO: Topo da Página (Fundo Escuro Transparente)
+      header?.classList.remove("scrolled");
+      header?.classList.add("bg-[#0f172a]/95");
 
-      // Volta para a logo branca e amarela (Se já não estiver)
+      // Volta para a logo clara (02)
       if (headerLogo && headerLogo.getAttribute("src") !== "img/AVAPEX OFICIAL 02 branca e amarela.png") {
         headerLogo.src = "img/AVAPEX OFICIAL 02 branca e amarela.png";
       }
 
-      desktopMenu?.classList.replace("text-[#0f172a]", "text-slate-300");
-      menuBtnIcon?.classList.replace("text-[#0f172a]", "text-white");
+      // Muda textos de volta para claro
+      if (desktopMenu) {
+        desktopMenu.classList.remove("text-[#0f172a]");
+        desktopMenu.classList.add("text-slate-300");
+      }
+      if (menuBtn) {
+        menuBtn.classList.remove("text-[#0f172a]");
+        menuBtn.classList.add("text-white");
+      }
     }
-    
-    // Libera a próxima atualização de frame
+
+    // Controle do botão Voltar ao Topo
+    if (window.scrollY > 400) {
+      backToTopBtn?.classList.remove("opacity-0", "pointer-events-none", "translate-y-10");
+    } else {
+      backToTopBtn?.classList.add("opacity-0", "pointer-events-none", "translate-y-10");
+    }
+
     ticking = false;
   };
 
-  // Event Listener Otimizado
+  // Escuta o scroll performático
   window.addEventListener("scroll", () => {
     if (!ticking) {
       window.requestAnimationFrame(handleScroll);
@@ -72,6 +109,24 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }, { passive: true });
 
-  // Executar a verificação inicial caso a página carregue no meio
-  handleScroll();
+  handleScroll(); // Trigger inicial
+
+  // ==========================================
+  // Banner de Cookies LGPD
+  // ==========================================
+  const cookieBanner = document.getElementById("cookieBanner");
+  const acceptCookiesBtn = document.getElementById("acceptCookies");
+
+  if (cookieBanner && acceptCookiesBtn) {
+    if (!localStorage.getItem("avapex_cookies_accepted")) {
+      setTimeout(() => {
+        cookieBanner.classList.remove("translate-y-full");
+      }, 1500);
+    }
+
+    acceptCookiesBtn.addEventListener("click", () => {
+      localStorage.setItem("avapex_cookies_accepted", "true");
+      cookieBanner.classList.add("translate-y-full");
+    });
+  }
 });

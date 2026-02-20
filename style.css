@@ -1,194 +1,133 @@
 /* =========================================
    ARQUIVO: style.css
-   Avapex Transportes
+   Avapex Transportes - Otimizado para Leads e UI
    ========================================= */
 
-body{
-  font-family: 'Inter', sans-serif;
+body {
+  font-family: "Inter", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Utilitários */
-.bg-navy{ background-color:#0f172a; }
-.yellow-accent{ color:#facc15; }
-
-iframe{ border-radius:1rem; }
-
-#desktop-menu a{ transition: color .3s ease; }
-
-/* Header scroll */
-header.scrolled{
-  background-color: rgba(255,255,255,.95) !important;
-  backdrop-filter: blur(8px);
-  box-shadow: 0 4px 6px -1px rgba(0,0,0,.10), 0 2px 4px -1px rgba(0,0,0,.06);
-  padding-top: .5rem !important;
-  padding-bottom: .5rem !important;
-  border-bottom: 1px solid rgba(0,0,0,.05) !important;
+/* Header scrolled com Efeito Blur (Glassmorphism) */
+header.scrolled {
+  background-color: rgba(255, 255, 255, 0.97) !important;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 15px -1px rgba(0, 0, 0, 0.08),
+    0 2px 4px -1px rgba(0, 0, 0, 0.05);
+  padding-top: 0.6rem !important;
+  padding-bottom: 0.6rem !important;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05) !important;
 }
 
-/* Logos (hover) */
-.client-logo{
+#desktop-menu a {
+  transition: all 0.25s ease;
+}
+
+/* Mapas arredondados */
+iframe {
+  border-radius: 1rem;
+}
+
+/* Remove a seta feia padrão do navegador nos acordeões de FAQ */
+details > summary::-webkit-details-marker {
+  display: none;
+}
+
+/* Logos de clientes (Interatividade clean) */
+.client-logo {
   filter: grayscale(100%);
-  opacity: .6;
-  transition: all .35s cubic-bezier(.4,0,.2,1);
+  opacity: 0.6;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s ease, filter 0.4s ease;
 }
-.client-logo:hover{
+
+.client-logo:hover {
   filter: grayscale(0%);
   opacity: 1;
-  transform: scale(1.12);
+  transform: scale(1.15);
   cursor: pointer;
 }
 
 /* ================================
-   LOGO CAROUSEL (FORÇADO)
+   LOGO CAROUSEL (Animação Suave e Lenta)
    ================================ */
-.logo-carousel{
+.logo-carousel {
   overflow: hidden;
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 2rem;
 }
 
-.logo-track{
+.logo-track {
   display: flex !important;
   align-items: center;
   width: max-content !important;
   will-change: transform;
 }
 
-.logo-set{
+.logo-set {
   display: flex !important;
   align-items: center;
-  gap: 2.5rem;
-  padding-right: 2.5rem;
+  gap: 3.5rem;
+  padding-right: 3.5rem;
   flex: 0 0 auto;
 }
 
-/* IMPORTANTE: -50% porque o HTML tem 2 logo-set iguais */
-.logo-track.row-1{
-  animation: scroll-left 26s linear infinite !important;
-}
-.logo-track.row-2{
-  animation: scroll-right 26s linear infinite !important;
+/* Ajuste de tempo da animação (Muito suave) */
+.logo-track.row-1 {
+  animation: scroll-left 55s linear infinite !important;
 }
 
-@keyframes scroll-left{
+.logo-track.row-2 {
+  animation: scroll-right 55s linear infinite !important;
+}
+
+@keyframes scroll-left {
   from { transform: translateX(0); }
   to   { transform: translateX(-50%); }
 }
 
-@keyframes scroll-right{
+@keyframes scroll-right {
   from { transform: translateX(-50%); }
   to   { transform: translateX(0); }
-}
-/* =========================================
-   ARQUIVO: style.css
-   Avapex Transportes
-   ========================================= */
-
-body{
-  font-family: 'Inter', sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-/* Utilitários */
-.bg-navy{ background-color:#0f172a; }
-.yellow-accent{ color:#facc15; }
-
-iframe{ border-radius:1rem; }
-
-#desktop-menu a{ transition: color .3s ease; }
-
-/* Header scroll */
-header.scrolled{
-  background-color: rgba(255,255,255,.95) !important;
-  backdrop-filter: blur(8px);
-  box-shadow: 0 4px 6px -1px rgba(0,0,0,.10), 0 2px 4px -1px rgba(0,0,0,.06);
-  padding-top: .5rem !important;
-  padding-bottom: .5rem !important;
-  border-bottom: 1px solid rgba(0,0,0,.05) !important;
-}
-
-/* Logos (hover) */
-.client-logo{
-  filter: grayscale(100%);
-  opacity: .6;
-  transition: all .35s cubic-bezier(.4,0,.2,1);
-}
-.client-logo:hover{
-  filter: grayscale(0%);
-  opacity: 1;
-  transform: scale(1.12);
-  cursor: pointer;
 }
 
 /* ================================
-   LOGO CAROUSEL (FORÇADO E LENTO)
+   LISTA DE EQUIPAMENTOS
    ================================ */
-.logo-carousel{
-  overflow: hidden;
-  width: 100%;
+.equip-list {
+  margin-top: 0.5rem;
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
-}
-
-.logo-track{
-  display: flex !important;
-  align-items: center;
-  width: max-content !important;
-  will-change: transform;
-}
-
-.logo-set{
-  display: flex !important;
-  align-items: center;
-  gap: 2.5rem;
-  padding-right: 2.5rem;
-  flex: 0 0 auto;
-}
-
-/* IMPORTANTE: Tempo alterado para 50s para um deslize mais suave e lento */
-.logo-track.row-1{
-  animation: scroll-left 50s linear infinite !important;
-}
-.logo-track.row-2{
-  animation: scroll-right 50s linear infinite !important;
-}
-
-@keyframes scroll-left{
-  from { transform: translateX(0); }
-  to   { transform: translateX(-50%); }
-}
-
-@keyframes scroll-right{
-  from { transform: translateX(-50%); }
-  to   { transform: translateX(0); }
-}
-
-/* Lista equipamentos */
-.equip-list{
-  margin-top: .5rem;
-  display: flex;
-  flex-direction: column;
-  gap: .75rem;
+  gap: 1rem;
   padding-left: 0;
   list-style: none;
 }
-.equip-list li{
+
+.equip-list li {
   position: relative;
-  padding-left: 1.6rem;
+  padding-left: 1.8rem;
   color: #334155;
   line-height: 1.6;
 }
-.equip-list li::before{
+
+.equip-list li::before {
   content: "➤";
   position: absolute;
   left: 0;
   top: 0;
-  color: #0f172a;
-  opacity: .85;
+  color: #facc15; /* Seta Amarela Avapex */
+  opacity: 1;
+  font-size: 0.9em;
+}
+
+/* Animação suave no acordeão FAQ */
+details[open] summary ~ * {
+  animation: sweep .5s ease-in-out;
+}
+
+@keyframes sweep {
+  0%    {opacity: 0; transform: translateY(-10px)}
+  100%  {opacity: 1; transform: translateY(0)}
 }
