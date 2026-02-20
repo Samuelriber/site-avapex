@@ -56,9 +56,9 @@ document.addEventListener("DOMContentLoaded", () => {
       header?.classList.add("scrolled");
       header?.classList.remove("bg-[#0f172a]/95");
 
-      // Troca para a logo escura (01)
-      if (headerLogo && headerLogo.getAttribute("src") !== "img/AVAPEX OFICIAL 01.png") {
-        headerLogo.src = "img/AVAPEX OFICIAL 01.png";
+      // Tira o filtro branco da logo da Seday para mostrar a original (Azul/Cinza)
+      if (headerLogo) {
+        headerLogo.classList.remove("brightness-0", "invert");
       }
 
       // Muda textos para escuro
@@ -75,9 +75,9 @@ document.addEventListener("DOMContentLoaded", () => {
       header?.classList.remove("scrolled");
       header?.classList.add("bg-[#0f172a]/95");
 
-      // Volta para a logo clara (02)
-      if (headerLogo && headerLogo.getAttribute("src") !== "img/AVAPEX OFICIAL 02 branca e amarela.png") {
-        headerLogo.src = "img/AVAPEX OFICIAL 02 branca e amarela.png";
+      // Coloca o filtro branco na logo da Seday para destacar no fundo escuro
+      if (headerLogo) {
+        headerLogo.classList.add("brightness-0", "invert");
       }
 
       // Muda textos de volta para claro
@@ -118,14 +118,14 @@ document.addEventListener("DOMContentLoaded", () => {
   const acceptCookiesBtn = document.getElementById("acceptCookies");
 
   if (cookieBanner && acceptCookiesBtn) {
-    if (!localStorage.getItem("avapex_cookies_accepted")) {
+    if (!localStorage.getItem("seday_cookies_accepted")) {
       setTimeout(() => {
         cookieBanner.classList.remove("translate-y-full");
       }, 1500);
     }
 
     acceptCookiesBtn.addEventListener("click", () => {
-      localStorage.setItem("avapex_cookies_accepted", "true");
+      localStorage.setItem("seday_cookies_accepted", "true");
       cookieBanner.classList.add("translate-y-full");
     });
   }
