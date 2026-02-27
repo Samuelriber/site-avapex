@@ -20,7 +20,7 @@ O foco foi construir uma presença digital sólida, com identidade visual alinha
 
 ## 📁 Estrutura do Projeto
 
-```
+```text
 site-avapex/
 │
 ├── index.html          # Página principal
@@ -28,73 +28,66 @@ site-avapex/
 ├── script.js           # Funcionalidades JavaScript
 ├── img/                # Pasta de imagens
 └── README.md           # Documentação do projeto
-```
 
----
+🚀 Tecnologias Utilizadas
+HTML5 - Estrutura semântica do site
 
-## 🚀 Tecnologias Utilizadas
+CSS3 - Estilização e animações
 
-- **HTML5** - Estrutura semântica do site
-- **CSS3** - Estilização e animações
-- **JavaScript** - Interatividade e funcionalidades dinâmicas
-- **TailwindCSS (CDN)** - Framework CSS para estilização rápida
-- **Lucide Icons** - Biblioteca de ícones moderna
-- **Google Fonts (Inter)** - Tipografia profissional
+JavaScript - Interatividade e funcionalidades dinâmicas
 
----
+TailwindCSS (CDN) - Framework CSS para estilização rápida
 
-## ⚙️ Funcionalidades
+Lucide Icons - Biblioteca de ícones moderna
 
-- ✅ Layout responsivo (desktop / tablet / mobile)
-- ✅ Hero section com vídeo institucional
-- ✅ Seções informativas sobre a empresa
-- ✅ Formulário de contato
-- ✅ Design moderno e profissional
-- ✅ Performance otimizada
+Google Fonts (Inter) - Tipografia profissional
 
----
+⚙️ Funcionalidades
+✅ Layout responsivo (desktop / tablet / mobile)
 
-## 🖥️ Como Executar
+✅ Hero section com vídeo institucional
 
-1. Clone este repositório ou baixe os arquivos
-2. Abra o arquivo `index.html` em seu navegador
-3. O site estará pronto para visualização
+✅ Seções informativas sobre a empresa
 
-> **Nota:** Como o projeto utiliza TailwindCSS via CDN, é necessário ter conexão com a internet para carregar os estilos corretamente.
+✅ Formulário de contato
 
----
+✅ Design moderno e profissional
 
-## 📱 Responsividade
+✅ Performance otimizada
 
-O site foi desenvolvido seguindo a abordagem **mobile-first**, garantindo uma experiência otimizada em:
+🖥️ Como Executar
+Clone este repositório ou baixe os arquivos.
 
-- 📱 Dispositivos móveis (smartphones)
-- 📱 Tablets
-- 💻 Desktops e notebooks
+Abra o arquivo index.html em seu navegador.
 
----
+O site estará pronto para visualização.
 
-## 🎨 Identidade Visual
+Nota: Como o projeto utiliza TailwindCSS via CDN, é necessário ter conexão com a internet para carregar os estilos corretamente.
 
+📱 Responsividade
+O site foi desenvolvido seguindo a abordagem mobile-first, garantindo uma experiência otimizada em:
+
+📱 Dispositivos móveis (smartphones)
+
+📱 Tablets
+
+💻 Desktops e notebooks
+
+🎨 Identidade Visual
 O design do site reflete a solidez e profissionalismo do setor de transporte pesado e logística, utilizando:
 
-- Cores institucionais alinhadas com a identidade da AVAPEX
-- Tipografia clara e legível
-- Elementos visuais que transmitem confiança e credibilidade
-- Vídeo institucional para engajamento inicial
+Cores institucionais alinhadas com a identidade da AVAPEX.
 
----
+Tipografia clara e legível.
 
-## 📞 Contato
+Elementos visuais que transmitem confiança e credibilidade.
 
+Vídeo institucional para engajamento inicial.
+
+📞 Contato
 Para mais informações sobre o projeto, entre em contato através dos canais disponíveis no site.
 
----
+📄 Licença
+Este projeto foi desenvolvido para uso exclusivo da AVAPEX Transportes.
 
-## 📄 Licença
-
-Este projeto foi desenvolvido para uso exclusivo da **AVAPEX Transportes**.
-
----
-
-**Desenvolvido com 💙 para AVAPEX Transportes**
+Desenvolvido com 💙 para AVAPEX Transportes
