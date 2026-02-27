@@ -1,93 +1,119 @@
 # 🚛 AVAPEX Transportes — Site Institucional
 
-Site institucional desenvolvido para a empresa **AVAPEX Transportes**, com o objetivo de apresentar seus serviços, clientes, diferenciais e canais de contato de forma moderna, responsiva e profissional.
+Site institucional desenvolvido para a **AVAPEX Transportes**, com foco em fortalecer a presença digital da empresa no setor de **logística, mineração e transporte pesado**.
+
+Projeto voltado para posicionamento institucional, credibilidade e geração de oportunidades comerciais.
 
 ---
 
-## 📋 Sobre o Projeto
+## 📌 Objetivo do Projeto
 
-Este projeto consiste na criação de um site institucional completo para a AVAPEX Transportes, destacando:
+Construir uma presença digital profissional que:
 
-- **História e posicionamento** da empresa
-- **Serviços prestados**
-- **Principais clientes e parceiros**
-- **Credibilidade e certificações**
-- **Canal de contato** e solicitação de orçamento
+- Apresente a empresa de forma estratégica
+- Reforce autoridade e credibilidade
+- Destaque serviços e diferenciais competitivos
+- Facilite o contato comercial
+- Transmita solidez e confiança
 
-O foco foi construir uma presença digital sólida, com identidade visual alinhada ao setor de **logística, mineração e transporte pesado**.
+O site foi pensado para refletir a robustez do setor de transporte pesado, mantendo uma identidade visual moderna e objetiva.
 
 ---
 
-## 📁 Estrutura do Projeto
+## 🏗️ Estrutura do Projeto
 
-```text
+```
+
 site-avapex/
 │
-├── index.html          # Página principal
-├── style.css           # Estilos customizados
-├── script.js           # Funcionalidades JavaScript
-├── img/                # Pasta de imagens
-└── README.md           # Documentação do projeto
+├── index.html
+├── style.css
+├── script.js
+├── img/
+└── README.md
 
-🚀 Tecnologias Utilizadas
-HTML5 - Estrutura semântica do site
+````
 
-CSS3 - Estilização e animações
+Arquitetura simples, organizada e de fácil manutenção.
 
-JavaScript - Interatividade e funcionalidades dinâmicas
+---
 
-TailwindCSS (CDN) - Framework CSS para estilização rápida
+## 🛠️ Stack Tecnológica
 
-Lucide Icons - Biblioteca de ícones moderna
+- HTML5 — Estrutura semântica
+- CSS3 — Estilização customizada
+- JavaScript — Interatividade
+- TailwindCSS (CDN) — Construção rápida de layout
+- Lucide Icons — Ícones vetoriais modernos
+- Google Fonts (Inter) — Tipografia profissional
 
-Google Fonts (Inter) - Tipografia profissional
+---
 
-⚙️ Funcionalidades
-✅ Layout responsivo (desktop / tablet / mobile)
+## ⚙️ Principais Funcionalidades
 
-✅ Hero section com vídeo institucional
+- Layout 100% responsivo (mobile-first)
+- Hero section com vídeo institucional
+- Seções institucionais organizadas
+- Exibição de clientes e parceiros
+- Formulário de contato
+- Estrutura otimizada para performance
+- Código limpo e organizado
 
-✅ Seções informativas sobre a empresa
+---
 
-✅ Formulário de contato
+## 📱 Responsividade
 
-✅ Design moderno e profissional
+Desenvolvido seguindo abordagem **mobile-first**, garantindo adaptação para:
 
-✅ Performance otimizada
+- Smartphones
+- Tablets
+- Desktops
 
-🖥️ Como Executar
-Clone este repositório ou baixe os arquivos.
+Sem quebra de layout ou perda de usabilidade.
 
-Abra o arquivo index.html em seu navegador.
+---
 
-O site estará pronto para visualização.
+## 🚀 Como Executar
 
-Nota: Como o projeto utiliza TailwindCSS via CDN, é necessário ter conexão com a internet para carregar os estilos corretamente.
+1. Clone o repositório:
 
-📱 Responsividade
-O site foi desenvolvido seguindo a abordagem mobile-first, garantindo uma experiência otimizada em:
+```bash
+git clone https://github.com/seu-usuario/site-avapex.git
+````
 
-📱 Dispositivos móveis (smartphones)
+2. Acesse a pasta do projeto:
 
-📱 Tablets
+```bash
+cd site-avapex
+```
 
-💻 Desktops e notebooks
+3. Abra o arquivo `index.html` no navegador.
 
-🎨 Identidade Visual
-O design do site reflete a solidez e profissionalismo do setor de transporte pesado e logística, utilizando:
+> Observação: o projeto utiliza TailwindCSS via CDN. É necessário conexão com internet.
 
-Cores institucionais alinhadas com a identidade da AVAPEX.
+---
 
-Tipografia clara e legível.
+## 📌 Melhorias Futuras
 
-Elementos visuais que transmitem confiança e credibilidade.
+* Integração com backend para envio real do formulário
+* Deploy automatizado (CI/CD)
+* Otimização avançada de SEO
+* Lazy loading de imagens
+* Integração com Google Analytics
 
-Vídeo institucional para engajamento inicial.
+---
 
-📞 Contato
-Para mais informações sobre o projeto, entre em contato através dos canais disponíveis no site.
+## 📄 Licença
 
-📄 Licença
-Este projeto foi desenvolvido para uso exclusivo da AVAPEX Transportes.
+Projeto desenvolvido sob demanda para uso exclusivo da AVAPEX Transportes.
 
-Desenvolvido com 💙 para AVAPEX Transportes
+---
+
+## 👨🏻‍💻 Desenvolvido por
+
+**Samuel Angelo Rezende Ribeiro**
+Backend & Data-Oriented Developer
+[LinkedIn](https://www.linkedin.com/in/samuelribeiro-/)
+[GitHub](https://github.com/Samuelriber)
+
+
