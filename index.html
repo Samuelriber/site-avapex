@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR" class="scroll-smooth">
+<html lang="pt-BR" class="scroll-smooth overflow-x-hidden">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -55,7 +55,7 @@
   </script>
 </head>
 
-<body class="bg-slate-50 text-slate-900 overflow-x-hidden">
+<body class="bg-slate-50 text-slate-900 overflow-x-hidden w-full max-w-[100vw]">
 
   <button id="backToTop" class="fixed bottom-6 left-6 z-50 bg-[#0f172a] text-white p-3 rounded-full shadow-2xl hover:bg-yellow-400 hover:text-[#0f172a] transition-all duration-300 opacity-0 pointer-events-none translate-y-10 border border-slate-700 hover:scale-110" aria-label="Voltar ao topo">
     <i data-lucide="chevron-up" class="w-6 h-6" aria-hidden="true"></i>
@@ -111,9 +111,10 @@
     <a href="#orcamento" class="bg-yellow-400 text-[#0f172a] px-10 py-4 rounded-full font-extrabold shadow-2xl active:scale-95">Contato</a>
   </div>
 
-  <main>
+  <main class="overflow-x-hidden w-full">
     <section id="home" class="relative h-screen w-full overflow-hidden flex items-center justify-center">
-      <video autoplay muted loop playsinline preload="metadata" poster="img/thumb-video.jpg" class="absolute inset-0 w-full h-full object-cover z-0" aria-hidden="true">
+      <img src="img/fundo site mobile.jpg" alt="Fundo Logística Avapex" class="absolute inset-0 w-full h-full object-cover z-0 md:hidden" fetchpriority="high" />
+      <video autoplay muted loop playsinline preload="none" poster="img/thumb-video.jpg" class="absolute inset-0 w-full h-full object-cover z-0 hidden md:block" aria-hidden="true">
         <source src="img/videoSITE.mp4" type="video/mp4" />
       </video>
 
@@ -360,7 +361,6 @@
               </div>
             </article>
 
-           
             <article class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all group" data-aos="fade-up" data-aos-delay="600">
               <div class="h-56 overflow-hidden bg-white flex items-center justify-center p-4">
                 <img src="Equipamentos/Carretas Prancha.png" alt="Transporte com Conjunto Carreta Prancha" loading="lazy" decoding="async" class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-500">
@@ -791,7 +791,7 @@
           <div data-aos="fade-left" class="relative mt-10 lg:mt-0 lg:h-full min-h-[400px] md:min-h-[500px]">
             <div class="absolute inset-0 bg-yellow-400 rounded-[2rem] transform rotate-2 opacity-30"></div>
             
-            <div class="bg-[#f8fafc] rounded-[2rem] w-full h-full relative shadow-lg border border-slate-200">
+            <div class="bg-[#f8fafc] rounded-[2rem] w-full relative shadow-lg border border-slate-200" style="min-height: 400px;">
               <img src="img/caminhão.webp" alt="Foto Institucional de Caminhão Avapex Transportes" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover rounded-[2rem] z-10" />
               
               <div class="absolute bottom-4 left-4 md:bottom-8 md:-left-8 bg-white py-5 px-8 rounded-2xl flex flex-col items-center justify-center z-20 shadow-2xl border border-slate-100">
