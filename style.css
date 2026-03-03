@@ -3,7 +3,7 @@
    Avapex Transportes - Otimizado para Leads e UI
    ========================================= */
 
-/* Reset fundamental para o layout "bater" */
+/* Reset fundamental */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -17,11 +17,39 @@ body {
     overflow-x: hidden;
 }
 
+/* =========================================
+   CORREÇÃO DE ENQUADRAMENTO E ALINHAMENTO
+   ========================================= */
+
+/* Use esta classe no contêiner PAI da imagem e do selo "18 anos" */
+.hero-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centralizado no mobile */
+    width: 100%;
+}
+
+/* Ajuste específico para Desktop */
+@media (min-width: 1024px) {
+    .hero-container {
+        flex-direction: row;
+        align-items: flex-start !important; /* PUXA O CONTEÚDO PARA CIMA */
+        padding-top: 2rem; /* Espaçamento opcional no topo */
+    }
+
+    .img-featured {
+        width: 100%;
+        max-height: 600px; /* Evita que a imagem cresça demais e "desça" */
+        object-fit: cover;
+        object-position: center;
+        border-radius: 1.5rem;
+    }
+}
+
 /* ================================
    HEADER E LOGO (Lógica de Troca)
    ================================ */
 
-/* Estado inicial (Fundo escuro/transparente) */
 header #logo-dark {
     display: none !important;
 }
@@ -30,7 +58,6 @@ header #logo-white {
     display: block !important;
 }
 
-/* Estado Scrolled (Fundo Branco) */
 header.scrolled {
     background-color: rgba(255, 255, 255, 0.97) !important;
     backdrop-filter: blur(10px);
@@ -40,7 +67,6 @@ header.scrolled {
     border-bottom: 1px solid rgba(0, 0, 0, 0.05) !important;
 }
 
-/* Troca as logos no Scroll */
 header.scrolled #logo-white {
     display: none !important;
 }
@@ -49,13 +75,12 @@ header.scrolled #logo-dark {
     display: block !important;
 }
 
-/* Muda a cor dos links do menu no scroll para não sumirem no branco */
 header.scrolled #desktop-menu a {
-    color: #0f172a !important; /* Cor Navy escura */
+    color: #0f172a !important;
 }
 
 header.scrolled #desktop-menu a:hover {
-    color: #eab308 !important; /* Amarelo no hover */
+    color: #eab308 !important;
 }
 
 #desktop-menu a {
@@ -101,7 +126,6 @@ header.scrolled #desktop-menu a:hover {
     to   { transform: translateX(0); }
 }
 
-/* Logos Interatividade */
 .client-logo {
     filter: grayscale(100%);
     opacity: 0.6;
@@ -137,7 +161,7 @@ header.scrolled #desktop-menu a:hover {
     content: "➤";
     position: absolute;
     left: 0;
-    color: #facc15; /* Amarelo Avapex */
+    color: #facc15;
     font-size: 0.9em;
 }
 
