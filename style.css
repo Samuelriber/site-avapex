@@ -1,9 +1,8 @@
 /* =========================================
    ARQUIVO: style.css
-   Avapex Transportes - Otimizado para Leads e UI
+   Avapex Transportes - Otimizado (Native Speed)
    ========================================= */
 
-/* Reset fundamental */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -18,78 +17,15 @@ body {
 }
 
 /* =========================================
-   CORREÇÃO DE ENQUADRAMENTO E ALINHAMENTO
+   PERFORMANCE DO CARROSSEL DE LOGOS
+   Usando translate3d força uso da placa de vídeo
    ========================================= */
 
-/* Use esta classe no contêiner PAI da imagem e do selo "18 anos" */
-.hero-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Centralizado no mobile */
-    width: 100%;
+.hardware-accel {
+    will-change: transform;
+    transform: translateZ(0);
 }
 
-/* Ajuste específico para Desktop */
-@media (min-width: 1024px) {
-    .hero-container {
-        flex-direction: row;
-        align-items: flex-start !important; /* PUXA O CONTEÚDO PARA CIMA */
-        padding-top: 2rem; /* Espaçamento opcional no topo */
-    }
-
-    .img-featured {
-        width: 100%;
-        max-height: 600px; /* Evita que a imagem cresça demais e "desça" */
-        object-fit: cover;
-        object-position: center;
-        border-radius: 1.5rem;
-    }
-}
-
-/* ================================
-   HEADER E LOGO (Lógica de Troca)
-   ================================ */
-
-header #logo-dark {
-    display: none !important;
-}
-
-header #logo-white {
-    display: block !important;
-}
-
-header.scrolled {
-    background-color: rgba(255, 255, 255, 0.97) !important;
-    backdrop-filter: blur(10px);
-    box-shadow: 0 4px 15px -1px rgba(0, 0, 0, 0.08);
-    padding-top: 0.6rem !important;
-    padding-bottom: 0.6rem !important;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.05) !important;
-}
-
-header.scrolled #logo-white {
-    display: none !important;
-}
-
-header.scrolled #logo-dark {
-    display: block !important;
-}
-
-header.scrolled #desktop-menu a {
-    color: #0f172a !important;
-}
-
-header.scrolled #desktop-menu a:hover {
-    color: #eab308 !important;
-}
-
-#desktop-menu a {
-    transition: all 0.25s ease;
-}
-
-/* ================================
-   COMPONENTE: LOGO CAROUSEL
-   ================================ */
 .logo-carousel {
     overflow: hidden;
     width: 100%;
@@ -99,81 +35,59 @@ header.scrolled #desktop-menu a:hover {
 }
 
 .logo-track {
-    display: flex !important;
+    display: flex;
     align-items: center;
-    width: max-content !important;
-    will-change: transform;
+    width: max-content;
 }
 
 .logo-set {
-    display: flex !important;
+    display: flex;
     align-items: center;
     gap: 3.5rem;
     padding-right: 3.5rem;
     flex: 0 0 auto;
 }
 
-.logo-track.row-1 { animation: scroll-left 55s linear infinite !important; }
-.logo-track.row-2 { animation: scroll-right 55s linear infinite !important; }
+.logo-track.row-1 { animation: scroll-left 50s linear infinite; }
+.logo-track.row-2 { animation: scroll-right 50s linear infinite; }
 
 @keyframes scroll-left {
-    from { transform: translateX(0); }
-    to   { transform: translateX(-50%); }
+    from { transform: translate3d(0, 0, 0); }
+    to   { transform: translate3d(-50%, 0, 0); }
 }
 
 @keyframes scroll-right {
-    from { transform: translateX(-50%); }
-    to   { transform: translateX(0); }
+    from { transform: translate3d(-50%, 0, 0); }
+    to   { transform: translate3d(0, 0, 0); }
 }
 
 .client-logo {
     filter: grayscale(100%);
     opacity: 0.6;
-    transition: all 0.4s ease;
+    transition: all 0.3s ease;
 }
 
 .client-logo:hover {
     filter: grayscale(0%);
     opacity: 1;
-    transform: scale(1.15);
-    cursor: pointer;
 }
 
 /* ================================
-   LISTA DE EQUIPAMENTOS E FAQ
+   HEADER (Trocador de cor)
    ================================ */
-.equip-list {
-    margin-top: 0.5rem;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    list-style: none;
+
+header #logo-dark { display: none !important; }
+header #logo-white { display: block !important; }
+
+header.scrolled {
+    background-color: rgba(255, 255, 255, 0.98) !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
 }
 
-.equip-list li {
-    position: relative;
-    padding-left: 1.8rem;
-    color: #334155;
-    line-height: 1.6;
-}
+header.scrolled #logo-white { display: none !important; }
+header.scrolled #logo-dark { display: block !important; }
+header.scrolled #desktop-menu a { color: #0f172a !important; }
+header.scrolled #desktop-menu a:hover { color: #eab308 !important; }
 
-.equip-list li::before {
-    content: "➤";
-    position: absolute;
-    left: 0;
-    color: #facc15;
-    font-size: 0.9em;
-}
-
-iframe { border-radius: 1rem; }
-
+/* Acordeon FAQ */
 details > summary::-webkit-details-marker { display: none; }
-
-details[open] summary ~ * {
-    animation: sweep .5s ease-in-out;
-}
-
-@keyframes sweep {
-    0%   {opacity: 0; transform: translateY(-10px)}
-    100% {opacity: 1; transform: translateY(0)}
-}
