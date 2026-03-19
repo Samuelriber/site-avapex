@@ -3,3 +3,19 @@ Thumbs.db
 .DS_Store
 .vscode/
 *.log
+
+# Dependências (O mais importante!)
+node_modules/
+
+# Pastas de Build (Produção)
+dist/
+dist-ssr/
+
+# Arquivos de cache e ferramentas locais
+.vite/
+.claude/
+
+# Variáveis de ambiente (Segurança)
+.env
+.env.local
+.env.*.local
