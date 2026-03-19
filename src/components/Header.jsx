@@ -64,8 +64,8 @@ export default function Header() {
             <img
               src={
                 isScrolled
-                  ? '/img/AVAPEX OFICIAL 01.png'
-                  : '/img/AVAPEX OFICIAL 02 branca e amarela.png'
+                  ? 'img/AVAPEX OFICIAL 01.png'
+                  : 'img/AVAPEX OFICIAL 02 branca e amarela.png'
               }
               width={isScrolled ? 3182 : 3040}
               height={isScrolled ? 900 : 859}
