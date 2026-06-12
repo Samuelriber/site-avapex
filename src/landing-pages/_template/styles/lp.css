@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=DM+Sans:wght@400;500;600&display=swap');
+
+:root {
+  --lp-navy:   #0B1121;
+  --lp-steel:  #1E2A3A;
+  --lp-yellow: #F5C518;
+  --lp-dust:   #F0EDE8;
+  --lp-iron:   #8A8F98;
+  --lp-white:  #FFFFFF;
+}
+
+.lp-root {
+  font-family: 'DM Sans', sans-serif;
+  color: var(--lp-navy);
+  background: #fff;
+}
+
+.lp-root h1,
+.lp-root h2,
+.lp-root h3 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+/* Seções escuras — texto branco */
+.lp-dark {
+  background: var(--lp-navy);
+  color: var(--lp-white);
+}
+
+/* Seções neutras */
+.lp-dust {
+  background: var(--lp-dust);
+  color: var(--lp-navy);
+}
+
+/* Container padrão */
+.lp-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* Seção padrão */
+.lp-section {
+  padding: 5rem 0;
+}
+
+/* Badge */
+.lp-badge {
+  display: inline-block;
+  background: var(--lp-yellow);
+  color: var(--lp-navy);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  margin-bottom: 1.5rem;
+}
+
+/* Botão primário */
+.lp-btn-primary {
+  display: inline-block;
+  background: var(--lp-yellow);
+  color: var(--lp-navy);
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 14px 32px;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+.lp-btn-primary:hover { background: #e6b800; }
+
+/* Botão secundário */
+.lp-btn-secondary {
+  display: inline-block;
+  background: transparent;
+  color: var(--lp-white);
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 13px 32px;
+  border: 2px solid rgba(255,255,255,0.4);
+  cursor: pointer;
+  text-decoration: none;
+  transition: border-color 0.2s;
+}
+.lp-btn-secondary:hover { border-color: var(--lp-white); }
+
+/* Grid 2 colunas */
+.lp-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+/* Grid 3 colunas */
+.lp-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+/* Grid 4 colunas */
+.lp-grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .lp-grid-2,
+  .lp-grid-3,
+  .lp-grid-4 { grid-template-columns: 1fr; }
+}
+
+/* Card base */
+.lp-card {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  padding: 2rem;
+}
+
+/* Linha amarela decorativa */
+.lp-accent-line {
+  width: 40px;
+  height: 3px;
+  background: var(--lp-yellow);
+  margin: 1rem 0;
+}
+
+html { scroll-behavior: smooth; }

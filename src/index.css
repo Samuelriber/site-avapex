@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* =========================================
+   GLOBAL
+   ========================================= */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "DM Sans", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4 {
+  font-family: "Barlow Condensed", sans-serif;
+}
+
+/* =========================================
+   PERFORMANCE DO CARROSSEL DE LOGOS
+   Usando translate3d força uso da placa de vídeo
+   ========================================= */
+
+.hardware-accel {
+  will-change: transform;
+  transform: translateZ(0);
+}
+
+.logo-carousel {
+  overflow: hidden;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.logo-track {
+  display: flex;
+  align-items: center;
+  width: max-content;
+}
+
+.logo-set {
+  display: flex;
+  align-items: center;
+  gap: 3.5rem;
+  padding-right: 3.5rem;
+  flex: 0 0 auto;
+}
+
+.logo-track.row-1 { animation: scroll-left 50s linear infinite; }
+.logo-track.row-2 { animation: scroll-right 50s linear infinite; }
+
+@keyframes scroll-left {
+  from { transform: translate3d(0, 0, 0); }
+  to   { transform: translate3d(-50%, 0, 0); }
+}
+
+@keyframes scroll-right {
+  from { transform: translate3d(-50%, 0, 0); }
+  to   { transform: translate3d(0, 0, 0); }
+}
+

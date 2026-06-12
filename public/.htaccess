@@ -1,0 +1,10 @@
+Options -MultiViews
+RewriteEngine On
+
+# Deixa o PHP processar normalmente
+RewriteRule ^send-email\.php$ - [L]
+
+# Redireciona tudo que não é arquivo/pasta para index.html (SPA)
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^ index.html [QSA,L]

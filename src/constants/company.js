@@ -1,0 +1,1 @@
+export const COMPANY_YEARS_EXPERIENCE = 18

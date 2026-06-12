@@ -1,0 +1,6 @@
+export const WHATSAPP_TAIS  = 'https://wa.me/5531953241291'
+export const WHATSAPP_JOICE = 'https://wa.me/5531984657066'
+export const PHONE_TAIS     = '+55 31 95324-1291'
+export const PHONE_JOICE    = '+55 31 98465-7066'
+export const EMAIL           = 'comercial@avapex.com.br'
+export const ADDRESS         = 'Rodovia BR040, 22750, Barreira - Cons. Lafaiete/MG'
