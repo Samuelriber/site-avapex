@@ -6,10 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "npm run build && wrangler dev",
-    "predeploy": "npm run build",
-    "deploy": "npm run build && wrangler deploy",
-    "deploy-hostinger": "vite build && gh-pages -d dist -b deploy"
+    "preview": "vite preview"
   },
   "dependencies": {
     "aos": "^2.3.4",
@@ -20,13 +17,10 @@
     "react-router-dom": "^7.16.0"
   },
   "devDependencies": {
-    "@cloudflare/vite-plugin": "^1.29.1",
     "@vitejs/plugin-react": "^4.3.4",
     "autoprefixer": "^10.4.27",
-    "gh-pages": "^6.3.0",
     "postcss": "^8.4.49",
     "tailwindcss": "^3.4.19",
-    "vite": "^6.0.7",
-    "wrangler": "^4.75.0"
+    "vite": "^6.0.7"
   }
 }

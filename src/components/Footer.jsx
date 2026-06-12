@@ -1,5 +1,6 @@
 import { Instagram, Linkedin } from 'lucide-react'
 import { WHATSAPP_TAIS, WHATSAPP_JOICE, PHONE_TAIS, PHONE_JOICE } from '../constants/contact'
+import { LOGO_WHITE } from '../styles/logoStyles'
 
 export default function Footer() {
   return (
@@ -15,14 +16,7 @@ export default function Footer() {
             <img
               src="/img/img/Logos/logo-avapex-transportes-v1.svg"
               alt="Avapex Transportes"
-              style={{
-                height: '44px',
-                width: 'auto',
-                display: 'block',
-                objectFit: 'contain',
-                filter: 'brightness(0) invert(1)',
-                opacity: 0.85,
-              }}
+              style={{ ...LOGO_WHITE, height: '44px', opacity: 0.85 }}
             />
 
             {/* Divisor vertical — oculto em mobile */}
@@ -32,14 +26,7 @@ export default function Footer() {
             <img
               src="/img/img/Logos/logo-grupo-seday-colorido.svg"
               alt="Grupo Seday"
-              style={{
-                height: '64px',
-                width: 'auto',
-                display: 'block',
-                objectFit: 'contain',
-                filter: 'brightness(0) invert(1)',
-                opacity: 0.7,
-              }}
+              style={{ ...LOGO_WHITE, height: '64px', opacity: 0.7 }}
             />
 
           </div>
@@ -77,7 +64,7 @@ export default function Footer() {
 
               {/* WhatsApp — ícone SVG inline pois Lucide não tem WhatsApp */}
               <a
-                href="{WHATSAPP_TAIS}"
+                href={WHATSAPP_TAIS}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="WhatsApp Avapex Transportes"
@@ -105,7 +92,7 @@ export default function Footer() {
           <div className="flex flex-col sm:flex-row justify-center items-center gap-4 mb-6 text-sm text-slate-400">
             <span>
               <span className="text-slate-500 text-xs uppercase tracking-wider mr-2">Comercial</span>
-              <a href="{WHATSAPP_TAIS}"
+              <a href={WHATSAPP_TAIS}
                  className="hover:text-brand-yellow transition-colors">
                 Taís · {PHONE_TAIS}
               </a>

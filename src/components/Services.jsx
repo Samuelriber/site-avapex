@@ -1,5 +1,6 @@
 import { Truck, Boxes, Wrench, HardHat } from 'lucide-react'
 import { COMPANY_YEARS_EXPERIENCE } from '../constants/company'
+import SectionHeader from './SectionHeader'
 
 const services = [
   {
@@ -37,14 +38,10 @@ export default function Services() {
     <section id="servicos" className="py-16 bg-brand-dust border-b border-slate-200">
       <div className="container mx-auto px-6">
 
-        <div className="text-center mb-16" data-aos="fade-up">
-          <h2 className="text-brand-navy text-4xl font-extrabold mb-4">Nossos Serviços</h2>
-          <p className="text-slate-600 max-w-2xl mx-auto">
-            Soluções logísticas completas para os setores de mineração, indústria pesada e
-            ferrovia, com mais de {COMPANY_YEARS_EXPERIENCE} anos de expertise operacional.
-          </p>
-          <div className="w-16 h-1 bg-brand-yellow mx-auto mt-6" />
-        </div>
+        <SectionHeader
+          title="Nossos Serviços"
+          subtitle={`Soluções logísticas completas para os setores de mineração, indústria pesada e ferrovia, com mais de ${COMPANY_YEARS_EXPERIENCE} anos de expertise operacional.`}
+        />
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {services.map(({ icon: Icon, title, description, delay }) => (

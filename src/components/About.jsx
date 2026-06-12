@@ -9,10 +9,10 @@ export default function About() {
 
             {/* Left — text */}
             <div data-aos="fade-right">
-              <span className="text-yellow-500 font-bold tracking-widest uppercase text-xs mb-3 block">
+              <span className="text-brand-yellow font-bold tracking-widest uppercase text-xs mb-3 block">
                 Nossa História
               </span>
-              <h2 className="text-[#0f172a] text-4xl md:text-5xl font-extrabold mb-6 leading-tight">
+              <h2 className="text-brand-navy text-4xl md:text-5xl font-extrabold mb-6 leading-tight">
                 Mais de {COMPANY_YEARS_EXPERIENCE} Anos de <br />Excelência Operacional
               </h2>
 
@@ -31,21 +31,21 @@ export default function About() {
 
               <div className="grid sm:grid-cols-2 gap-4">
                 <div className="flex items-start gap-4 bg-white p-5 border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
-                  <div className="text-yellow-500 mt-1 bg-yellow-50 p-2 rounded-sm">
+                  <div className="text-brand-yellow mt-1 bg-yellow-50 p-2 rounded-sm">
                     <Award className="w-6 h-6" aria-hidden="true" />
                   </div>
                   <div>
-                    <h3 className="font-bold text-[#0f172a] text-sm">Certificação ISO 9001</h3>
+                    <h3 className="font-bold text-brand-navy text-sm">Certificação ISO 9001</h3>
                     <p className="text-xs text-slate-500 mt-1">Garantia de máxima qualidade e padronização operacional.</p>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-4 bg-white p-5 border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
-                  <div className="text-yellow-500 mt-1 bg-yellow-50 p-2 rounded-sm">
+                  <div className="text-brand-yellow mt-1 bg-yellow-50 p-2 rounded-sm">
                     <Map className="w-6 h-6" aria-hidden="true" />
                   </div>
                   <div>
-                    <h3 className="font-bold text-[#0f172a] text-sm">Cobertura Estratégica</h3>
+                    <h3 className="font-bold text-brand-navy text-sm">Cobertura Estratégica</h3>
                     <p className="text-xs text-slate-500 mt-1">Bases em MG, SP e RJ para pronto atendimento.</p>
                   </div>
                 </div>
@@ -65,7 +65,7 @@ export default function About() {
                 <div className="pt-4 flex items-center justify-between px-2">
                   <span className="text-slate-400 text-xs font-light tracking-widest uppercase">Avapex Transportes</span>
                   <div className="flex flex-col items-center">
-                    <span className="text-2xl font-extrabold text-[#0f172a] leading-none">{COMPANY_YEARS_EXPERIENCE}</span>
+                    <span className="text-2xl font-extrabold text-brand-navy leading-none">{COMPANY_YEARS_EXPERIENCE}</span>
                     <span className="text-[9px] font-bold text-slate-400 uppercase tracking-widest">Anos</span>
                   </div>
                 </div>

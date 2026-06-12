@@ -46,17 +46,16 @@ const cards = [
   },
 ]
 
+import SectionHeader from './SectionHeader'
+
 export default function MVV() {
   return (
     <section id="mvv" className="py-24 bg-brand-dust border-b border-slate-200">
       <div className="container mx-auto px-6">
-        <div className="text-center mb-16" data-aos="fade-up">
-          <h2 className="text-brand-navy text-4xl font-extrabold mb-4">Visão, Missão e Valores</h2>
-          <p className="text-slate-600 max-w-2xl mx-auto">
-            Diretrizes que orientam nossa operação, conduta e compromisso com resultados.
-          </p>
-          <div className="w-16 h-1 bg-brand-yellow mx-auto mt-6" />
-        </div>
+        <SectionHeader
+          title="Visão, Missão e Valores"
+          subtitle="Diretrizes que orientam nossa operação, conduta e compromisso com resultados."
+        />
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {cards.map(({ title, delay, content }) => (

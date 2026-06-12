@@ -1,5 +1,6 @@
 import { Award, ShieldCheck, Map, Clock, BadgeCheck, Users } from 'lucide-react'
 import { COMPANY_YEARS_EXPERIENCE } from '../constants/company'
+import SectionHeader from './SectionHeader'
 
 const reasons = [
   {
@@ -45,15 +46,10 @@ export default function WhyUs() {
     <section id="diferenciais" className="py-16 bg-white border-b border-slate-200">
       <div className="container mx-auto px-6">
 
-        <div className="text-center mb-16" data-aos="fade-up">
-          <h2 className="text-brand-navy text-4xl font-extrabold mb-4">
-            Por que terceirizar sua logística conosco?
-          </h2>
-          <p className="text-slate-600 max-w-2xl mx-auto">
-            Focamos no que fazemos de melhor para que você possa focar no seu negócio.
-          </p>
-          <div className="w-16 h-1 bg-brand-yellow mx-auto mt-6" />
-        </div>
+        <SectionHeader
+          title="Por que terceirizar sua logística conosco?"
+          subtitle="Focamos no que fazemos de melhor para que você possa focar no seu negócio."
+        />
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {reasons.map(({ icon: Icon, title, description, delay }, index) => (

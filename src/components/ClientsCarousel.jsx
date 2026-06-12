@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import SectionHeader from './SectionHeader'
 
 const logos = [
   { src: 'img/img/Empresas/GPS.svg',       name: 'Grupo GPS',    href: 'https://gpssa.com.br/' },
@@ -62,15 +63,11 @@ export default function ClientsCarousel() {
   return (
     <section id="credibilidade" className="py-16 bg-white border-b border-slate-200 overflow-hidden">
       <div className="container mx-auto px-6 mb-10">
-        <div className="text-center" data-aos="fade-up">
-          <h2 className="text-brand-navy text-4xl font-extrabold mb-3">
-            Clientes que confiam na Avapex
-          </h2>
-          <p className="text-slate-500 text-sm max-w-xl mx-auto">
-            Atendemos empresas de referência nos setores de mineração, siderurgia e ferrovia.
-          </p>
-          <div className="w-16 h-1 bg-brand-yellow mx-auto mt-6" />
-        </div>
+        <SectionHeader
+          title="Clientes que confiam na Avapex"
+          subtitle="Atendemos empresas de referência nos setores de mineração, siderurgia e ferrovia."
+          className="mb-0"
+        />
       </div>
 
       {/* Desktop: carrossel animado em 2 filas */}
@@ -97,29 +94,9 @@ export default function ClientsCarousel() {
 
       {/* Mobile: grid estático 3 colunas */}
       <div className="md:hidden grid grid-cols-3 gap-6 px-6">
-        {logos.map((logo) => {
-          const cell = (
-            <div key={logo.name} className="flex items-center justify-center p-4">
-              <LogoImg src={logo.src} name={logo.name} />
-            </div>
-          )
-          return logo.href ? (
-            <a
-              key={logo.name}
-              href={logo.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={`Visitar site ${logo.name}`}
-              className="flex items-center justify-center p-4"
-            >
-              <LogoImg src={logo.src} name={logo.name} />
-            </a>
-          ) : (
-            <div key={logo.name} className="flex items-center justify-center p-4">
-              <LogoImg src={logo.src} name={logo.name} />
-            </div>
-          )
-        })}
+        {logos.map((logo) => (
+          <CarouselLogo key={logo.name} src={logo.src} name={logo.name} href={logo.href} />
+        ))}
       </div>
     </section>
   )
