@@ -20,6 +20,10 @@ dist-ssr/
 !.env.example
 !.env.*.example
 
+# PHP vendor (Composer)
+/vendor/
+/public/vendor/
+
 # wrangler files
 .wrangler
 .dev.vars*

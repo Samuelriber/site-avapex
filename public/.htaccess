@@ -1,6 +1,17 @@
 Options -MultiViews
 RewriteEngine On
 
+# Bloqueia acesso HTTP direto a arquivos sensíveis
+<Files .env>
+    Order allow,deny
+    Deny from all
+</Files>
+<FilesMatch "^composer\.(json|lock)$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+RewriteRule ^vendor/ - [F,L]
+
 # Deixa o PHP processar normalmente
 RewriteRule ^send-email\.php$ - [L]
 

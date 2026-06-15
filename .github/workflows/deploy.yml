@@ -16,6 +16,16 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.1'
+          extensions: openssl
+
+      - name: Install PHP dependencies
+        run: composer install --no-dev --optimize-autoloader
+        working-directory: ./public
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
@@ -29,6 +39,11 @@ jobs:
         run: npm run build
         env:
           VITE_GADS_ID: ${{ secrets.VITE_GADS_ID }}
+
+      - name: Create PHP env file
+        env:
+          MAIL_PASSWORD: ${{ secrets.MAIL_PASSWORD }}
+        run: printf 'MAIL_PASSWORD=%s\n' "$MAIL_PASSWORD" > dist/.env
 
       - name: Deploy via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
