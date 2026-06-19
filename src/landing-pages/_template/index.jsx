@@ -15,6 +15,7 @@ import LPProblem from './components/LPProblem'
 import LPSolution from './components/LPSolution'
 import LPTestimonials from './components/LPTestimonials'
 import LPForm from './components/LPForm'
+import ContactFormLP from './components/ContactFormLP'
 import LPFooter from './components/LPFooter'
 import './styles/lp.css'
 
@@ -169,6 +170,7 @@ export default function LandingPageTemplate() {
         <LPSolution config={CONFIG.solution} />
         <LPTestimonials items={CONFIG.testimonials} />
         <LPForm config={CONFIG.form} />
+        <ContactFormLP />
         <LPFooter />
       </div>
     </HelmetProvider>

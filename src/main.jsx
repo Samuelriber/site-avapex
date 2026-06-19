@@ -9,6 +9,7 @@ const LandingPageTemplate = lazy(() => import('./landing-pages/_template'))
 
 // Adicionar novas LPs aqui:
 // const LPMineracao = lazy(() => import('./landing-pages/mineracao'))
+const LPEspecialCopa = lazy(() => import('./landing-pages/especial-copa'))
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
@@ -29,6 +30,14 @@ ReactDOM.createRoot(document.getElementById('root')).render(
 
         {/* Adicionar novas LPs aqui: */}
         {/* <Route path="/lp/mineracao" element={<Suspense fallback={null}><LPMineracao /></Suspense>} /> */}
+        <Route
+          path="/lp/especial-copa"
+          element={
+            <Suspense fallback={<div style={{ background: '#0B1121', minHeight: '100vh' }} />}>
+              <LPEspecialCopa />
+            </Suspense>
+          }
+        />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>,
