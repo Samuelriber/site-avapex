@@ -39,8 +39,8 @@ export default function ContactFormLP() {
               </div>
               <div>
                 <p className="font-title-md text-[14px] text-white/70 uppercase tracking-wider">E-mail Corporativo</p>
-                <a href="mailto:comercial@avapex.com.br" className="font-body-sm text-[16px] text-white hover:text-primary transition-colors">
-                  comercial@avapex.com.br
+                <a href="mailto:comercial3@avapex.com.br" className="font-body-sm text-[16px] text-white hover:text-primary transition-colors">
+                  comercial3@avapex.com.br
                 </a>
               </div>
             </div>

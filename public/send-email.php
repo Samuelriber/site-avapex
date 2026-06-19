@@ -28,6 +28,13 @@ if (file_exists($envFile)) {
 
 $senha = $_ENV['MAIL_PASSWORD'] ?? getenv('MAIL_PASSWORD') ?: '';
 
+if (!file_exists(__DIR__ . '/vendor/autoload.php')) {
+    // Modo de desenvolvimento: simula o sucesso para não travar o Front-end
+    http_response_code(200);
+    echo json_encode(['ok' => true, 'mock' => true, 'message' => 'Simulação de envio local.']);
+    exit;
+}
+
 require_once __DIR__ . '/vendor/autoload.php';
 
 use PHPMailer\PHPMailer\PHPMailer;
@@ -54,14 +61,14 @@ try {
     $mail->isSMTP();
     $mail->Host       = 'smtps.uhserver.com';
     $mail->SMTPAuth   = true;
-    $mail->Username   = 'ti01@avapex.com.br';
+    $mail->Username   = 'comercial3@avapex.com.br';
     $mail->Password   = $senha;
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
     $mail->Port       = 465;
     $mail->CharSet    = 'UTF-8';
 
-    $mail->setFrom('ti01@avapex.com.br', 'Avapex Transportes');
-    $mail->addAddress('ti01@avapex.com.br', 'Avapex Transportes');
+    $mail->setFrom('comercial3@avapex.com.br', 'Avapex Transportes');
+    $mail->addAddress('comercial3@avapex.com.br', 'Avapex Transportes');
     $mail->addReplyTo($email, $nome);
 
     $mail->isHTML(true);

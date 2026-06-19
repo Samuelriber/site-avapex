@@ -147,7 +147,7 @@ export const CONFIG = {
     subtitulo: 'Descreva sua operação. Nossa equipe analisa e retorna com valores e prazo — sem enrolação e sem compromisso.',
     campos: ['nome', 'empresa', 'telefone', 'email', 'mensagem'],
     cta_label: 'Quero minha proposta agora',
-    destino: 'comercial@avapex.com.br',
+    destino: 'comercial3@avapex.com.br',
     utm_campaign: 'template',
     garantia: 'Respondemos em até 2 horas úteis. Sem spam, sem ligação não solicitada.',
   },
