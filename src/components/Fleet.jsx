@@ -69,7 +69,7 @@ export default function Fleet() {
     <section id="equipamentos" className="py-24 bg-slate-50 border-b border-slate-200">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16" data-aos="fade-up">
-          <h2 className="text-[#0f172a] text-4xl font-extrabold mb-4">A Nossa Frota</h2>
+          <h2 className="text-[#0f172a] text-5xl md:text-6xl font-extrabold mb-4">A Nossa Frota</h2>
           <p className="text-slate-600 max-w-2xl mx-auto">
             Equipamentos atualizados para garantir alta performance e segurança no canteiro de obras ou na estrada.
           </p>

@@ -6,7 +6,7 @@ export default function SectionHeader({ eyebrow, title, subtitle, delay = 0, cla
           {eyebrow}
         </span>
       )}
-      <h2 className="text-brand-navy text-4xl font-extrabold mb-4">{title}</h2>
+      <h2 className="text-brand-navy text-5xl md:text-6xl font-extrabold mb-4">{title}</h2>
       {subtitle && (
         <p className="text-slate-600 max-w-2xl mx-auto">{subtitle}</p>
       )}
