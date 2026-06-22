@@ -29,10 +29,12 @@ function LogoImg({ src, name }) {
       style={{
         maxHeight: '100px',
         minHeight: '72px',
+        maxWidth: '100%',
         width: 'auto',
         objectFit: 'contain',
         opacity: hovered ? 1 : 0.85,
         transition: 'opacity 0.3s',
+        imageRendering: 'auto',
       }}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
@@ -92,10 +94,12 @@ export default function ClientsCarousel() {
         </div>
       </div>
 
-      {/* Mobile: grid estático 3 colunas */}
-      <div className="md:hidden grid grid-cols-3 gap-6 px-6">
+      {/* Mobile: grid estático 2 colunas */}
+      <div className="md:hidden grid grid-cols-2 gap-8 px-8">
         {logos.map((logo) => (
-          <CarouselLogo key={logo.name} src={logo.src} name={logo.name} href={logo.href} />
+          <div key={logo.name} className="flex items-center justify-center py-2">
+            <CarouselLogo src={logo.src} name={logo.name} href={logo.href} />
+          </div>
         ))}
       </div>
     </section>
