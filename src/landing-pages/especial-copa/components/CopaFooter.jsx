@@ -62,7 +62,10 @@ export default function CopaFooter() {
               </div>
               <div>
                 <p className="text-white/40 text-sm uppercase tracking-widest font-semibold mb-1">E-mail Corporativo</p>
-                <a href="mailto:comercial3@avapex.com.br" className="text-white/80 text-base hover:text-[#F3BE55] transition-colors">
+                <a href="mailto:comercial@avapex.com.br" className="text-white/80 text-base hover:text-[#F3BE55] transition-colors block">
+                  comercial@avapex.com.br
+                </a>
+                <a href="mailto:comercial3@avapex.com.br" className="text-white/80 text-base hover:text-[#F3BE55] transition-colors block">
                   comercial3@avapex.com.br
                 </a>
               </div>

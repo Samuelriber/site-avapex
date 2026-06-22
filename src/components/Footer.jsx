@@ -50,7 +50,10 @@ export default function Footer() {
               </div>
               <div>
                 <p className="text-slate-500 text-sm uppercase tracking-widest font-semibold mb-1">E-mail Corporativo</p>
-                <a href="mailto:comercial3@avapex.com.br" className="text-slate-300 text-base hover:text-brand-yellow transition-colors">
+                <a href="mailto:comercial@avapex.com.br" className="text-slate-300 text-base hover:text-brand-yellow transition-colors block">
+                  comercial@avapex.com.br
+                </a>
+                <a href="mailto:comercial3@avapex.com.br" className="text-slate-300 text-base hover:text-brand-yellow transition-colors block">
                   comercial3@avapex.com.br
                 </a>
               </div>
