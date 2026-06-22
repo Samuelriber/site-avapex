@@ -10,20 +10,12 @@ export default function CopaFooter() {
       {/* Logos + redes sociais */}
       <div className="max-w-7xl mx-auto py-10 flex flex-col items-center gap-6 text-center">
 
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-5 sm:gap-8">
-          <img
-            src="/img/img/Logos/logo-avapex-transportes-v1.svg"
-            alt="Avapex Transportes"
-            className="h-10 w-auto object-contain opacity-85"
-            style={{ filter: 'brightness(0) invert(1)' }}
-          />
-          <div className="hidden sm:block h-10 w-px bg-white/20" />
-          <img
-            src="/img/img/Logos/logo-grupo-seday-colorido.svg"
-            alt="Grupo Seday"
-            className="h-14 w-auto object-contain opacity-70"
-          />
-        </div>
+        <img
+          src="/img/img/Logos/logo-avapex-transportes-v1.svg"
+          alt="Avapex Transportes"
+          className="h-10 w-auto object-contain"
+          style={{ filter: 'brightness(0) invert(1)', opacity: 0.85 }}
+        />
 
         <div className="flex flex-col items-center gap-3">
           <span className="text-white/40 text-xs uppercase tracking-widest font-semibold">
