@@ -10,26 +10,13 @@ export default function Footer() {
         {/* Linha superior: logo + redes sociais */}
         <div className="flex flex-col items-center gap-6 mb-10 text-center">
 
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-5 sm:gap-8">
-
-            {/* Logo Avapex */}
+          <a href="#home" aria-label="Voltar ao topo" className="hover:opacity-60 transition-opacity">
             <img
               src="/img/img/Logos/logo-avapex-transportes-v1.svg"
               alt="Avapex Transportes"
               style={{ ...LOGO_WHITE, height: '44px', opacity: 0.85 }}
             />
-
-            {/* Divisor vertical — oculto em mobile */}
-            <div className="hidden sm:block h-10 w-px bg-white/20" />
-
-            {/* Logo Grupo Seday */}
-            <img
-              src="/img/img/Logos/logo-grupo-seday-colorido.svg"
-              alt="Grupo Seday"
-              style={{ ...LOGO_WHITE, height: '64px', opacity: 0.7 }}
-            />
-
-          </div>
+          </a>
 
           {/* Redes sociais */}
           <div className="flex flex-col items-center gap-3">
