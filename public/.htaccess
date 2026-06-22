@@ -15,7 +15,6 @@ RewriteRule ^vendor/ - [F,L]
 # Deixa o PHP processar normalmente
 RewriteRule ^send-email\.php$ - [L]
 
-# Redireciona tudo que não é arquivo/pasta para index.html (SPA)
+# Redireciona tudo que não é arquivo para index.html (SPA)
 RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^ index.html [QSA,L]
+RewriteRule ^ /index.html [QSA,L]
