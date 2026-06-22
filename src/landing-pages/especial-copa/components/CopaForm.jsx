@@ -99,7 +99,8 @@ export default function CopaForm() {
                 <p className="text-white/60 text-xs font-bold uppercase tracking-widest">
                   E-mail Corporativo
                 </p>
-                <p className="text-white/80 text-sm">{EMAIL}</p>
+                <a href="mailto:comercial@avapex.com.br" className="text-white/80 text-sm block hover:text-[#F3BE55] transition-colors">comercial@avapex.com.br</a>
+                <a href="mailto:comercial3@avapex.com.br" className="text-white/80 text-sm block hover:text-[#F3BE55] transition-colors">comercial3@avapex.com.br</a>
               </div>
             </div>
 
