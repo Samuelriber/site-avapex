@@ -35,6 +35,12 @@ jobs:
           RESEND_API: ${{ secrets.RESEND_API }}
         run: printf 'RESEND_API=%s\n' "$RESEND_API" > dist/.env
 
+      - name: List FTP root (diagnostico)
+        run: |
+          curl --list-only "ftp://${{ secrets.FTP_SERVER }}/" \
+            --user "${{ secrets.FTP_USERNAME }}:${{ secrets.FTP_PASSWORD }}" \
+            --connect-timeout 10 || true
+
       - name: Deploy via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
