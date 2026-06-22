@@ -137,15 +137,13 @@ export default function Footer() {
 
           </div>
 
-          {/* Contatos + Copyright */}
+          {/* Copyright */}
           <div className="border-t border-slate-800 pt-6">
             <div className="flex flex-col sm:flex-row justify-center items-center gap-4 mb-4 text-sm text-slate-400">
-              <span>
-                <span className="text-slate-500 text-xs uppercase tracking-wider mr-2">Comercial</span>
-                <a href={WHATSAPP_TAIS} className="hover:text-brand-yellow transition-colors">
-                  Taís · {PHONE_TAIS}
-                </a>
-              </span>
+              <span className="text-slate-500 text-xs uppercase tracking-wider">Central de Atendimento</span>
+              <a href={WHATSAPP_TAIS} className="hover:text-brand-yellow transition-colors">
+                Taís · {PHONE_TAIS}
+              </a>
               <span className="hidden sm:inline text-slate-700">|</span>
               <a href={WHATSAPP_JOICE} className="hover:text-brand-yellow transition-colors">
                 Joice · {PHONE_JOICE}
