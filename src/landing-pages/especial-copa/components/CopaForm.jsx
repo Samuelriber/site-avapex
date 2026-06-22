@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Phone, Mail, MapPin, Send } from 'lucide-react'
 import { sendContactEmail } from '../../../services/emailApi'
-import { PHONE_JOICE, EMAIL, ADDRESS } from '../../../constants/contact'
+import { PHONE_TAIS, PHONE_JOICE, WHATSAPP_TAIS, WHATSAPP_JOICE, EMAIL, ADDRESS } from '../../../constants/contact'
 
 const SERVICE_OPTIONS = [
   'Locação de Empilhadeira Diesel',
@@ -79,9 +79,12 @@ export default function CopaForm() {
                 <p className="text-white/60 text-xs font-bold uppercase tracking-widest">
                   Central de Atendimento
                 </p>
-                <p className="font-bold text-lg" style={{ color: '#F3BE55' }}>
-                  {PHONE_JOICE}
-                </p>
+                <a href={WHATSAPP_TAIS} className="font-bold text-base block hover:opacity-80 transition-opacity" style={{ color: '#F3BE55' }}>
+                  Taís · {PHONE_TAIS}
+                </a>
+                <a href={WHATSAPP_JOICE} className="font-bold text-base block hover:opacity-80 transition-opacity" style={{ color: '#F3BE55' }}>
+                  Joice · {PHONE_JOICE}
+                </a>
               </div>
             </div>
 

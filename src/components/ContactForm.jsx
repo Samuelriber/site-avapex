@@ -1,7 +1,7 @@
 import { Phone, Mail, MapPin, Send } from 'lucide-react'
 import { sendContactEmail } from '../services/emailApi.js'
 import { useState } from 'react'
-import { PHONE_JOICE, EMAIL, ADDRESS } from '../constants/contact'
+import { PHONE_TAIS, PHONE_JOICE, WHATSAPP_TAIS, WHATSAPP_JOICE, EMAIL, ADDRESS } from '../constants/contact'
 
 const INPUT_CLASS = 'w-full p-4 rounded-sm border border-slate-300 focus:border-yellow-500 focus:ring-2 focus:ring-yellow-200 outline-none transition-all bg-slate-50'
 const LABEL_CLASS = 'block text-sm font-bold text-slate-700 mb-2'
@@ -56,7 +56,12 @@ export default function ContactForm() {
                 </div>
                 <div>
                   <p className="font-bold text-white text-sm">Central de Atendimento</p>
-                  <p className="text-yellow-400 text-lg font-bold">{PHONE_JOICE}</p>
+                  <a href={WHATSAPP_TAIS} className="text-yellow-400 text-base font-bold block hover:opacity-80 transition-opacity">
+                    Taís · {PHONE_TAIS}
+                  </a>
+                  <a href={WHATSAPP_JOICE} className="text-yellow-400 text-base font-bold block hover:opacity-80 transition-opacity">
+                    Joice · {PHONE_JOICE}
+                  </a>
                 </div>
               </div>
 
