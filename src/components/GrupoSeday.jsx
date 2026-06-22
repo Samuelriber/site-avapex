@@ -9,7 +9,7 @@ const empresas = [
     href: '#home',
     cta: 'Você está aqui',
     logoHref: '#home',
-    logoHeight: '48px',
+    logoHeight: '72px',
   },
   {
     logo: '/img/img/Logos/seday-logo-gps.svg',
@@ -19,7 +19,7 @@ const empresas = [
     href: 'https://seday.com.br/',
     cta: 'Visitar site',
     logoHref: 'https://seday.com.br/',
-    logoHeight: '80px',
+    logoHeight: '110px',
   },
   {
     logo: '/img/img/Logos/logo-innomach-equipamentos-branco.svg',
@@ -29,7 +29,7 @@ const empresas = [
     href: 'https://www.innomach.com.br/',
     cta: 'Visitar site',
     logoHref: 'https://www.innomach.com.br/',
-    logoHeight: '48px',
+    logoHeight: '72px',
   },
 ]
 
@@ -43,7 +43,7 @@ export default function GrupoSeday() {
           <img
             src="/img/img/Logos/grupo-seday-topo.png"
             alt="Grupo Seday — Ecossistema de Soluções"
-            className="w-full max-w-4xl h-auto"
+            className="w-full max-w-6xl h-auto"
           />
         </div>
 
@@ -55,7 +55,7 @@ export default function GrupoSeday() {
               className="bg-white p-8 flex flex-col gap-6 items-center text-center hover:bg-slate-50 transition-colors group"
             >
               {/* Logo */}
-              <div className="h-20 flex items-center justify-center">
+              <div className="h-32 flex items-center justify-center">
                 <a
                   href={empresa.logoHref}
                   target={empresa.logoHref.startsWith('http') ? '_blank' : '_self'}
