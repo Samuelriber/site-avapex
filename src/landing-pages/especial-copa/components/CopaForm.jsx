@@ -4,10 +4,10 @@ import { sendContactEmail } from '../../../services/emailApi'
 import { PHONE_TAIS, PHONE_JOICE, WHATSAPP_TAIS, WHATSAPP_JOICE, EMAIL, ADDRESS } from '../../../constants/contact'
 
 const SERVICE_OPTIONS = [
-  'Locação de Empilhadeira Diesel',
-  'Locação de Caminhão Munck / Guindauto',
-  'Locação de Equipamentos Linha Amarela',
-  'Transporte Rodoviário / Frota',
+  'Empilhadeira Diesel 16T — Ataque / Força Bruta',
+  'Empilhadeira Diesel 7T — Meio-Campo / Agilidade',
+  'Empilhadeira Diesel 10T — Meio-Campo / Estabilidade',
+  'Caminhão 3/4 Carroceria — Defesa / Alcance',
   'Outra Necessidade',
 ]
 
