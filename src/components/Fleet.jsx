@@ -33,8 +33,48 @@ function EquipmentCard({ src, alt, label, delay = 0 }) {
   const [imgError, setImgError] = useState(false)
 
   return (
+    <a
+      href="#orcamento"
+      className="bg-white border border-slate-200 overflow-hidden shadow-sm hover:shadow-xl hover:border-brand-yellow transition-all group cursor-pointer hidden md:block"
+      data-aos="fade-up"
+      data-aos-delay={delay}
+      aria-label={`Solicitar orçamento para ${label}`}
+    >
+      <div className="h-56 overflow-hidden bg-white flex items-center justify-center p-4">
+        {imgError ? (
+          <div className="w-full h-full flex flex-col items-center justify-center gap-2">
+            <ImageOff className="text-slate-200" size={40} aria-hidden="true" />
+            <span className="text-xs text-slate-300 font-medium">Imagem em breve</span>
+          </div>
+        ) : (
+          <img
+            src={src}
+            alt={alt}
+            width="224"
+            height="224"
+            loading="lazy"
+            decoding="async"
+            onError={() => setImgError(true)}
+            className="w-full h-full object-contain group-hover:scale-110 transition-transform duration-500"
+          />
+        )}
+      </div>
+      <div className="p-5 border-t border-slate-100 flex items-center justify-between gap-2">
+        <h4 className="text-base font-bold text-[#0f172a]">{label}</h4>
+        <span className="text-xs font-bold text-brand-yellow uppercase tracking-widest whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity">
+          Orçamento →
+        </span>
+      </div>
+    </a>
+  )
+}
+
+function EquipmentCardMobile({ src, alt, label, delay = 0 }) {
+  const [imgError, setImgError] = useState(false)
+
+  return (
     <article
-      className="bg-white border border-slate-200 overflow-hidden shadow-sm hover:shadow-xl transition-all group"
+      className="bg-white border border-slate-200 overflow-hidden shadow-sm md:hidden"
       data-aos="fade-up"
       data-aos-delay={delay}
     >
@@ -53,7 +93,7 @@ function EquipmentCard({ src, alt, label, delay = 0 }) {
             loading="lazy"
             decoding="async"
             onError={() => setImgError(true)}
-            className="w-full h-full object-contain group-hover:scale-110 transition-transform duration-500"
+            className="w-full h-full object-contain"
           />
         )}
       </div>
@@ -85,7 +125,10 @@ export default function Fleet() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
             {roadFleet.map((item, index) => (
-              <EquipmentCard key={item.src} {...item} delay={(index % 4) * 75} />
+              <>
+                <EquipmentCard key={item.src + '-d'} {...item} delay={(index % 4) * 75} />
+                <EquipmentCardMobile key={item.src + '-m'} {...item} delay={(index % 4) * 75} />
+              </>
             ))}
           </div>
         </div>
@@ -100,7 +143,10 @@ export default function Fleet() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-8">
             {yellowLineFleet.map((item, index) => (
-              <EquipmentCard key={item.src} {...item} delay={(index % 4) * 75} />
+              <>
+                <EquipmentCard key={item.src + '-d'} {...item} delay={(index % 4) * 75} />
+                <EquipmentCardMobile key={item.src + '-m'} {...item} delay={(index % 4) * 75} />
+              </>
             ))}
           </div>
         </div>
