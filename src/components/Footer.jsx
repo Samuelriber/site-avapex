@@ -2,6 +2,19 @@ import { Instagram, Linkedin } from 'lucide-react'
 import { WHATSAPP_TAIS, WHATSAPP_JOICE, PHONE_TAIS, PHONE_JOICE } from '../constants/contact'
 import { LOGO_WHITE } from '../styles/logoStyles'
 
+const atividades = [
+  { cnae: '49.30-2-01', desc: 'Transporte rodoviário de carga geral' },
+  { cnae: '49.30-2-03', desc: 'Transporte rodoviário de produtos perigosos' },
+  { cnae: '77.32-2-01', desc: 'Locação de máquinas e equipamentos para construção sem operador' },
+  { cnae: '77.39-0-99', desc: 'Locação de outras máquinas e equipamentos industriais sem operador' },
+  { cnae: '33.14-7-08', desc: 'Manutenção e reparação de máquinas e equipamentos para transporte e elevação de cargas' },
+  { cnae: '52.12-5-00', desc: 'Carga e descarga' },
+  { cnae: '52.29-0-99', desc: 'Atividades auxiliares dos transportes terrestres' },
+  { cnae: '46.62-1-00', desc: 'Comércio atacadista de máquinas para terraplenagem, mineração e construção' },
+  { cnae: '52.11-7-99', desc: 'Depósito de mercadorias para terceiros' },
+  { cnae: '36.00-6-02', desc: 'Distribuição de água por caminhões' },
+]
+
 export default function Footer() {
   return (
     <footer className="bg-brand-navy border-t border-slate-800">
@@ -25,7 +38,6 @@ export default function Footer() {
             </span>
             <div className="flex items-center gap-4">
 
-              {/* Instagram */}
               <a
                 href="https://www.instagram.com/avapextransportes/"
                 target="_blank"
@@ -37,7 +49,6 @@ export default function Footer() {
                 <span className="hidden sm:inline">@avapextransportes</span>
               </a>
 
-              {/* LinkedIn */}
               <a
                 href="https://www.linkedin.com/company/avapex-transportes/posts/?feedView=all"
                 target="_blank"
@@ -49,7 +60,6 @@ export default function Footer() {
                 <span className="hidden sm:inline">Avapex Transportes</span>
               </a>
 
-              {/* WhatsApp — ícone SVG inline pois Lucide não tem WhatsApp */}
               <a
                 href={WHATSAPP_TAIS}
                 target="_blank"
@@ -73,30 +83,71 @@ export default function Footer() {
         </div>
 
         {/* Divisor */}
-        <div className="border-t border-slate-800 pt-6">
+        <div className="border-t border-slate-800 pt-8">
 
-          {/* Contatos WhatsApp */}
-          <div className="flex flex-col sm:flex-row justify-center items-center gap-4 mb-6 text-sm text-slate-400">
-            <span>
-              <span className="text-slate-500 text-xs uppercase tracking-wider mr-2">Comercial</span>
-              <a href={WHATSAPP_TAIS}
-                 className="hover:text-brand-yellow transition-colors">
-                Taís · {PHONE_TAIS}
+          {/* Área de Atuação + CTA */}
+          <div className="grid md:grid-cols-3 gap-8 mb-8">
+
+            {/* Coluna: Dados legais */}
+            <div>
+              <h4 className="text-slate-300 text-xs font-bold uppercase tracking-widest mb-3">
+                Dados da Empresa
+              </h4>
+              <p className="text-slate-500 text-xs leading-relaxed">
+                <span className="text-slate-400 font-semibold">Avapex Transportes Ltda.</span>
+              </p>
+              <p className="text-slate-500 text-xs mt-1">
+                CNPJ: <span className="text-slate-400">36.407.430/0001-00</span>
+              </p>
+              <p className="text-slate-500 text-xs mt-3 leading-relaxed">
+                Rodovia BR-040, 22750 — Barreira<br />
+                Conselheiro Lafaiete / MG
+              </p>
+              <a
+                href="#orcamento"
+                className="inline-block mt-4 px-4 py-2 text-xs font-bold uppercase tracking-widest
+                           border border-brand-yellow text-brand-yellow hover:bg-brand-yellow
+                           hover:text-brand-navy transition-all rounded-none"
+              >
+                Solicitar Orçamento →
               </a>
-            </span>
-            <span className="hidden sm:inline text-slate-700">|</span>
-            <span>
-              <a href={WHATSAPP_JOICE}
-                 className="hover:text-brand-yellow transition-colors">
-                Joice · {PHONE_JOICE}
-              </a>
-            </span>
+            </div>
+
+            {/* Coluna: Atividades principais */}
+            <div className="md:col-span-2">
+              <h4 className="text-slate-300 text-xs font-bold uppercase tracking-widest mb-3">
+                Áreas de Atuação — CNAEs
+              </h4>
+              <ul className="grid sm:grid-cols-2 gap-x-6 gap-y-1">
+                {atividades.map((a) => (
+                  <li key={a.cnae} className="text-slate-500 text-xs leading-relaxed flex gap-2">
+                    <span className="text-brand-yellow font-mono shrink-0">{a.cnae}</span>
+                    <span>{a.desc}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
           </div>
 
-          {/* Copyright */}
-          <p className="text-center text-slate-500 text-xs">
-            © 2026 Avapex Transportes. Todos os direitos reservados.
-          </p>
+          {/* Contatos + Copyright */}
+          <div className="border-t border-slate-800 pt-6">
+            <div className="flex flex-col sm:flex-row justify-center items-center gap-4 mb-4 text-sm text-slate-400">
+              <span>
+                <span className="text-slate-500 text-xs uppercase tracking-wider mr-2">Comercial</span>
+                <a href={WHATSAPP_TAIS} className="hover:text-brand-yellow transition-colors">
+                  Taís · {PHONE_TAIS}
+                </a>
+              </span>
+              <span className="hidden sm:inline text-slate-700">|</span>
+              <a href={WHATSAPP_JOICE} className="hover:text-brand-yellow transition-colors">
+                Joice · {PHONE_JOICE}
+              </a>
+            </div>
+            <p className="text-center text-slate-500 text-xs">
+              © 2026 Avapex Transportes. Todos os direitos reservados.
+            </p>
+          </div>
 
         </div>
       </div>
