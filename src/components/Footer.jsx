@@ -20,9 +20,8 @@ export default function Footer() {
     <footer className="bg-brand-navy border-t border-slate-800">
       <div className="container mx-auto px-6 py-12">
 
-        {/* Linha superior: logo + redes sociais */}
-        <div className="flex flex-col items-center gap-6 mb-10 text-center">
-
+        {/* Logo */}
+        <div className="flex justify-center mb-10">
           <a href="#home" aria-label="Voltar ao topo" className="hover:opacity-60 transition-opacity">
             <img
               src="/img/img/Logos/logo-avapex-transportes-v1.svg"
@@ -30,70 +29,23 @@ export default function Footer() {
               style={{ ...LOGO_WHITE, height: '44px', opacity: 0.85 }}
             />
           </a>
-
-          {/* Redes sociais */}
-          <div className="flex flex-col items-center gap-3">
-            <span className="text-slate-400 text-xs uppercase tracking-widest font-semibold">
-              Siga-nos nas redes sociais
-            </span>
-            <div className="flex items-center gap-4">
-
-              <a
-                href="https://www.instagram.com/avapextransportes/"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Instagram Avapex Transportes"
-                className="flex items-center gap-2 text-slate-400 hover:text-brand-yellow transition-colors text-sm font-medium"
-              >
-                <Instagram size={18} aria-hidden="true" />
-                <span className="hidden sm:inline">@avapextransportes</span>
-              </a>
-
-              <a
-                href="https://www.linkedin.com/company/avapex-transportes/posts/?feedView=all"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="LinkedIn Avapex Transportes"
-                className="flex items-center gap-2 text-slate-400 hover:text-brand-yellow transition-colors text-sm font-medium"
-              >
-                <Linkedin size={18} aria-hidden="true" />
-                <span className="hidden sm:inline">Avapex Transportes</span>
-              </a>
-
-              <a
-                href={WHATSAPP_TAIS}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="WhatsApp Avapex Transportes"
-                className="flex items-center gap-2 text-slate-400 hover:text-brand-yellow transition-colors text-sm font-medium"
-              >
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
-                     stroke="currentColor" strokeWidth="2" strokeLinecap="round"
-                     strokeLinejoin="round" aria-hidden="true">
-                  <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7
-                           8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0
-                           1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1
-                           3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
-                </svg>
-                <span className="hidden sm:inline">WhatsApp</span>
-              </a>
-
-            </div>
-          </div>
         </div>
 
         {/* Divisor */}
         <div className="border-t border-slate-800 pt-8">
 
-          {/* Contato + Área de Atuação lado a lado */}
-          <div className="grid md:grid-cols-2 gap-10 mb-8">
+          {/* 3 colunas: Contato | Redes Sociais | Área de Atuação */}
+          <div className="grid md:grid-cols-3 gap-10 mb-8">
 
-            {/* Coluna esquerda: Contato empilhado */}
+            {/* Coluna 1: Contato */}
             <div className="flex flex-col gap-5">
               <div>
                 <p className="text-slate-500 text-xs uppercase tracking-widest font-semibold mb-1">Central de Atendimento</p>
-                <a href={WHATSAPP_JOICE} className="text-slate-300 text-sm font-bold hover:text-brand-yellow transition-colors">
-                  +55 31 98465-7066
+                <a href={WHATSAPP_JOICE} className="text-slate-300 text-sm font-bold hover:text-brand-yellow transition-colors block">
+                  Taís · {PHONE_TAIS}
+                </a>
+                <a href={WHATSAPP_JOICE} className="text-slate-300 text-sm font-bold hover:text-brand-yellow transition-colors block">
+                  Joice · {PHONE_JOICE}
                 </a>
               </div>
               <div>
@@ -114,7 +66,49 @@ export default function Footer() {
               </div>
             </div>
 
-            {/* Coluna direita: Área de Atuação */}
+            {/* Coluna 2: Redes Sociais */}
+            <div className="flex flex-col gap-4">
+              <p className="text-slate-500 text-xs uppercase tracking-widest font-semibold">Siga-nos nas Redes Sociais</p>
+              <a
+                href="https://www.instagram.com/avapextransportes/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram Avapex Transportes"
+                className="flex items-center gap-3 text-slate-400 hover:text-brand-yellow transition-colors text-sm font-medium"
+              >
+                <Instagram size={18} aria-hidden="true" />
+                @avapextransportes
+              </a>
+              <a
+                href="https://www.linkedin.com/company/avapex-transportes/posts/?feedView=all"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn Avapex Transportes"
+                className="flex items-center gap-3 text-slate-400 hover:text-brand-yellow transition-colors text-sm font-medium"
+              >
+                <Linkedin size={18} aria-hidden="true" />
+                Avapex Transportes
+              </a>
+              <a
+                href={WHATSAPP_TAIS}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="WhatsApp Avapex Transportes"
+                className="flex items-center gap-3 text-slate-400 hover:text-brand-yellow transition-colors text-sm font-medium"
+              >
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+                     stroke="currentColor" strokeWidth="2" strokeLinecap="round"
+                     strokeLinejoin="round" aria-hidden="true">
+                  <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7
+                           8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0
+                           1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1
+                           3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+                </svg>
+                WhatsApp
+              </a>
+            </div>
+
+            {/* Coluna 3: Área de Atuação */}
             <div>
               <h4 className="text-slate-300 text-xs font-bold uppercase tracking-widest mb-4">
                 Área de Atuação
@@ -124,7 +118,7 @@ export default function Footer() {
                   <li key={desc}>
                     <a
                       href="#orcamento"
-                      className="flex items-start gap-2 text-slate-500 text-xs leading-relaxed
+                      className="flex items-start gap-2 text-slate-400 text-sm leading-relaxed
                                  hover:text-brand-yellow transition-colors group"
                     >
                       <span className="text-brand-yellow mt-0.5 shrink-0">▸</span>
@@ -139,16 +133,6 @@ export default function Footer() {
 
           {/* Copyright */}
           <div className="border-t border-slate-800 pt-6">
-            <div className="flex flex-col sm:flex-row justify-center items-center gap-4 mb-4 text-sm text-slate-400">
-              <span className="text-slate-500 text-xs uppercase tracking-wider">Central de Atendimento</span>
-              <a href={WHATSAPP_TAIS} className="hover:text-brand-yellow transition-colors">
-                Taís · {PHONE_TAIS}
-              </a>
-              <span className="hidden sm:inline text-slate-700">|</span>
-              <a href={WHATSAPP_JOICE} className="hover:text-brand-yellow transition-colors">
-                Joice · {PHONE_JOICE}
-              </a>
-            </div>
             <p className="text-center text-slate-500 text-xs">
               © 2026 Avapex Transportes. Todos os direitos reservados.
             </p>
