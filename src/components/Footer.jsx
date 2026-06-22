@@ -85,6 +85,39 @@ export default function Footer() {
         {/* Divisor */}
         <div className="border-t border-slate-800 pt-8">
 
+          {/* Contato + CNPJ */}
+          <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-6 mb-8">
+
+            <div>
+              <p className="text-slate-500 text-xs uppercase tracking-widest font-semibold mb-1">Central de Atendimento</p>
+              <a href={WHATSAPP_JOICE} className="text-slate-300 text-sm font-bold hover:text-brand-yellow transition-colors">
+                +55 31 98465-7066
+              </a>
+            </div>
+
+            <div>
+              <p className="text-slate-500 text-xs uppercase tracking-widest font-semibold mb-1">E-mail Corporativo</p>
+              <a href="mailto:comercial3@avapex.com.br" className="text-slate-300 text-sm hover:text-brand-yellow transition-colors">
+                comercial3@avapex.com.br
+              </a>
+            </div>
+
+            <div>
+              <p className="text-slate-500 text-xs uppercase tracking-widest font-semibold mb-1">Matriz</p>
+              <p className="text-slate-300 text-sm leading-relaxed">
+                Rodovia BR040, 22750, Barreira<br />Cons. Lafaiete / MG
+              </p>
+            </div>
+
+            <div>
+              <p className="text-slate-500 text-xs uppercase tracking-widest font-semibold mb-1">CNPJ</p>
+              <p className="text-slate-300 text-sm font-mono">36.407.430/0001-00</p>
+            </div>
+
+          </div>
+
+          <div className="border-t border-slate-800 mb-8" />
+
           {/* Área de Atuação */}
           <div className="mb-8">
             <h4 className="text-slate-300 text-xs font-bold uppercase tracking-widest mb-4 text-center">
