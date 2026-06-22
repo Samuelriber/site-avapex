@@ -68,13 +68,13 @@ export default function Hero() {
           Soluções Logísticas Integradas
         </div>
 
-        <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold leading-tight mb-6 drop-shadow-2xl">
+        <h1 className="text-5xl md:text-7xl lg:text-8xl font-extrabold leading-tight mb-6 drop-shadow-2xl">
           Transporte e <br className="hidden md:block" />
           Movimentação com <br className="hidden md:block" />
           <span className="text-yellow-400">Excelência</span>
         </h1>
 
-        <p className="text-lg md:text-xl text-slate-200 mb-10 max-w-3xl mx-auto leading-relaxed font-medium">
+        <p className="text-xl md:text-2xl text-slate-200 mb-10 max-w-4xl mx-auto leading-relaxed font-medium">
           Há mais de {COMPANY_YEARS_EXPERIENCE} anos, conectando empresas e impulsionando negócios em todo o Brasil, oferecendo
           soluções logísticas com eficiência, segurança e alto desempenho.
         </p>
