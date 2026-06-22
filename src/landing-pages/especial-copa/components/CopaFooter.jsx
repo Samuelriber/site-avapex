@@ -24,7 +24,7 @@ export default function CopaFooter() {
 
         {/* Logo + botão site institucional */}
         <div className="flex justify-center mb-10">
-          <div className="flex flex-col sm:flex-row items-center gap-6">
+          <div className="flex flex-col items-center gap-4">
             <a href="https://www.avapex.com.br" aria-label="Avapex Transportes" className="hover:opacity-60 transition-opacity">
               <img
                 src="/img/img/Logos/logo-avapex-transportes-v1.svg"
