@@ -35,16 +35,13 @@ jobs:
           RESEND_API: ${{ secrets.RESEND_API }}
         run: printf 'RESEND_API=%s\n' "$RESEND_API" > dist/.env
 
-      - name: Deploy via FTP
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
-        with:
-          server: ${{ secrets.FTP_SERVER }}
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: ./dist/
-          server-dir: /domains/avapex.com.br/public_html/
-          dangerous-clean-slate: true
-          exclude: |
-            **/.git*
-            **/.git*/**
-            **/node_modules/**
+      - name: Deploy via SSH/rsync
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_ed25519
+          chmod 600 ~/.ssh/id_ed25519
+          ssh-keyscan -p 65002 -H 82.25.67.92 >> ~/.ssh/known_hosts
+          rsync -az --delete \
+            -e "ssh -p 65002 -i ~/.ssh/id_ed25519 -o StrictHostKeyChecking=no" \
+            ./dist/ \
+            u537894463@82.25.67.92:/home/u537894463/domains/avapex.com.br/public_html/
