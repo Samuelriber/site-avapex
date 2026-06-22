@@ -10,12 +10,25 @@ export default function CopaFooter() {
       {/* Logos + redes sociais */}
       <div className="max-w-7xl mx-auto py-10 flex flex-col items-center gap-6 text-center">
 
-        <img
-          src="/img/img/Logos/logo-avapex-transportes-v1.svg"
-          alt="Avapex Transportes"
-          className="h-10 w-auto object-contain"
-          style={{ filter: 'brightness(0) invert(1)', opacity: 0.85 }}
-        />
+        <div className="flex flex-col sm:flex-row items-center gap-6">
+          <img
+            src="/img/img/Logos/logo-avapex-transportes-v1.svg"
+            alt="Avapex Transportes"
+            className="h-10 w-auto object-contain"
+            style={{ filter: 'brightness(0) invert(1)', opacity: 0.85 }}
+          />
+          <a
+            href="https://www.avapex.com.br"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-6 py-2 rounded border text-sm font-bold uppercase tracking-widest transition-all"
+            style={{ borderColor: '#F3BE55', color: '#F3BE55' }}
+            onMouseEnter={e => { e.currentTarget.style.background = '#F3BE55'; e.currentTarget.style.color = '#111415' }}
+            onMouseLeave={e => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.color = '#F3BE55' }}
+          >
+            Site Institucional
+          </a>
+        </div>
 
         <div className="flex flex-col items-center gap-3">
           <span className="text-white/40 text-xs uppercase tracking-widest font-semibold">
