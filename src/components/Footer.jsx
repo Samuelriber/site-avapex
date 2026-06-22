@@ -3,16 +3,16 @@ import { WHATSAPP_TAIS, WHATSAPP_JOICE, PHONE_TAIS, PHONE_JOICE } from '../const
 import { LOGO_WHITE } from '../styles/logoStyles'
 
 const atividades = [
-  { cnae: '49.30-2-01', desc: 'Transporte rodoviário de carga geral' },
-  { cnae: '49.30-2-03', desc: 'Transporte rodoviário de produtos perigosos' },
-  { cnae: '77.32-2-01', desc: 'Locação de máquinas e equipamentos para construção sem operador' },
-  { cnae: '77.39-0-99', desc: 'Locação de outras máquinas e equipamentos industriais sem operador' },
-  { cnae: '33.14-7-08', desc: 'Manutenção e reparação de máquinas e equipamentos para transporte e elevação de cargas' },
-  { cnae: '52.12-5-00', desc: 'Carga e descarga' },
-  { cnae: '52.29-0-99', desc: 'Atividades auxiliares dos transportes terrestres' },
-  { cnae: '46.62-1-00', desc: 'Comércio atacadista de máquinas para terraplenagem, mineração e construção' },
-  { cnae: '52.11-7-99', desc: 'Depósito de mercadorias para terceiros' },
-  { cnae: '36.00-6-02', desc: 'Distribuição de água por caminhões' },
+  'Transporte rodoviário de carga geral',
+  'Transporte rodoviário de produtos perigosos',
+  'Locação de máquinas e equipamentos para construção',
+  'Locação de máquinas e equipamentos industriais',
+  'Manutenção e reparação de máquinas para transporte e elevação de cargas',
+  'Carga e descarga',
+  'Atividades auxiliares dos transportes terrestres',
+  'Comércio atacadista de máquinas para terraplenagem, mineração e construção',
+  'Depósito de mercadorias para terceiros',
+  'Distribuição de água por caminhões',
 ]
 
 export default function Footer() {
@@ -85,49 +85,25 @@ export default function Footer() {
         {/* Divisor */}
         <div className="border-t border-slate-800 pt-8">
 
-          {/* Área de Atuação + CTA */}
-          <div className="grid md:grid-cols-3 gap-8 mb-8">
-
-            {/* Coluna: Dados legais */}
-            <div>
-              <h4 className="text-slate-300 text-xs font-bold uppercase tracking-widest mb-3">
-                Dados da Empresa
-              </h4>
-              <p className="text-slate-500 text-xs leading-relaxed">
-                <span className="text-slate-400 font-semibold">Avapex Transportes Ltda.</span>
-              </p>
-              <p className="text-slate-500 text-xs mt-1">
-                CNPJ: <span className="text-slate-400">36.407.430/0001-00</span>
-              </p>
-              <p className="text-slate-500 text-xs mt-3 leading-relaxed">
-                Rodovia BR-040, 22750 — Barreira<br />
-                Conselheiro Lafaiete / MG
-              </p>
-              <a
-                href="#orcamento"
-                className="inline-block mt-4 px-4 py-2 text-xs font-bold uppercase tracking-widest
-                           border border-brand-yellow text-brand-yellow hover:bg-brand-yellow
-                           hover:text-brand-navy transition-all rounded-none"
-              >
-                Solicitar Orçamento →
-              </a>
-            </div>
-
-            {/* Coluna: Atividades principais */}
-            <div className="md:col-span-2">
-              <h4 className="text-slate-300 text-xs font-bold uppercase tracking-widest mb-3">
-                Áreas de Atuação — CNAEs
-              </h4>
-              <ul className="grid sm:grid-cols-2 gap-x-6 gap-y-1">
-                {atividades.map((a) => (
-                  <li key={a.cnae} className="text-slate-500 text-xs leading-relaxed flex gap-2">
-                    <span className="text-brand-yellow font-mono shrink-0">{a.cnae}</span>
-                    <span>{a.desc}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
+          {/* Área de Atuação */}
+          <div className="mb-8">
+            <h4 className="text-slate-300 text-xs font-bold uppercase tracking-widest mb-4 text-center">
+              Área de Atuação
+            </h4>
+            <ul className="grid sm:grid-cols-2 md:grid-cols-3 gap-x-8 gap-y-2 max-w-4xl mx-auto">
+              {atividades.map((desc) => (
+                <li key={desc}>
+                  <a
+                    href="#orcamento"
+                    className="flex items-start gap-2 text-slate-500 text-xs leading-relaxed
+                               hover:text-brand-yellow transition-colors group"
+                  >
+                    <span className="text-brand-yellow mt-0.5 shrink-0">▸</span>
+                    <span className="group-hover:underline underline-offset-2">{desc}</span>
+                  </a>
+                </li>
+              ))}
+            </ul>
           </div>
 
           {/* Contatos + Copyright */}
