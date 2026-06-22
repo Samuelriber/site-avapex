@@ -11,11 +11,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     http_response_code(405);
-    echo json_encode(['ok' => false, 'erro' => 'Método não permitido', 'message' => 'Método não permitido']);
+    echo json_encode(['ok' => false, 'message' => 'Método não permitido']);
     exit;
 }
 
-// Carrega .env local se existir (dev e produção via FTP)
+// Carrega .env do mesmo diretório (criado pelo CI ou enviado manualmente via FTP)
 $envFile = __DIR__ . '/.env';
 if (file_exists($envFile)) {
     $vars = parse_ini_file($envFile);
@@ -26,19 +26,14 @@ if (file_exists($envFile)) {
     }
 }
 
-$senha = $_ENV['MAIL_PASSWORD'] ?? getenv('MAIL_PASSWORD') ?: '';
+$apiKey = $_ENV['RESEND_API'] ?? getenv('RESEND_API') ?? '';
 
-if (!file_exists(__DIR__ . '/vendor/autoload.php')) {
-    // Modo de desenvolvimento: simula o sucesso para não travar o Front-end
+// Modo de desenvolvimento: retorna mock se a chave não estiver configurada
+if (!$apiKey) {
     http_response_code(200);
-    echo json_encode(['ok' => true, 'mock' => true, 'message' => 'Simulação de envio local.']);
+    echo json_encode(['ok' => true, 'mock' => true, 'message' => 'Simulação de envio (chave RESEND_API não configurada).']);
     exit;
 }
-
-require_once __DIR__ . '/vendor/autoload.php';
-
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\Exception;
 
 $input = json_decode(file_get_contents('php://input'), true);
 
@@ -51,29 +46,11 @@ $mensagem = htmlspecialchars(strip_tags($input['mensagem'] ?? ''), ENT_QUOTES, '
 
 if (!$nome || !$email) {
     http_response_code(400);
-    echo json_encode(['ok' => false, 'erro' => 'Nome e e-mail são obrigatórios', 'message' => 'Nome e e-mail são obrigatórios']);
+    echo json_encode(['ok' => false, 'message' => 'Nome e e-mail são obrigatórios']);
     exit;
 }
 
-$mail = new PHPMailer(true);
-
-try {
-    $mail->isSMTP();
-    $mail->Host       = 'smtps.uhserver.com';
-    $mail->SMTPAuth   = true;
-    $mail->Username   = 'comercial3@avapex.com.br';
-    $mail->Password   = $senha;
-    $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
-    $mail->Port       = 465;
-    $mail->CharSet    = 'UTF-8';
-
-    $mail->setFrom('comercial3@avapex.com.br', 'Avapex Transportes');
-    $mail->addAddress('comercial3@avapex.com.br', 'Avapex Transportes');
-    $mail->addReplyTo($email, $nome);
-
-    $mail->isHTML(true);
-    $mail->Subject = "Novo contato - $servico";
-    $mail->Body    = "
+$htmlBody = "
 <div style=\"font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; color: #333;\">
     <h2 style=\"color: #1a3a5c; border-bottom: 2px solid #1a3a5c; padding-bottom: 8px;\">Novo contato pelo site Avapex</h2>
     <table style=\"width: 100%; border-collapse: collapse; margin-top: 16px;\">
@@ -104,13 +81,42 @@ try {
     <p style=\"color: #aaa; font-size: 12px;\">Enviado pelo formulário do site avapex.com.br</p>
 </div>
 ";
-    $mail->AltBody = "Novo contato pelo site Avapex\n\nNome: $nome\nEmpresa: $empresa\nE-mail: $email\nTelefone: $telefone\nServiço: $servico\n\nMensagem:\n$mensagem\n\n---\nEnviado pelo formulário do site avapex.com.br";
 
-    $mail->send();
-    echo json_encode(['ok' => true]);
+$payload = json_encode([
+    'from'     => 'Avapex Transportes <comercial3@avapex.com.br>',
+    'to'       => ['comercial3@avapex.com.br'],
+    'reply_to' => $email,
+    'subject'  => "Novo contato - $servico",
+    'html'     => $htmlBody,
+]);
 
-} catch (Exception $e) {
+$ch = curl_init('https://api.resend.com/emails');
+curl_setopt_array($ch, [
+    CURLOPT_RETURNTRANSFER => true,
+    CURLOPT_POST           => true,
+    CURLOPT_POSTFIELDS     => $payload,
+    CURLOPT_HTTPHEADER     => [
+        'Authorization: Bearer ' . $apiKey,
+        'Content-Type: application/json',
+    ],
+    CURLOPT_TIMEOUT        => 10,
+]);
+
+$resendResponse = curl_exec($ch);
+$httpCode       = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+$curlError      = curl_error($ch);
+curl_close($ch);
+
+if ($curlError) {
     http_response_code(500);
-    echo json_encode(['ok' => false, 'erro' => 'Falha ao enviar e-mail', 'message' => 'Falha ao enviar e-mail']);
+    echo json_encode(['ok' => false, 'message' => 'Erro de conexão com o serviço de e-mail']);
+    exit;
+}
+
+if ($httpCode >= 200 && $httpCode < 300) {
+    echo json_encode(['ok' => true]);
+} else {
+    http_response_code(500);
+    echo json_encode(['ok' => false, 'message' => 'Falha ao enviar e-mail']);
 }
 ?>

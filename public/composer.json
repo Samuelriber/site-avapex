@@ -1,13 +1,8 @@
 {
     "name": "avapex/site-backend",
-    "description": "Backend PHP para envio de e-mail - Avapex Transportes",
+    "description": "Backend PHP para envio de e-mail via Resend API - Avapex Transportes",
     "type": "project",
     "require": {
-        "php": ">=7.4",
-        "phpmailer/phpmailer": "^6.9"
-    },
-    "config": {
-        "optimize-autoloader": true,
-        "vendor-dir": "vendor"
+        "php": ">=7.4"
     }
 }
