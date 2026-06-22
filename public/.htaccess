@@ -1,5 +1,9 @@
-Options -MultiViews
+Options -Indexes -MultiViews
 RewriteEngine On
+
+# Redireciona non-www para www (canonical)
+RewriteCond %{HTTP_HOST} !^www\. [NC]
+RewriteRule ^ https://www.%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
 
 # Bloqueia acesso HTTP direto a arquivos sensíveis
 <Files .env>
@@ -18,3 +22,25 @@ RewriteRule ^send-email\.php$ - [L]
 # Redireciona tudo que não é arquivo para index.html (SPA)
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule ^ /index.html [QSA,L]
+
+# Cache de assets estáticos
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType image/webp        "access plus 1 year"
+    ExpiresByType image/png         "access plus 1 year"
+    ExpiresByType image/jpeg        "access plus 1 year"
+    ExpiresByType image/svg+xml     "access plus 1 year"
+    ExpiresByType video/webm        "access plus 1 year"
+    ExpiresByType text/css          "access plus 1 month"
+    ExpiresByType application/javascript "access plus 1 month"
+    ExpiresByType font/woff2        "access plus 1 year"
+</IfModule>
+
+<IfModule mod_headers.c>
+    <FilesMatch "\.(webp|png|jpg|jpeg|svg|webm|woff2)$">
+        Header set Cache-Control "public, max-age=31536000, immutable"
+    </FilesMatch>
+    <FilesMatch "\.(css|js)$">
+        Header set Cache-Control "public, max-age=2592000"
+    </FilesMatch>
+</IfModule>
