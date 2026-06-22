@@ -43,6 +43,7 @@ $email    = filter_var($input['email'] ?? '', FILTER_VALIDATE_EMAIL);
 $telefone = htmlspecialchars(strip_tags($input['telefone'] ?? ''), ENT_QUOTES, 'UTF-8');
 $servico  = htmlspecialchars(strip_tags($input['servico']  ?? ''), ENT_QUOTES, 'UTF-8');
 $mensagem = htmlspecialchars(strip_tags($input['mensagem'] ?? ''), ENT_QUOTES, 'UTF-8');
+$origem   = htmlspecialchars(strip_tags($input['origem']   ?? 'site'), ENT_QUOTES, 'UTF-8');
 
 if (!$nome || !$email) {
     http_response_code(400);
@@ -86,7 +87,7 @@ $payload = json_encode([
     'from'     => 'Avapex Transportes <comercial3@avapex.com.br>',
     'to'       => ['comercial3@avapex.com.br'],
     'reply_to' => $email,
-    'subject'  => "Novo contato - $servico",
+    'subject'  => "[" . strtoupper($origem) . "] Novo contato - $servico",
     'html'     => $htmlBody,
 ]);
 

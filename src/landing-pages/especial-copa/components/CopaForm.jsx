@@ -21,7 +21,7 @@ export default function CopaForm() {
   async function handleSubmit(e) {
     e.preventDefault()
     setStatus('sending')
-    const data = Object.fromEntries(new FormData(e.target).entries())
+    const data = { ...Object.fromEntries(new FormData(e.target).entries()), origem: 'LP Copa' }
     try {
       await sendContactEmail(data)
       setStatus('success')
