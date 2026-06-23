@@ -1,11 +1,11 @@
 const values = [
   'Segurança',
-  'Ética',
   'Respeito',
-  'Desenvolvimento profissional',
-  'Melhoria contínua',
+  'Ética',
+  'Desenvolvimento Profissional',
+  'Melhoria Contínua',
   'Credibilidade',
-  'Compromisso com o Resultado',
+  'Comprometimento',
 ]
 
 const cards = [
@@ -14,8 +14,9 @@ const cards = [
     delay: 0,
     content: (
       <p className="text-slate-600 leading-relaxed">
-        Dirigir meios eficazes de transportes e locação de máquinas e equipamentos de forma sustentável,
-        com segurança, rapidez, qualidade e respeito aos nossos clientes, em harmonia com o meio ambiente.
+        Oferecer meios eficientes em transportes e locação de máquinas e equipamentos de forma sustentável
+        e segura, com agilidade, qualidade e respeito aos nossos parceiros de negócios, minimizando os
+        impactos ambientais.
       </p>
     ),
   },
@@ -24,9 +25,9 @@ const cards = [
     delay: 100,
     content: (
       <p className="text-slate-600 leading-relaxed">
-        Ser reconhecido pela excelência nos serviços prestados no segmento de transportes e locação de
-        máquinas e equipamentos, satisfazendo plenamente nossos clientes, com compromisso no resultado
-        e responsabilidade socioambiental.
+        Ser uma empresa reconhecida pela excelência nos segmentos em que atua, agregando valores aos nossos
+        clientes, colaboradores e demais parceiros, com compromisso no resultado e responsabilidade
+        socioambiental.
       </p>
     ),
   },
