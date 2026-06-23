@@ -19,6 +19,7 @@ const navLinks = [
   { href: '#equipamentos',  label: 'Frota' },
   { href: '#credibilidade', label: 'Clientes' },
   { href: '#quem-somos',    label: 'Quem Somos' },
+  { href: 'https://avapextransportes.vagas.solides.com.br/', label: 'Trabalhe Conosco', external: true },
 ]
 
 export default function Header() {
@@ -101,9 +102,14 @@ export default function Header() {
           </a>
 
           {/* Desktop nav */}
-          <nav aria-label="Navegação principal" className="hidden md:flex items-center gap-6">
-            {navLinks.map(({ href, label }) => (
-              <a key={href} href={href} className={isDark ? navLinkDark : navLinkLight}>
+          <nav aria-label="Navegação principal" className="hidden md:flex items-center gap-4">
+            {navLinks.map(({ href, label, external }) => (
+              <a
+                key={href}
+                href={href}
+                className={`${isDark ? navLinkDark : navLinkLight}${external ? ' nav-trabalhe' : ''}`}
+                {...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+              >
                 {label}
               </a>
             ))}
@@ -135,12 +141,13 @@ export default function Header() {
           aria-label="Menu mobile"
           className="md:hidden bg-brand-navy border-t border-slate-800 px-6 py-5 flex flex-col gap-4"
         >
-          {navLinks.map(({ href, label }) => (
+          {navLinks.map(({ href, label, external }) => (
             <a
               key={href}
               href={href}
               onClick={() => setMenuOpen(false)}
               className="text-white hover:text-brand-yellow font-semibold text-sm"
+              {...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
             >
               {label}
             </a>

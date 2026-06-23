@@ -73,6 +73,16 @@ export default function Footer() {
                 </svg>
               </IconWrap>
             </div>
+
+            <a
+              href="https://avapextransportes.vagas.solides.com.br/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block text-sm font-bold text-brand-yellow border border-brand-yellow
+                         px-4 py-2 hover:bg-brand-yellow hover:text-brand-navy transition-colors tracking-wide"
+            >
+              Trabalhe Conosco →
+            </a>
           </div>
 
           {/* Col 2 — Precisa de ajuda? */}
