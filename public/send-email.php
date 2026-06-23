@@ -55,42 +55,42 @@ $isLpCopa = (strtolower($origem) === 'lp copa');
 
 if ($isLpCopa) {
     $htmlBody = "
-<div style=\"font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; background: #111415; color: #f0f0f0; border-radius: 8px; overflow: hidden;\">
+<div style=\"font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; background: #ffffff; color: #1a1a1a; border-radius: 8px; overflow: hidden; border: 1px solid #e0e0e0;\">
     <div style=\"background: linear-gradient(135deg, #009B3A 0%, #006622 100%); padding: 24px 28px;\">
-        <p style=\"margin: 0 0 4px; font-size: 11px; font-weight: bold; letter-spacing: 2px; color: #F3BE55; text-transform: uppercase;\">⚽ Landing Page — Especial Copa</p>
-        <h2 style=\"margin: 0; color: #ffffff; font-size: 22px;\">Nova Solicitação de Equipamento</h2>
+        <p style=\"margin: 0 0 6px; font-size: 11px; font-weight: bold; letter-spacing: 2px; color: #F3BE55; text-transform: uppercase;\">⚽ Landing Page — Especial Copa</p>
+        <h2 style=\"margin: 0; color: #ffffff; font-size: 22px; font-weight: bold;\">Nova Solicitação de Equipamento</h2>
     </div>
     <div style=\"padding: 24px 28px;\">
         <table style=\"width: 100%; border-collapse: collapse;\">
-            <tr style=\"border-bottom: 1px solid #2a2a2a;\">
-                <td style=\"padding: 10px 0; font-weight: bold; color: #F3BE55; width: 130px; font-size: 12px; text-transform: uppercase; letter-spacing: 1px;\">Nome</td>
-                <td style=\"padding: 10px 0; color: #f0f0f0;\">$nome</td>
+            <tr style=\"border-bottom: 1px solid #e8e8e8;\">
+                <td style=\"padding: 12px 0; font-weight: bold; color: #006622; width: 130px; font-size: 11px; text-transform: uppercase; letter-spacing: 1px;\">Nome</td>
+                <td style=\"padding: 12px 0; color: #1a1a1a; font-size: 15px;\">$nome</td>
             </tr>
-            <tr style=\"border-bottom: 1px solid #2a2a2a;\">
-                <td style=\"padding: 10px 0; font-weight: bold; color: #F3BE55; font-size: 12px; text-transform: uppercase; letter-spacing: 1px;\">Empresa</td>
-                <td style=\"padding: 10px 0; color: #f0f0f0;\">$empresa</td>
+            <tr style=\"border-bottom: 1px solid #e8e8e8;\">
+                <td style=\"padding: 12px 0; font-weight: bold; color: #006622; font-size: 11px; text-transform: uppercase; letter-spacing: 1px;\">Empresa</td>
+                <td style=\"padding: 12px 0; color: #1a1a1a; font-size: 15px;\">$empresa</td>
             </tr>
-            <tr style=\"border-bottom: 1px solid #2a2a2a;\">
-                <td style=\"padding: 10px 0; font-weight: bold; color: #F3BE55; font-size: 12px; text-transform: uppercase; letter-spacing: 1px;\">E-mail</td>
-                <td style=\"padding: 10px 0;\"><a href=\"mailto:$email\" style=\"color: #F3BE55;\">$email</a></td>
+            <tr style=\"border-bottom: 1px solid #e8e8e8;\">
+                <td style=\"padding: 12px 0; font-weight: bold; color: #006622; font-size: 11px; text-transform: uppercase; letter-spacing: 1px;\">E-mail</td>
+                <td style=\"padding: 12px 0; font-size: 15px;\"><a href=\"mailto:$email\" style=\"color: #009B3A; font-weight: bold;\">$email</a></td>
             </tr>
-            <tr style=\"border-bottom: 1px solid #2a2a2a;\">
-                <td style=\"padding: 10px 0; font-weight: bold; color: #F3BE55; font-size: 12px; text-transform: uppercase; letter-spacing: 1px;\">Telefone</td>
-                <td style=\"padding: 10px 0; color: #f0f0f0;\">$telefone</td>
+            <tr style=\"border-bottom: 1px solid #e8e8e8;\">
+                <td style=\"padding: 12px 0; font-weight: bold; color: #006622; font-size: 11px; text-transform: uppercase; letter-spacing: 1px;\">Telefone</td>
+                <td style=\"padding: 12px 0; color: #1a1a1a; font-size: 15px;\">$telefone</td>
             </tr>
             <tr>
-                <td style=\"padding: 10px 0; font-weight: bold; color: #F3BE55; font-size: 12px; text-transform: uppercase; letter-spacing: 1px;\">Equipamento</td>
-                <td style=\"padding: 10px 0; color: #f0f0f0; font-weight: bold;\">$servico</td>
+                <td style=\"padding: 12px 0; font-weight: bold; color: #006622; font-size: 11px; text-transform: uppercase; letter-spacing: 1px;\">Equipamento</td>
+                <td style=\"padding: 12px 0; color: #1a1a1a; font-size: 15px; font-weight: bold;\">$servico</td>
             </tr>
         </table>
         " . ($mensagem ? "
         <div style=\"margin-top: 20px;\">
-            <p style=\"color: #F3BE55; font-size: 12px; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px;\">Detalhes</p>
-            <div style=\"background: #1e1e1e; padding: 14px 16px; border-left: 4px solid #009B3A; border-radius: 2px; white-space: pre-wrap; color: #ccc;\">$mensagem</div>
+            <p style=\"color: #006622; font-size: 11px; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px;\">Detalhes</p>
+            <div style=\"background: #f4faf6; padding: 14px 16px; border-left: 4px solid #009B3A; border-radius: 2px; white-space: pre-wrap; color: #1a1a1a; font-size: 14px; line-height: 1.6;\">$mensagem</div>
         </div>" : "") . "
     </div>
-    <div style=\"background: #0a0a0a; padding: 14px 28px;\">
-        <p style=\"color: #555; font-size: 11px; margin: 0;\">⚽ Enviado pela Landing Page Especial Copa — avapex.com.br</p>
+    <div style=\"background: #f0f0f0; padding: 14px 28px; border-top: 1px solid #ddd;\">
+        <p style=\"color: #555555; font-size: 11px; margin: 0;\">⚽ Enviado pela Landing Page Especial Copa — avapex.com.br</p>
     </div>
 </div>
 ";
