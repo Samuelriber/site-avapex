@@ -2,7 +2,7 @@ import { COMPANY_YEARS_EXPERIENCE } from '../constants/company'
 
 export default function Hero() {
   return (
-    <section id="home" className="relative h-screen w-full overflow-hidden flex items-center justify-center">
+    <section id="home" className="relative h-screen w-full overflow-hidden flex items-center justify-center pt-16 md:pt-20">
       {/* Sentinel: Header.jsx IntersectionObserver watches this.
           Placed ~60px from top so the header flips after a natural scroll. */}
       <div
@@ -60,7 +60,7 @@ export default function Hero() {
 
       {/* Content */}
       <div
-        className="container mx-auto px-6 relative z-20 text-center text-white mt-16 flex flex-col items-center"
+        className="container mx-auto px-6 relative z-20 text-center text-white flex flex-col items-center"
         data-aos="fade-up"
         data-aos-duration="1000"
       >
