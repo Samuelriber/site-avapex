@@ -1,6 +1,7 @@
 import { Phone, Mail, MapPin, Send } from 'lucide-react'
 import { sendContactEmail } from '../services/emailApi.js'
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { PHONE_TAIS, PHONE_JOICE, WHATSAPP_TAIS, WHATSAPP_JOICE, EMAIL, ADDRESS } from '../constants/contact'
 
 const INPUT_CLASS = 'w-full p-4 rounded-sm border border-slate-300 focus:border-yellow-500 focus:ring-2 focus:ring-yellow-200 outline-none transition-all bg-slate-50'
@@ -15,7 +16,8 @@ const serviceOptions = [
 ]
 
 export default function ContactForm() {
-  const [status, setStatus] = useState('idle') // 'idle' | 'sending' | 'success' | 'error'
+  const [status, setStatus] = useState('idle') // 'idle' | 'sending' | 'error'
+  const navigate = useNavigate()
 
   async function handleSubmit(e) {
     e.preventDefault()
@@ -24,8 +26,7 @@ export default function ContactForm() {
     const data = Object.fromEntries(formData.entries())
     try {
       await sendContactEmail(data)
-      setStatus('success')
-      e.target.reset()
+      navigate('/obrigado')
     } catch {
       setStatus('error')
     }
@@ -192,11 +193,6 @@ export default function ContactForm() {
                 />
               </div>
 
-              {status === 'success' && (
-                <p className="text-green-600 font-bold text-sm text-center">
-                  Solicitação enviada com sucesso! Entraremos em contato em breve.
-                </p>
-              )}
               {status === 'error' && (
                 <p className="text-red-500 font-bold text-sm text-center">
                   Ocorreu um erro. Por favor, tente novamente.

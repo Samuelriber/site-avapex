@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { Phone, Mail, MapPin, Send } from 'lucide-react'
+import { useNavigate } from 'react-router-dom'
 import { sendContactEmail } from '../../../services/emailApi'
 import { PHONE_TAIS, PHONE_JOICE, WHATSAPP_TAIS, WHATSAPP_JOICE, EMAIL, ADDRESS } from '../../../constants/contact'
 
@@ -17,6 +18,7 @@ const INPUT =
 
 export default function CopaForm() {
   const [status, setStatus] = useState('idle')
+  const navigate = useNavigate()
 
   async function handleSubmit(e) {
     e.preventDefault()
@@ -24,8 +26,7 @@ export default function CopaForm() {
     const data = { ...Object.fromEntries(new FormData(e.target).entries()), origem: 'LP Copa' }
     try {
       await sendContactEmail(data)
-      setStatus('success')
-      e.target.reset()
+      navigate('/lp/especial-copa/obrigado')
     } catch {
       setStatus('error')
     }
@@ -243,11 +244,6 @@ export default function CopaForm() {
               />
             </div>
 
-            {status === 'success' && (
-              <p className="text-green-400 font-bold text-sm text-center">
-                ✓ Solicitação enviada! Nossa equipe entrará em contato em breve.
-              </p>
-            )}
             {status === 'error' && (
               <p className="text-red-400 font-bold text-sm text-center">
                 Ocorreu um erro. Por favor, tente novamente.

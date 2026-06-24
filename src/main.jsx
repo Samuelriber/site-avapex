@@ -9,7 +9,9 @@ const LandingPageTemplate = lazy(() => import('./landing-pages/_template'))
 
 // Adicionar novas LPs aqui:
 // const LPMineracao = lazy(() => import('./landing-pages/mineracao'))
-const LPEspecialCopa = lazy(() => import('./landing-pages/especial-copa'))
+const LPEspecialCopa     = lazy(() => import('./landing-pages/especial-copa'))
+const CopaObrigado       = lazy(() => import('./landing-pages/especial-copa/CopaObrigado'))
+const Obrigado           = lazy(() => import('./pages/Obrigado'))
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
@@ -35,6 +37,22 @@ ReactDOM.createRoot(document.getElementById('root')).render(
           element={
             <Suspense fallback={<div style={{ background: '#0B1121', minHeight: '100vh' }} />}>
               <LPEspecialCopa />
+            </Suspense>
+          }
+        />
+        <Route
+          path="/lp/especial-copa/obrigado"
+          element={
+            <Suspense fallback={<div style={{ background: '#0B1121', minHeight: '100vh' }} />}>
+              <CopaObrigado />
+            </Suspense>
+          }
+        />
+        <Route
+          path="/obrigado"
+          element={
+            <Suspense fallback={<div style={{ background: '#0B1121', minHeight: '100vh' }} />}>
+              <Obrigado />
             </Suspense>
           }
         />
