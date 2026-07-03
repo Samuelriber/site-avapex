@@ -3,29 +3,29 @@ import { WHATSAPP_TAIS, WHATSAPP_JOICE, PHONE_TAIS, PHONE_JOICE } from '../const
 import { LOGO_WHITE } from '../styles/logoStyles'
 
 const navLinks = [
-  { href: '#home',          label: 'Início' },
-  { href: '#servicos',      label: 'Serviços' },
-  { href: '#diferenciais',  label: 'Diferenciais' },
-  { href: '#equipamentos',  label: 'Frota' },
-  { href: '#credibilidade', label: 'Clientes' },
-  { href: '#quem-somos',    label: 'Quem Somos' },
+  { href: '/',               label: 'Início' },
+  { href: '/#servicos',      label: 'Serviços' },
+  { href: '/#diferenciais',  label: 'Diferenciais' },
+  { href: '/#equipamentos',  label: 'Frota' },
+  { href: '/#credibilidade', label: 'Clientes' },
+  { href: '/#quem-somos',    label: 'Quem Somos' },
 ]
 
 const servicos = [
-  { href: '#servicos', label: 'Transporte de Carga Geral' },
-  { href: '#servicos', label: 'Produtos Perigosos' },
-  { href: '#servicos', label: 'Locação Industrial' },
-  { href: '#servicos', label: 'Locação para Construção' },
-  { href: '#servicos', label: 'Carga e Descarga' },
-  { href: '#servicos', label: 'Distribuição de Água' },
-  { href: '#servicos', label: 'Depósito para Terceiros' },
+  { href: '/#servicos', label: 'Transporte de Carga Geral' },
+  { href: '/#servicos', label: 'Produtos Perigosos' },
+  { href: '/#servicos', label: 'Locação Industrial' },
+  { href: '/#servicos', label: 'Locação para Construção' },
+  { href: '/#servicos', label: 'Carga e Descarga' },
+  { href: '/#servicos', label: 'Distribuição de Água' },
+  { href: '/#servicos', label: 'Depósito para Terceiros' },
 ]
 
 const empresa = [
-  { href: '#quem-somos', label: 'Sobre a Avapex' },
-  { href: '#mvv',        label: 'Missão e Valores' },
-  { href: '#quem-somos', label: 'Política de Gestão' },
-  { href: '#orcamento',  label: 'Solicitar Orçamento' },
+  { href: '/#quem-somos', label: 'Sobre a Avapex' },
+  { href: '/#mvv',        label: 'Missão e Valores' },
+  { href: '/#quem-somos', label: 'Política de Gestão' },
+  { href: '/#orcamento',  label: 'Solicitar Orçamento' },
 ]
 
 const IconWrap = ({ href, label, children, external }) => (
@@ -48,7 +48,7 @@ export default function Footer() {
 
           {/* Col 1 — Logo + redes sociais */}
           <div className="flex flex-col gap-7 lg:pr-10 lg:border-r lg:border-slate-800 shrink-0">
-            <a href="#home" aria-label="Voltar ao topo" className="hover:opacity-70 transition-opacity">
+            <a href="/" aria-label="Voltar ao topo" className="hover:opacity-70 transition-opacity">
               <img
                 src="/img/img/Logos/logo-avapex-transportes-v1.svg"
                 alt="Avapex Transportes"

@@ -41,7 +41,7 @@ $nome     = htmlspecialchars(strip_tags($input['nome']     ?? ''), ENT_QUOTES, '
 $empresa  = htmlspecialchars(strip_tags($input['empresa']  ?? ''), ENT_QUOTES, 'UTF-8');
 $email    = filter_var($input['email'] ?? '', FILTER_VALIDATE_EMAIL);
 $telefone = htmlspecialchars(strip_tags($input['telefone'] ?? ''), ENT_QUOTES, 'UTF-8');
-$servico  = htmlspecialchars(strip_tags($input['servico']  ?? ''), ENT_QUOTES, 'UTF-8');
+$servico  = htmlspecialchars(strip_tags($input['servico']  ?? $input['setor'] ?? ''), ENT_QUOTES, 'UTF-8');
 $mensagem = htmlspecialchars(strip_tags($input['mensagem'] ?? ''), ENT_QUOTES, 'UTF-8');
 $origem   = htmlspecialchars(strip_tags($input['origem']   ?? 'site'), ENT_QUOTES, 'UTF-8');
 
@@ -51,7 +51,8 @@ if (!$nome || !$email) {
     exit;
 }
 
-$isLpCopa = (strtolower($origem) === 'lp copa');
+$isLpCopa           = (strtolower($origem) === 'lp copa');
+$isLpEmpilhadeiras  = (strtolower($origem) === 'lp empilhadeiras lítio' || strtolower($origem) === 'lp empilhadeiras litio');
 
 if ($isLpCopa) {
     $htmlBody = "
@@ -91,6 +92,47 @@ if ($isLpCopa) {
     </div>
     <div style=\"background: #f0f0f0; padding: 14px 28px; border-top: 1px solid #ddd;\">
         <p style=\"color: #555555; font-size: 11px; margin: 0;\">⚽ Enviado pela Landing Page Especial Copa — avapex.com.br</p>
+    </div>
+</div>
+";
+} elseif ($isLpEmpilhadeiras) {
+    $htmlBody = "
+<div style=\"font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; background: #17181b; color: #f7f7f5; border-radius: 4px; overflow: hidden; border: 1px solid #33373d;\">
+    <div style=\"background: #101114; padding: 24px 28px; border-bottom: 3px solid #ffd028;\">
+        <p style=\"margin: 0 0 6px; font-size: 11px; font-weight: bold; letter-spacing: 2px; color: #ffd028; text-transform: uppercase; font-family: 'Courier New', monospace;\">⚡ Landing Page — Empilhadeiras Elétricas a Lítio</p>
+        <h2 style=\"margin: 0; color: #f7f7f5; font-size: 22px; font-weight: bold;\">Nova Solicitação de Orçamento</h2>
+    </div>
+    <div style=\"padding: 24px 28px;\">
+        <table style=\"width: 100%; border-collapse: collapse;\">
+            <tr style=\"border-bottom: 1px solid #2a2c30;\">
+                <td style=\"padding: 12px 0; font-weight: bold; color: #ffd028; width: 140px; font-size: 11px; text-transform: uppercase; letter-spacing: 1px;\">Nome</td>
+                <td style=\"padding: 12px 0; color: #f7f7f5; font-size: 15px;\">$nome</td>
+            </tr>
+            <tr style=\"border-bottom: 1px solid #2a2c30;\">
+                <td style=\"padding: 12px 0; font-weight: bold; color: #ffd028; font-size: 11px; text-transform: uppercase; letter-spacing: 1px;\">Empresa</td>
+                <td style=\"padding: 12px 0; color: #f7f7f5; font-size: 15px;\">$empresa</td>
+            </tr>
+            <tr style=\"border-bottom: 1px solid #2a2c30;\">
+                <td style=\"padding: 12px 0; font-weight: bold; color: #ffd028; font-size: 11px; text-transform: uppercase; letter-spacing: 1px;\">E-mail</td>
+                <td style=\"padding: 12px 0; font-size: 15px;\"><a href=\"mailto:$email\" style=\"color: #ffd028; font-weight: bold;\">$email</a></td>
+            </tr>
+            <tr style=\"border-bottom: 1px solid #2a2c30;\">
+                <td style=\"padding: 12px 0; font-weight: bold; color: #ffd028; font-size: 11px; text-transform: uppercase; letter-spacing: 1px;\">Telefone</td>
+                <td style=\"padding: 12px 0; color: #f7f7f5; font-size: 15px;\">$telefone</td>
+            </tr>
+            <tr>
+                <td style=\"padding: 12px 0; font-weight: bold; color: #ffd028; font-size: 11px; text-transform: uppercase; letter-spacing: 1px;\">Setor de Atuação</td>
+                <td style=\"padding: 12px 0; color: #f7f7f5; font-size: 15px; font-weight: bold;\">$servico</td>
+            </tr>
+        </table>
+        " . ($mensagem ? "
+        <div style=\"margin-top: 20px;\">
+            <p style=\"color: #ffd028; font-size: 11px; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px;\">Detalhes da Demanda</p>
+            <div style=\"background: #101114; padding: 14px 16px; border-left: 4px solid #0f8c5c; border-radius: 2px; white-space: pre-wrap; color: #f7f7f5; font-size: 14px; line-height: 1.6;\">$mensagem</div>
+        </div>" : "") . "
+    </div>
+    <div style=\"background: #101114; padding: 14px 28px; border-top: 1px solid #2a2c30;\">
+        <p style=\"color: #a9aeb8; font-size: 11px; margin: 0;\">⚡ Enviado pela Landing Page Empilhadeiras Elétricas a Lítio — avapex.com.br</p>
     </div>
 </div>
 ";

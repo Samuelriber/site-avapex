@@ -1,0 +1,170 @@
+/* LP Empilhadeiras a Lítio — identidade própria da Avapex (não é mais o mockup genérico M3),
+   escopado em .eqp-page para não vazar para o resto do site.
+   Tipografia: Barlow Condensed + DM Sans já são carregadas globalmente pelo index.html do site
+   (mesmo link usado pelo header/site principal), por isso não são reimportadas aqui. */
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700&display=swap');
+
+.eqp-page {
+  background-color: #17181b;
+  color: #f7f7f5;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+/* Tipografia — display condensada (nameplate industrial) + corpo técnico neutro */
+.eqp-page .eqp-h1 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 800;
+  font-size: 34px;
+  line-height: 38px;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+}
+@media (min-width: 768px) {
+  .eqp-page .eqp-h1 {
+    font-size: 56px;
+    line-height: 58px;
+    letter-spacing: -0.02em;
+  }
+}
+.eqp-page .eqp-h2 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 32px;
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+}
+.eqp-page .eqp-body-lg {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 28px;
+}
+.eqp-page .eqp-label-caps {
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0.05em;
+}
+
+.eqp-page .industrial-border {
+  border: 1px solid #33373d;
+}
+.eqp-page .industrial-focus:focus-within {
+  border: 2px solid #ffd028;
+}
+
+.eqp-page .btn-primary {
+  background-color: #ffd028;
+  color: #1b1300;
+  text-transform: uppercase;
+  font-weight: bold;
+  border-radius: 4px;
+  padding: 12px 24px;
+  transition: all 0.2s;
+  display: inline-block;
+}
+.eqp-page .btn-primary:hover {
+  background-color: #f0c112;
+  box-shadow: 4px 4px 0px #33373d;
+  transform: translate(-2px, -2px);
+}
+
+.eqp-page .btn-secondary {
+  background-color: transparent;
+  color: #f7f7f5;
+  border: 2px solid #f7f7f5;
+  text-transform: uppercase;
+  font-weight: bold;
+  border-radius: 4px;
+  padding: 10px 22px;
+  transition: all 0.2s;
+  display: inline-block;
+}
+.eqp-page .btn-secondary:hover {
+  background-color: #f7f7f5;
+  color: #17181b;
+}
+
+.eqp-page .btn-tertiary {
+  background-color: #0f8c5c;
+  color: #ffffff;
+  text-transform: uppercase;
+  font-weight: bold;
+  border-radius: 4px;
+  padding: 12px 24px;
+  transition: all 0.2s;
+}
+.eqp-page .btn-tertiary:hover {
+  background-color: #0b6e48;
+  box-shadow: 4px 4px 0px #33373d;
+  transform: translate(-2px, -2px);
+}
+
+.eqp-page .card-hover:hover {
+  border-color: #ffd028;
+  box-shadow: 4px 4px 0px #33373d;
+  transform: translateY(-2px);
+  transition: all 0.2s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .eqp-page .btn-primary,
+  .eqp-page .btn-tertiary,
+  .eqp-page .card-hover {
+    transition: none;
+  }
+}
+
+/* Textura "piso xadrez" (diamond plate) sutil — substitui a grade de pontos genérica.
+   Só gradientes, sem imagem, pra manter a seção do formulário no universo industrial. */
+.eqp-page .bg-pattern {
+  background-color: #17181b;
+  background-image:
+    repeating-linear-gradient(45deg, rgba(255, 208, 40, 0.05) 0, rgba(255, 208, 40, 0.05) 1px, transparent 1px, transparent 18px),
+    repeating-linear-gradient(-45deg, rgba(255, 255, 255, 0.03) 0, rgba(255, 255, 255, 0.03) 1px, transparent 1px, transparent 18px);
+}
+
+/* Cantos tipo desenho técnico — substituem os blobs decorativos do card do formulário */
+.eqp-page .eqp-blueprint-corners {
+  position: relative;
+}
+.eqp-page .eqp-blueprint-corners::before,
+.eqp-page .eqp-blueprint-corners::after,
+.eqp-page .eqp-blueprint-corners .eqp-corner-br,
+.eqp-page .eqp-blueprint-corners .eqp-corner-bl {
+  content: '';
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  border: 2px solid #ffd028;
+  opacity: 0.8;
+  pointer-events: none;
+}
+.eqp-page .eqp-blueprint-corners::before {
+  top: -2px;
+  left: -2px;
+  border-right: none;
+  border-bottom: none;
+}
+.eqp-page .eqp-blueprint-corners::after {
+  top: -2px;
+  right: -2px;
+  border-left: none;
+  border-bottom: none;
+}
+.eqp-page .eqp-blueprint-corners .eqp-corner-br {
+  bottom: -2px;
+  right: -2px;
+  border-left: none;
+  border-top: none;
+}
+.eqp-page .eqp-blueprint-corners .eqp-corner-bl {
+  bottom: -2px;
+  left: -2px;
+  border-right: none;
+  border-top: none;
+}

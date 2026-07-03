@@ -25,6 +25,14 @@ export default function App() {
     return () => AOS.refresh()
   }, [])
 
+  // Rola até o anchor quando a home é carregada via /#section (ex: vindo da /obrigado)
+  useEffect(() => {
+    const { hash } = window.location
+    if (!hash) return
+    const el = document.querySelector(hash)
+    if (el) el.scrollIntoView({ behavior: 'smooth' })
+  }, [])
+
   return (
     <>
       <SEO />

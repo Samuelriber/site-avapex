@@ -5,6 +5,7 @@ export default defineConfig({
   plugins: [react()],
   base: '/',
   server: {
+    port: parseInt(process.env.PORT) || 5173,
     proxy: {
       '/send-email.php': {
         target: 'http://localhost:8080',

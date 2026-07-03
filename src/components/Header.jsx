@@ -13,12 +13,12 @@ const ctaDark  = 'border border-white text-white px-5 py-2 text-sm font-bold hov
 const ctaLight = 'bg-brand-yellow text-brand-navy px-5 py-2 text-sm font-bold hover:bg-yellow-400 transition-all rounded-sm'
 
 const navLinks = [
-  { href: '#home',          label: 'Início' },
-  { href: '#servicos',      label: 'Serviços' },
-  { href: '#diferenciais',  label: 'Diferenciais' },
-  { href: '#equipamentos',  label: 'Frota' },
-  { href: '#credibilidade', label: 'Clientes' },
-  { href: '#quem-somos',    label: 'Quem Somos' },
+  { href: '/',               label: 'Início' },
+  { href: '/#servicos',      label: 'Serviços' },
+  { href: '/#diferenciais',  label: 'Diferenciais' },
+  { href: '/#equipamentos',  label: 'Frota' },
+  { href: '/#credibilidade', label: 'Clientes' },
+  { href: '/#quem-somos',    label: 'Quem Somos' },
   { href: 'https://avapextransportes.vagas.solides.com.br/', label: 'Trabalhe Conosco', external: true },
 ]
 
@@ -37,7 +37,10 @@ export default function Header() {
 
   useEffect(() => {
     const trigger = document.getElementById('header-trigger')
-    if (!trigger) return
+    if (!trigger) {
+      setScrolled(true)
+      return
+    }
     const observer = new IntersectionObserver(
       ([entry]) => setScrolled(!entry.isIntersecting),
       { threshold: 0 }
@@ -62,7 +65,7 @@ export default function Header() {
 
           {/* Logo — crossfade com scale entre versão branca (topo) e escura (scroll) */}
           <a
-            href="#home"
+            href="/"
             className="shrink-0"
             style={{ position: 'relative', display: 'flex', alignItems: 'center' }}
             aria-label="Avapex Transportes — Voltar ao topo"
@@ -118,7 +121,7 @@ export default function Header() {
           {/* CTA + mobile toggle */}
           <div className="flex items-center gap-3">
             <a
-              href="#orcamento"
+              href="/#orcamento"
               className={`hidden md:inline-flex ${isDark ? ctaDark : ctaLight}`}
             >
               Solicitar Orçamento
@@ -153,7 +156,7 @@ export default function Header() {
             </a>
           ))}
           <a
-            href="#orcamento"
+            href="/#orcamento"
             onClick={() => setMenuOpen(false)}
             className="bg-brand-yellow text-brand-navy px-5 py-3 rounded-none font-extrabold text-sm text-center mt-2"
           >
