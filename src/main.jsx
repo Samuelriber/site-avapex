@@ -10,6 +10,7 @@ const LandingPageTemplate = lazy(() => import('./landing-pages/_template'))
 // Adicionar novas LPs aqui:
 // const LPMineracao = lazy(() => import('./landing-pages/mineracao'))
 const LPEmpilhadeirasLitio = lazy(() => import('./landing-pages/empilhadeiras-litio'))
+const EqpObrigado         = lazy(() => import('./landing-pages/empilhadeiras-litio/EqpObrigado'))
 const LPEspecialCopa     = lazy(() => import('./landing-pages/especial-copa'))
 const CopaObrigado       = lazy(() => import('./landing-pages/especial-copa/CopaObrigado'))
 const Obrigado           = lazy(() => import('./pages/Obrigado'))
@@ -38,6 +39,14 @@ ReactDOM.createRoot(document.getElementById('root')).render(
           element={
             <Suspense fallback={<div style={{ background: '#0B1121', minHeight: '100vh' }} />}>
               <LPEmpilhadeirasLitio />
+            </Suspense>
+          }
+        />
+        <Route
+          path="/lp/empilhadeiras-litio/obrigado"
+          element={
+            <Suspense fallback={<div style={{ background: '#0B1121', minHeight: '100vh' }} />}>
+              <EqpObrigado />
             </Suspense>
           }
         />

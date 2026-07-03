@@ -19,7 +19,7 @@ export default function EqpForm() {
     const data = { ...Object.fromEntries(new FormData(e.target).entries()), origem: 'LP Empilhadeiras Lítio' }
     try {
       await sendContactEmail(data)
-      navigate('/obrigado')
+      navigate('/lp/empilhadeiras-litio/obrigado')
     } catch {
       setStatus('error')
     }
