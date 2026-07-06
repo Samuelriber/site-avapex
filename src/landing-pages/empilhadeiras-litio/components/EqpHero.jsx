@@ -37,10 +37,10 @@ export default function EqpHero() {
         <div className="md:col-span-7 space-y-6">
           <motion.div
             variants={item}
-            className="inline-flex items-center gap-2 bg-eqp-charge/20 border border-eqp-charge px-3 py-1 rounded-sm eqp-label-caps uppercase text-eqp-charge-bright"
+            className="eqp-badge-charge inline-flex items-center gap-2 bg-eqp-charge/20 border border-eqp-charge px-3 py-1 rounded-sm eqp-label-caps uppercase text-eqp-charge-bright"
           >
             <Leaf size={16} strokeWidth={2} aria-hidden="true" />
-            Tecnologia a Lítio
+            Operação 100% Livre de Emissões
           </motion.div>
           <motion.h1 variants={item} className="eqp-h1 text-eqp-chalk">
             Reduza em Até 90% os Custos
