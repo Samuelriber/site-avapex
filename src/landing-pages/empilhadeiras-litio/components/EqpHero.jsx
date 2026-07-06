@@ -1,11 +1,15 @@
 import { motion, useReducedMotion } from 'framer-motion'
 import { Leaf } from 'lucide-react'
 import { WHATSAPP_TAIS } from '../../../constants/contact'
+import { useSetorParam } from '../hooks/useSetorParam'
+import { buildWhatsappHref } from '../utils/whatsapp'
 
 const HERO_IMG = '/img/img/fundos/fundo-lp-empilhadeira-eletrica-2.jpg'
 
 export default function EqpHero() {
   const reduceMotion = useReducedMotion()
+  const setor = useSetorParam()
+  const whatsappHref = buildWhatsappHref(WHATSAPP_TAIS, setor)
 
   const container = {
     hidden: {},
@@ -41,7 +45,7 @@ export default function EqpHero() {
           <motion.h1 variants={item} className="eqp-h1 text-eqp-chalk">
             Reduza em Até 90% os Custos
           </motion.h1>
-          <motion.p variants={item} className="eqp-h2 text-eqp-caution -mt-4">
+          <motion.p variants={item} className="eqp-h2 text-eqp-charge-bright -mt-4">
             com Empilhadeiras Elétricas a Lítio
           </motion.p>
           <motion.p variants={item} className="eqp-body-lg text-eqp-fog max-w-2xl">
@@ -49,7 +53,7 @@ export default function EqpHero() {
           </motion.p>
           <motion.div variants={item} className="flex flex-col sm:flex-row gap-4 pt-4">
             <a className="btn-primary text-center" href="#orcamento">Solicitar Orçamento</a>
-            <a className="btn-secondary text-center" href={WHATSAPP_TAIS} target="_blank" rel="noopener noreferrer">
+            <a className="btn-secondary text-center" href={whatsappHref} target="_blank" rel="noopener noreferrer">
               Falar com um Especialista
             </a>
           </motion.div>

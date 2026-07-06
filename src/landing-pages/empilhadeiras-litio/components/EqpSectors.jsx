@@ -1,3 +1,6 @@
+import { WHATSAPP_TAIS } from '../../../constants/contact'
+import { buildWhatsappHref } from '../utils/whatsapp'
+
 const SECTORS = [
   {
     titulo: 'Mineração',
@@ -29,7 +32,13 @@ export default function EqpSectors() {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {SECTORS.map(({ titulo, texto, img, alt }) => (
-            <a key={titulo} href="#orcamento" className="group relative overflow-hidden border industrial-border bg-eqp-ink block">
+            <a
+              key={titulo}
+              href={buildWhatsappHref(WHATSAPP_TAIS, titulo)}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group relative overflow-hidden border industrial-border bg-eqp-ink block"
+            >
               <div className="h-72 overflow-hidden">
                 <img
                   src={img}

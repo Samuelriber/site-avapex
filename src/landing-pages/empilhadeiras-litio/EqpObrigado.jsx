@@ -1,23 +1,36 @@
 import { useEffect } from 'react'
+import { useLocation } from 'react-router-dom'
+import { motion } from 'framer-motion'
 import { HelmetProvider, Helmet } from 'react-helmet-async'
-import { CheckCircle, MessageCircle, ArrowLeft } from 'lucide-react'
+import { MessageCircle } from 'lucide-react'
 import EqpHeader from './components/EqpHeader'
 import EqpFooter from './components/EqpFooter'
 import { WHATSAPP_TAIS } from '../../constants/contact'
+import { buildWhatsappHref } from './utils/whatsapp'
 import './styles/equip.css'
 
+const REDIRECT_DELAY_MS = 3000
+
 export default function EqpObrigado() {
+  const location = useLocation()
+  const setor = location.state?.setor || ''
+  const whatsappHref = buildWhatsappHref(WHATSAPP_TAIS, setor)
+
   useEffect(() => {
     window.scrollTo(0, 0)
     if (typeof window.gtag === 'function') {
       window.gtag('event', 'conversion')
     }
-  }, [])
+    const timer = setTimeout(() => {
+      window.location.href = whatsappHref
+    }, REDIRECT_DELAY_MS)
+    return () => clearTimeout(timer)
+  }, [whatsappHref])
 
   return (
     <HelmetProvider>
       <Helmet>
-        <title>Solicitação Recebida — Avapex Empilhadeiras Elétricas a Lítio</title>
+        <title>Obrigado — Avapex Empilhadeiras Elétricas a Lítio</title>
         <meta name="robots" content="noindex, nofollow" />
       </Helmet>
 
@@ -28,33 +41,33 @@ export default function EqpObrigado() {
             <span className="eqp-corner-br" aria-hidden="true"></span>
             <span className="eqp-corner-bl" aria-hidden="true"></span>
 
-            <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-eqp-caution mb-8 mx-auto">
-              <CheckCircle size={40} className="text-eqp-caution-ink" aria-hidden="true" />
+            <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-eqp-charge mb-8 mx-auto animate-pulse">
+              <MessageCircle size={40} className="text-white" aria-hidden="true" />
             </div>
 
-            <h1 className="eqp-h1 text-eqp-chalk mb-4">Solicitação Recebida!</h1>
-            <p className="text-eqp-fog text-base leading-relaxed mb-10">
-              Nossos especialistas vão analisar sua demanda e entrar em contato com a melhor solução em empilhadeiras elétricas a lítio para a sua operação.
+            <h1 className="eqp-h1 text-eqp-chalk mb-4">Obrigado!</h1>
+            <p className="text-eqp-fog text-base leading-relaxed mb-6">
+              Estamos te encaminhando para um consultor. Você já vai ser direcionado para o WhatsApp...
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
-                href={WHATSAPP_TAIS}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-tertiary inline-flex items-center justify-center gap-3"
-              >
-                <MessageCircle size={20} aria-hidden="true" />
-                Falar no WhatsApp
-              </a>
-              <a
-                href="/lp/empilhadeiras-litio"
-                className="btn-secondary inline-flex items-center justify-center gap-3"
-              >
-                <ArrowLeft size={20} aria-hidden="true" />
-                Voltar à página
-              </a>
+            <div className="h-1.5 rounded-full bg-eqp-charge/15 border border-eqp-charge/30 overflow-hidden mb-10">
+              <motion.div
+                className="h-full bg-eqp-charge"
+                initial={{ width: '0%' }}
+                animate={{ width: '100%' }}
+                transition={{ duration: REDIRECT_DELAY_MS / 1000, ease: 'linear' }}
+              />
             </div>
+
+            <a
+              href={whatsappHref}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-tertiary inline-flex items-center justify-center gap-3"
+            >
+              <MessageCircle size={20} aria-hidden="true" />
+              Ir para o WhatsApp agora
+            </a>
           </div>
         </main>
         <EqpFooter />

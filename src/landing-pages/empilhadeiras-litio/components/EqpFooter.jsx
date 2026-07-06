@@ -1,5 +1,7 @@
 import { Instagram, Linkedin, MessageCircle, Phone, Mail, MapPin } from 'lucide-react'
 import { WHATSAPP_TAIS, WHATSAPP_JOICE, PHONE_TAIS, PHONE_JOICE, ADDRESS } from '../../../constants/contact'
+import { useSetorParam } from '../hooks/useSetorParam'
+import { buildWhatsappHref } from '../utils/whatsapp'
 
 const solucoes = [
   { href: '#orcamento', label: 'Frota de Empilhadeiras' },
@@ -27,6 +29,10 @@ const IconWrap = ({ href, label, children }) => (
 )
 
 export default function EqpFooter() {
+  const setor = useSetorParam()
+  const whatsappTais = buildWhatsappHref(WHATSAPP_TAIS, setor)
+  const whatsappJoice = buildWhatsappHref(WHATSAPP_JOICE, setor)
+
   return (
     <footer className="w-full border-t-4 border-eqp-charge bg-eqp-panel">
       <div className="max-w-7xl mx-auto px-4 md:px-6 py-12">
@@ -59,7 +65,7 @@ export default function EqpFooter() {
               <IconWrap href="https://www.linkedin.com/company/avapex-transportes/" label="LinkedIn">
                 <Linkedin size={16} aria-hidden="true" />
               </IconWrap>
-              <IconWrap href={WHATSAPP_TAIS} label="WhatsApp">
+              <IconWrap href={whatsappTais} label="WhatsApp">
                 <MessageCircle size={16} aria-hidden="true" />
               </IconWrap>
             </div>
@@ -69,11 +75,11 @@ export default function EqpFooter() {
           <div className="flex flex-col gap-4 shrink-0 lg:px-10 lg:border-r border-eqp-seam">
             <p className="text-eqp-chalk font-bold text-base">Precisa de ajuda?</p>
             <div className="flex flex-col gap-3">
-              <a href={WHATSAPP_TAIS} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-eqp-fog hover:text-eqp-caution transition-colors">
+              <a href={whatsappTais} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-eqp-fog hover:text-eqp-caution transition-colors">
                 <Phone size={13} className="text-eqp-caution shrink-0" aria-hidden="true" />
                 Taís · {PHONE_TAIS}
               </a>
-              <a href={WHATSAPP_JOICE} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-eqp-fog hover:text-eqp-caution transition-colors">
+              <a href={whatsappJoice} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-eqp-fog hover:text-eqp-caution transition-colors">
                 <Phone size={13} className="text-eqp-caution shrink-0" aria-hidden="true" />
                 Joice · {PHONE_JOICE}
               </a>

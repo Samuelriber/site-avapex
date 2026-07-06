@@ -1,8 +1,10 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { Phone, Mail, MapPin, Send } from 'lucide-react'
 import { sendContactEmail } from '../../../services/emailApi'
 import { PHONE_TAIS, PHONE_JOICE, WHATSAPP_TAIS, WHATSAPP_JOICE, ADDRESS } from '../../../constants/contact'
+import { useSetorParam } from '../hooks/useSetorParam'
+import { buildWhatsappHref } from '../utils/whatsapp'
 
 const SETOR_OPTIONS = ['Mineração', 'Indústria', 'Logística']
 
@@ -13,13 +15,26 @@ export default function EqpForm() {
   const [status, setStatus] = useState('idle')
   const navigate = useNavigate()
 
+  const setorFromQuery = useSetorParam()
+  const [setor, setSetor] = useState(setorFromQuery)
+  const [mensagem, setMensagem] = useState('')
+
+  useEffect(() => {
+    if (!setorFromQuery) return
+    setSetor(setorFromQuery)
+    setMensagem(prev => prev || `Tenho interesse em soluções para o setor de ${setorFromQuery}.`)
+  }, [setorFromQuery])
+
+  const whatsappTais = buildWhatsappHref(WHATSAPP_TAIS, setor)
+  const whatsappJoice = buildWhatsappHref(WHATSAPP_JOICE, setor)
+
   async function handleSubmit(e) {
     e.preventDefault()
     setStatus('sending')
     const data = { ...Object.fromEntries(new FormData(e.target).entries()), origem: 'LP Empilhadeiras Lítio' }
     try {
       await sendContactEmail(data)
-      navigate('/lp/empilhadeiras-litio/obrigado')
+      navigate('/lp/empilhadeiras-litio/obrigado', { state: { setor } })
     } catch {
       setStatus('error')
     }
@@ -41,10 +56,10 @@ export default function EqpForm() {
               </div>
               <div>
                 <p className="font-bold text-eqp-chalk text-sm">Central de Atendimento</p>
-                <a href={WHATSAPP_TAIS} target="_blank" rel="noopener noreferrer" className="text-eqp-caution text-base font-bold block hover:opacity-80 transition-opacity">
+                <a href={whatsappTais} target="_blank" rel="noopener noreferrer" className="text-eqp-caution text-base font-bold block hover:opacity-80 transition-opacity">
                   Taís · {PHONE_TAIS}
                 </a>
-                <a href={WHATSAPP_JOICE} target="_blank" rel="noopener noreferrer" className="text-eqp-caution text-base font-bold block hover:opacity-80 transition-opacity">
+                <a href={whatsappJoice} target="_blank" rel="noopener noreferrer" className="text-eqp-caution text-base font-bold block hover:opacity-80 transition-opacity">
                   Joice · {PHONE_JOICE}
                 </a>
               </div>
@@ -112,7 +127,14 @@ export default function EqpForm() {
             </div>
             <div className="space-y-1">
               <label htmlFor="eqp_setor" className={LABEL_CLASS}>Setor de Atuação</label>
-              <select id="eqp_setor" name="setor" required defaultValue="" className={INPUT_CLASS}>
+              <select
+                id="eqp_setor"
+                name="setor"
+                required
+                value={setor}
+                onChange={e => setSetor(e.target.value)}
+                className={INPUT_CLASS}
+              >
                 <option value="" disabled>Selecione uma opção...</option>
                 {SETOR_OPTIONS.map(opt => (
                   <option key={opt} value={opt}>{opt}</option>
@@ -124,6 +146,8 @@ export default function EqpForm() {
               <textarea
                 id="eqp_mensagem"
                 name="mensagem"
+                value={mensagem}
+                onChange={e => setMensagem(e.target.value)}
                 placeholder="Descreva sua necessidade, prazo, local de entrega..."
                 className={`${INPUT_CLASS} resize-none flex-1 min-h-[96px]`}
               />
