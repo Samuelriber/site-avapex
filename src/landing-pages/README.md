@@ -44,4 +44,4 @@ Envolva o app em `main.jsx` com `<HelmetProvider>` e descomente o bloco `<Helmet
 | Campanha | Rota | Status |
 |---|---|---|
 | Empilhadeiras Elétricas a Lítio | `/lp/empilhadeiras-litio` | noindex |
-| Especial Copa | `/lp/especial-copa` | noindex |
+| Equipamentos Estratégicos | `/lp/equipamentos-estrategicos` | noindex |

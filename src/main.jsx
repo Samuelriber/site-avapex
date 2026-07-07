@@ -11,8 +11,8 @@ const LandingPageTemplate = lazy(() => import('./landing-pages/_template'))
 // const LPMineracao = lazy(() => import('./landing-pages/mineracao'))
 const LPEmpilhadeirasLitio = lazy(() => import('./landing-pages/empilhadeiras-litio'))
 const EqpObrigado         = lazy(() => import('./landing-pages/empilhadeiras-litio/EqpObrigado'))
-const LPEspecialCopa     = lazy(() => import('./landing-pages/especial-copa'))
-const CopaObrigado       = lazy(() => import('./landing-pages/especial-copa/CopaObrigado'))
+const LPEquipEstrategicos = lazy(() => import('./landing-pages/equipamentos-estrategicos'))
+const EstrObrigado        = lazy(() => import('./landing-pages/equipamentos-estrategicos/EstrObrigado'))
 const Obrigado           = lazy(() => import('./pages/Obrigado'))
 
 ReactDOM.createRoot(document.getElementById('root')).render(
@@ -51,18 +51,18 @@ ReactDOM.createRoot(document.getElementById('root')).render(
           }
         />
         <Route
-          path="/lp/especial-copa"
+          path="/lp/equipamentos-estrategicos"
           element={
-            <Suspense fallback={<div style={{ background: '#0B1121', minHeight: '100vh' }} />}>
-              <LPEspecialCopa />
+            <Suspense fallback={<div style={{ background: '#17181b', minHeight: '100vh' }} />}>
+              <LPEquipEstrategicos />
             </Suspense>
           }
         />
         <Route
-          path="/lp/especial-copa/obrigado"
+          path="/lp/equipamentos-estrategicos/obrigado"
           element={
-            <Suspense fallback={<div style={{ background: '#0B1121', minHeight: '100vh' }} />}>
-              <CopaObrigado />
+            <Suspense fallback={<div style={{ background: '#17181b', minHeight: '100vh' }} />}>
+              <EstrObrigado />
             </Suspense>
           }
         />

@@ -52,7 +52,13 @@ if (!$nome || !$email) {
 }
 
 $isLpCopa           = (strtolower($origem) === 'lp copa');
-$isLpEmpilhadeiras  = (strtolower($origem) === 'lp empilhadeiras lítio' || strtolower($origem) === 'lp empilhadeiras litio');
+$origemLower        = strtolower($origem);
+$isLpEmpilhadeiras  = ($origemLower === 'lp empilhadeiras lítio' || $origemLower === 'lp empilhadeiras litio');
+$isLpEstrategicos   = ($origemLower === 'lp equipamentos estratégicos' || $origemLower === 'lp equipamentos estrategicos');
+
+// As duas LPs escuras compartilham o mesmo template; só muda o rótulo do campo e o cabeçalho.
+$lpDarkEyebrow = $isLpEstrategicos ? '⚡ Landing Page — Equipamentos Estratégicos' : '⚡ Landing Page — Empilhadeiras Elétricas a Lítio';
+$lpDarkCampo   = $isLpEstrategicos ? 'Equipamento' : 'Setor de Atuação';
 
 if ($isLpCopa) {
     $htmlBody = "
@@ -95,11 +101,11 @@ if ($isLpCopa) {
     </div>
 </div>
 ";
-} elseif ($isLpEmpilhadeiras) {
+} elseif ($isLpEmpilhadeiras || $isLpEstrategicos) {
     $htmlBody = "
 <div style=\"font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; background: #17181b; color: #f7f7f5; border-radius: 4px; overflow: hidden; border: 1px solid #33373d;\">
     <div style=\"background: #101114; padding: 24px 28px; border-bottom: 3px solid #ffd028;\">
-        <p style=\"margin: 0 0 6px; font-size: 11px; font-weight: bold; letter-spacing: 2px; color: #ffd028; text-transform: uppercase; font-family: 'Courier New', monospace;\">⚡ Landing Page — Empilhadeiras Elétricas a Lítio</p>
+        <p style=\"margin: 0 0 6px; font-size: 11px; font-weight: bold; letter-spacing: 2px; color: #ffd028; text-transform: uppercase; font-family: 'Courier New', monospace;\">$lpDarkEyebrow</p>
         <h2 style=\"margin: 0; color: #f7f7f5; font-size: 22px; font-weight: bold;\">Nova Solicitação de Orçamento</h2>
     </div>
     <div style=\"padding: 24px 28px;\">
@@ -121,7 +127,7 @@ if ($isLpCopa) {
                 <td style=\"padding: 12px 0; color: #f7f7f5; font-size: 15px;\">$telefone</td>
             </tr>
             <tr>
-                <td style=\"padding: 12px 0; font-weight: bold; color: #ffd028; font-size: 11px; text-transform: uppercase; letter-spacing: 1px;\">Setor de Atuação</td>
+                <td style=\"padding: 12px 0; font-weight: bold; color: #ffd028; font-size: 11px; text-transform: uppercase; letter-spacing: 1px;\">$lpDarkCampo</td>
                 <td style=\"padding: 12px 0; color: #f7f7f5; font-size: 15px; font-weight: bold;\">$servico</td>
             </tr>
         </table>
