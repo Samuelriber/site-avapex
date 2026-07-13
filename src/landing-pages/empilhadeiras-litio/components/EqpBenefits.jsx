@@ -20,9 +20,9 @@ export default function EqpBenefits() {
           <h3 className="font-bold text-lg mb-2 text-eqp-chalk">Maior Autonomia</h3>
           <p className="text-eqp-fog text-sm">Operação contínua em múltiplos turnos com performance consistente.</p>
         </div>
-        <div className="bg-eqp-panel-sunken p-6 border border-eqp-charge bg-eqp-charge/10 card-hover">
-          <Leaf {...ICON_PROPS} className="text-eqp-charge-bright mb-4" />
-          <h3 className="font-bold text-lg text-eqp-charge-bright mb-2">Zero Emissão</h3>
+        <div className="bg-eqp-panel-sunken p-6 border border-[#11A028] bg-[#11A028]/10 card-hover">
+          <Leaf {...ICON_PROPS} className="text-[#11A028] mb-4" />
+          <h3 className="font-bold text-lg text-[#11A028] mb-2">Zero Emissão</h3>
           <p className="text-eqp-fog text-sm">Operação limpa, ideal para ambientes internos, câmaras frias e indústria alimentícia.</p>
         </div>
         <div className="bg-eqp-panel-sunken p-6 border industrial-border card-hover">

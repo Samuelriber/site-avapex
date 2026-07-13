@@ -21,7 +21,7 @@ export default function LandingEmpilhadeirasLitio() {
         <meta name="robots" content="noindex, nofollow" />
       </Helmet>
 
-      <div className="eqp-page">
+      <div className="eqp-page eqp-litio">
         <EqpHeader />
         <main className="pt-20">
           <EqpHero />

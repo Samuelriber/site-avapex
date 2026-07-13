@@ -278,3 +278,55 @@
   border-right: none;
   border-top: none;
 }
+
+/* ============================================================
+   Acento verde (#11A028) — somente na LP "empilhadeiras-litio".
+   Escopado em .eqp-litio para não vazar para outras páginas que
+   importam este mesmo arquivo (ex.: equipamentos-estrategicos),
+   que continuam com o acento amarelo padrão.
+   ============================================================ */
+.eqp-litio .btn-primary,
+.eqp-litio .btn-tertiary {
+  background-color: #11A028;
+  color: #ffffff;
+}
+.eqp-litio .btn-primary:hover,
+.eqp-litio .btn-primary:focus-visible {
+  background-color: #0d8420;
+  box-shadow: 4px 4px 0px #33373d, 0 0 18px 2px rgba(17, 160, 40, 0.65);
+}
+.eqp-litio .btn-tertiary:hover {
+  background-color: #0d8420;
+}
+.eqp-litio .btn-primary {
+  animation: eqp-charge-pulse-litio 2.4s ease-in-out infinite;
+}
+@keyframes eqp-charge-pulse-litio {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(17, 160, 40, 0.55); }
+  50% { box-shadow: 0 0 12px 3px rgba(17, 160, 40, 0.55); }
+}
+
+.eqp-litio .btn-secondary {
+  color: #11A028;
+  border-color: #11A028;
+}
+.eqp-litio .btn-secondary:hover {
+  background-color: #11A028;
+  color: #ffffff;
+}
+
+.eqp-litio .eqp-badge-charge {
+  animation: eqp-charge-pulse-soft-litio 2.4s ease-in-out infinite;
+}
+@keyframes eqp-charge-pulse-soft-litio {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(17, 160, 40, 0.5); }
+  50% { box-shadow: 0 0 10px 2px rgba(17, 160, 40, 0.5); }
+}
+.eqp-litio .eqp-badge-charge::before {
+  background-image:
+    repeating-linear-gradient(60deg, rgba(17, 160, 40, 0.14) 0, rgba(17, 160, 40, 0.14) 1px, transparent 1px, transparent 7px),
+    repeating-linear-gradient(-60deg, rgba(17, 160, 40, 0.1) 0, rgba(17, 160, 40, 0.1) 1px, transparent 1px, transparent 7px);
+}
+.eqp-litio .eqp-badge-charge::after {
+  background: linear-gradient(115deg, transparent, rgba(255, 255, 255, 0.5), rgba(150, 255, 175, 0.35), transparent);
+}

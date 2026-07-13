@@ -37,7 +37,7 @@ export default function EqpHero() {
         <div className="md:col-span-7 space-y-6">
           <motion.div
             variants={item}
-            className="eqp-badge-charge inline-flex items-center gap-2 bg-eqp-charge/20 border border-eqp-charge px-3 py-1 rounded-sm eqp-label-caps uppercase text-eqp-charge-bright"
+            className="eqp-badge-charge inline-flex items-center gap-2 bg-[#11A028]/20 border border-[#11A028] px-3 py-1 rounded-sm eqp-label-caps uppercase text-[#11A028]"
           >
             <Leaf size={16} strokeWidth={2} aria-hidden="true" />
             Operação 100% Livre de Emissões
@@ -45,7 +45,7 @@ export default function EqpHero() {
           <motion.h1 variants={item} className="eqp-h1 text-eqp-chalk">
             Reduza em Até 90% os Custos
           </motion.h1>
-          <motion.p variants={item} className="eqp-h2 text-eqp-charge-bright -mt-4">
+          <motion.p variants={item} className="eqp-h2 text-[#11A028] -mt-4">
             com Empilhadeiras Elétricas a Lítio
           </motion.p>
           <motion.p variants={item} className="eqp-body-lg text-eqp-fog max-w-2xl">

@@ -34,7 +34,7 @@ export default function EqpFooter() {
   const whatsappJoice = buildWhatsappHref(WHATSAPP_JOICE, setor)
 
   return (
-    <footer className="w-full border-t-4 border-eqp-charge bg-eqp-panel">
+    <footer className="w-full border-t-4 border-[#11A028] bg-eqp-panel">
       <div className="max-w-7xl mx-auto px-4 md:px-6 py-12">
         <div className="flex flex-col lg:flex-row gap-10">
 
@@ -137,7 +137,7 @@ export default function EqpFooter() {
       </div>
 
       {/* Barra inferior */}
-      <div className="bg-eqp-charge">
+      <div className="bg-[#11A028]">
         <p className="max-w-7xl mx-auto px-4 md:px-6 py-3 text-center text-white text-xs font-semibold">
           © 2026 AVAPEX TRANSPORTES — TODOS OS DIREITOS RESERVADOS.
         </p>
