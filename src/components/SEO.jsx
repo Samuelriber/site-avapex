@@ -12,7 +12,7 @@
 // export default function SEO() {
 //   return (
 //     <Helmet>
-//       <title>Avapex Transportes | Especialistas em Logística e Mineração</title>
+//       <title>Avapex Transportes | Especialistas em Logística e Transporte Rodoviário</title>
 //       <meta name="description" content="Aumente a eficiência da sua operação. A Avapex atua há mais de 18 anos com transporte rodoviário, intralogística e locação de máquinas com certificação ISO 9001." />
 //       <meta name="robots" content="index, follow" />
 //       <link rel="canonical" href="https://www.avapex.com.br/" />
